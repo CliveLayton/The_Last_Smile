@@ -5,26 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitch : MonoBehaviour
 {
-    public int scene;
-    public GameObject loadingScreen;
-    
+    public string sceneName;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(LoadNextScene(scene));
+            GameStateManager.instance.LoadNewGameplayScene(sceneName);
         }
     }
-
-    private IEnumerator LoadNextScene(int sceneIndex)
+    
+    public void SwitchScene(string sceneToLoad)
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
-
-        loadingScreen.SetActive(true);
-
-        while (operation.isDone)
-        {
-            yield return null;
-        }
+        GameStateManager.instance.LoadNewGameplayScene(sceneToLoad);
     }
 }

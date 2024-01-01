@@ -15,26 +15,19 @@ public class MainMenu : MonoBehaviour
         AudioManager.instance.SetMusicArea(area);
     }
 
-    public void PlayGame(int sceneIndex)
+    public void StartNewGame()
     {
-        StartCoroutine(GoToGame(sceneIndex));
+        GameStateManager.instance.StartNewGame();
+    }
+
+    public void LoadGame()
+    {
+        GameStateManager.instance.LoadFromSave("SaveGame1");
     }
 
     public void QuitGame()
     {
         print("Quit");
         Application.Quit();
-    }
-
-    private IEnumerator GoToGame(int sceneIndex)
-    {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
-        
-        loadingScreen.SetActive(true);
-
-        while (!operation.isDone)
-        {
-            yield return null;
-        }
     }
 }

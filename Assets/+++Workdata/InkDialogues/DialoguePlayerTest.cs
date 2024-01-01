@@ -8,12 +8,19 @@ using UnityEngine.UI;
 
 public class DialoguePlayerTest : MonoBehaviour
 {
-    [SerializeField] private TextAsset dialogueAsset;
+    public static DialoguePlayerTest instance;
+    public TextAsset dialogueAsset;
     [SerializeField] private DialogueButton buttonPrefab;
     [SerializeField] private RectTransform buttonParent;
     [SerializeField] private TextMeshProUGUI dialogueTextComponent;
+    public string inkPath;
 
-    public void Start()
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    public void OnEnable()
     {
         StartCoroutine(StoryContinue());
     }
@@ -21,6 +28,7 @@ public class DialoguePlayerTest : MonoBehaviour
     private IEnumerator StoryContinue()
     {
         Story story = new Story(dialogueAsset.text);
+        story.ChoosePathString(inkPath);
 
         while (story.canContinue || story.currentChoices.Count > 0)
         {

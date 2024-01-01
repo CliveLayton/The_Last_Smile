@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 3763729537907010189}
   m_Layer: 5
   m_Name: DialogueBox
-  m_TagString: Untagged
+  m_TagString: DialogBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -322,7 +322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab736f2137340346badef47ed857b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueAsset: {fileID: 4900000, guid: 985b8a862aa68d142ac25fa5e1ffc47b, type: 3}
+  dialogueAsset: {fileID: 4900000, guid: 9a14cc85e3f8dea44911ce30f926fb9b, type: 3}
   buttonPrefab: {fileID: 1584968109042538535, guid: e8ad3fdd7816a2a4b92a7f4ff5612d8f, type: 3}
   buttonParent: {fileID: 8223562459566893424}
   dialogueTextComponent: {fileID: 699977414382764673}
+  inkPath: 

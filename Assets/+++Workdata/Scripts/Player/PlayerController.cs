@@ -4,10 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
+    [Serializable]
+    public class Data
+    {
+        public string lastScene;
+        public Dictionary<string, SaveableVector3> positionsBySceneName = new Dictionary<string, SaveableVector3>();
+    }
+    
     #region Inspector
 
+    [SerializeField] private Data data;
+    
     [Header("Movement")] 
     
     [SerializeField] private float movementSpeed = 4f;
@@ -82,12 +92,24 @@ public class PlayerController : MonoBehaviour
 
         inputActions = new GameInput();
         moveAction = inputActions.Player.Move;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
         
+        var currentStats = GameStateManager.instance.data.data;
+        if (currentStats != null)
+        {
+            //if a set of exists, that means we loaded a save and can take over those values.
+            data = currentStats;
+            SetupFromData();
+        }
+        
+        GameStateManager.instance.data.data = data;
+    }
+    
+    private void SetupFromData()
+    {
+        //because the player can move from scene to scene, we want to load the position for the scene we are currently in.
+        //if the player was never in this scene, we keep the default position the prefab is at.
+        if (data.positionsBySceneName.TryGetValue(gameObject.scene.name, out var position))
+            transform.position = position;
     }
 
     private void FixedUpdate()
@@ -108,6 +130,17 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         moveInput = moveAction.ReadValue<Vector2>();
+    }
+    
+    private void LateUpdate()
+    {
+        //we have to save the current position dependant on the scene the player is in.
+        //this way, the position can be retained across multiple scenes, and we can switch back and forth.
+        var sceneName = gameObject.scene.name;
+        if (!data.positionsBySceneName.ContainsKey(sceneName))
+            data.positionsBySceneName.Add(sceneName, transform.position);
+        else
+            data.positionsBySceneName[sceneName] = transform.position;
     }
 
     private void OnEnable()
