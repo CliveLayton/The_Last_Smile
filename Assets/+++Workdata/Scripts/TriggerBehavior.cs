@@ -26,6 +26,7 @@ public class TriggerBehavior : MonoBehaviour
     public UnityEvent triggerExitEvent;
     private DialogueHUD dialogueHUD;
     private BoxCollider2D col;
+    private InGameUI openMenuText;
 
     private void Awake()
     {
@@ -48,6 +49,7 @@ public class TriggerBehavior : MonoBehaviour
         col = GetComponent<BoxCollider2D>();
         col.enabled = setActive;
         dialogueHUD = GameObject.FindGameObjectWithTag("DialogHUD").GetComponent<DialogueHUD>();
+        openMenuText = GameObject.FindGameObjectWithTag("InGameHUD").GetComponent<InGameUI>();
     }
     
     private void SetupFromData()
@@ -58,6 +60,7 @@ public class TriggerBehavior : MonoBehaviour
     public void SetTriggerObjectActive(bool state)
     {
         data.isActive = state;
+        col.enabled = state;
     }
 
     public void SetDialogueBoxActive(bool dialogueBoxActive)
@@ -68,6 +71,11 @@ public class TriggerBehavior : MonoBehaviour
     public void SetDialogueText(string inkPath)
     {
         dialogueHUD.SetDialogueBoxText(inkPath);
+    }
+
+    public void SetOpenMenuText(bool state)
+    {
+        openMenuText.EnableOpenMenuText(state);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -9,9 +9,12 @@ public class PuzzleLogic : MonoBehaviour
 
     public GameObject WinningScreen;
 
+    private InGameUI mapObject;
+
     private void Awake()
     {
         correctPuzzle = 0;
+        mapObject = GameObject.FindGameObjectWithTag("InGameHUD").GetComponent<InGameUI>();
     }
 
     public void CountCorrectPuzzles(int i)
@@ -27,5 +30,6 @@ public class PuzzleLogic : MonoBehaviour
     private void PuzzleSolved()
     {
         WinningScreen.SetActive(true);
+        mapObject.EnableMap(true);
     }
 }

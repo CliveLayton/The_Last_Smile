@@ -42,26 +42,22 @@ public class DragDrop : Selectable, IBeginDragHandler, IEndDragHandler, IDragHan
     public override void OnPointerDown(PointerEventData eventData)
     {
         base.OnPointerDown(eventData);
-        print("OnPointerDown");
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        print("OnBeginDrag");
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        print("OnEndDrag");
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        print("OnDrag");
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
 }

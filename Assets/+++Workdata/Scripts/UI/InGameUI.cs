@@ -15,6 +15,8 @@ public class InGameUI : MonoBehaviour
     [SerializeField] private GameObject characterMenu;
     [SerializeField] private GameObject photoMenu;
     [SerializeField] private GameObject mapButton;
+    [SerializeField] private GameObject map;
+    [SerializeField] private GameObject openMenuText;
 
     private GameInput inputActions;
 
@@ -49,6 +51,7 @@ public class InGameUI : MonoBehaviour
                               && (inGameMenu.activeSelf == false))
         {
             OpenIngameUI();
+            openMenuText.SetActive(false);
         }
         else if (context.performed && (GameStateManager.instance.currentState == GameStateManager.GameState.InGame)
                                    && (inGameMenu.activeSelf == true))
@@ -95,7 +98,25 @@ public class InGameUI : MonoBehaviour
         inGameMenu.SetActive(false);
         openMenuButton.SetActive(true);
     }
-    
+
+    /// <summary>
+    /// sets the map in the menu active or not
+    /// </summary>
+    /// <param name="state">bool</param>
+    public void EnableMap(bool state)
+    {
+        map.SetActive(state);
+    }
+
+    /// <summary>
+    /// sets the open menu text active or not
+    /// </summary>
+    /// <param name="state">bool</param>
+    public void EnableOpenMenuText(bool state)
+    {
+        openMenuText.SetActive(state);
+    }
+
     //plays a sound if a button is hovered
     public void ButtonSound()
     {
