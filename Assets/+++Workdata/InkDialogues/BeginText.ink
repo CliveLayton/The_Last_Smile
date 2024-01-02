@@ -12,6 +12,10 @@ What is this? Looks a bit like a map. Maybe I can put them together and use it t
 Now I can orient myself in this forest, I should stick it in my album.
 -> END
 
+= KnockingDoor
+... hmm seems no one is in there.
+-> END
+
 = Test
 VAR player_name = ""
 
