@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,7 +9,13 @@ public class CameraMover : MonoBehaviour
 {
      #region Inspector
 
-    [Header("Movement")] 
+     [SerializeField] private Animator cameraAnim;
+
+     [SerializeField] private CinemachineVirtualCamera virtualCameraCamera;
+
+     [SerializeField] private GameObject player;
+
+     [Header("Movement")] 
     
     [SerializeField] private float movementSpeed = 5f;
 
@@ -27,6 +35,10 @@ public class CameraMover : MonoBehaviour
 
     private BoxCollider2D col;
 
+    public bool inSnapPosition = false;
+
+    private InGameUI inGameUI;
+
     /// <summary>
     /// current movement input of the player
     /// </summary>
@@ -43,6 +55,7 @@ public class CameraMover : MonoBehaviour
 
         inputActions = new GameInput();
         moveAction = inputActions.Camera.Move;
+        inGameUI = GameObject.FindGameObjectWithTag("InGameHUD").GetComponent<InGameUI>();
     }
 
     // Start is called before the first frame update
@@ -65,11 +78,17 @@ public class CameraMover : MonoBehaviour
     private void OnEnable()
     {
         inputActions.Camera.Enable();
+
+        inputActions.Camera.Snap.performed += Snap;
+        inputActions.Camera.Leave.performed += Leave;
     }
 
     private void OnDisable()
     {
         inputActions.Camera.Disable();
+
+        inputActions.Camera.Snap.performed -= Snap;
+        inputActions.Camera.Leave.performed -= Leave;
     }
 
     #endregion
@@ -79,13 +98,50 @@ public class CameraMover : MonoBehaviour
     #endregion
 
     #region Collision Functions
-    
-    
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("SnapPosition"))
+        {
+            inSnapPosition = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("SnapPosition"))
+        {
+            inSnapPosition = false;
+        }
+    }
 
     #endregion
 
     #region Input CallbackContext Methods
-    
+
+    private void Snap(InputAction.CallbackContext context)
+    {
+        if (context.performed && !inSnapPosition)
+        {
+            cameraAnim.SetTrigger("Snap");
+        }
+        else if (context.performed && inSnapPosition)
+        {
+            cameraAnim.SetTrigger("Snap");
+            inGameUI.EnableNorthburrySignPicture(true);
+        }
+    }
+
+    private void Leave(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            virtualCameraCamera.Priority = 9;
+            player.gameObject.SetActive(true);
+            cameraAnim.SetTrigger("FadeOut");
+            this.gameObject.SetActive(false);
+        }
+    }
 
     #endregion
 

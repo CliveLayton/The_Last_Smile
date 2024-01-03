@@ -16,6 +16,10 @@ Now I can orient myself in this forest, I should stick it in my album.
 ... hmm seems no one is in there.
 -> END
 
+= CheckShop
+Oh it’s closed.
+-> END
+
 = Test
 VAR player_name = ""
 

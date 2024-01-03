@@ -17,6 +17,7 @@ public class InGameUI : MonoBehaviour
     [SerializeField] private GameObject mapButton;
     [SerializeField] private GameObject map;
     [SerializeField] private GameObject openMenuText;
+    [SerializeField] private GameObject northburrySignPicture;
 
     private GameInput inputActions;
 
@@ -106,6 +107,11 @@ public class InGameUI : MonoBehaviour
     public void EnableMap(bool state)
     {
         map.SetActive(state);
+    }
+
+    public void EnableNorthburrySignPicture(bool state)
+    {
+        northburrySignPicture.SetActive(state);
     }
 
     /// <summary>

@@ -82,6 +82,15 @@ namespace UnityEngine.InputSystem
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SesamOpenDoor"",
+                    ""type"": ""Button"",
+                    ""id"": ""4eca6091-644a-4807-837f-ad9c97c9d97b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -318,6 +327,17 @@ namespace UnityEngine.InputSystem
                 },
                 {
                     ""name"": """",
+                    ""id"": ""af7a3ec9-eeb5-4070-bb67-d2637e314868"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""1329e2f0-37bd-4cde-a963-c35037a44540"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
@@ -329,12 +349,45 @@ namespace UnityEngine.InputSystem
                 },
                 {
                     ""name"": """",
+                    ""id"": ""13e16474-00e1-4e9f-922b-93f290b1ad12"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""c1a615f9-932a-4abc-894b-acc841ccd899"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""818e8280-0c25-474a-ac72-2ecf40368f6e"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3197489e-550b-439b-b9ee-7d82a8f5f27e"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SesamOpenDoor"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -829,6 +882,17 @@ namespace UnityEngine.InputSystem
                     ""action"": ""PauseGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""55e635b1-2b58-4c2a-b200-76c9a9593559"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""PauseGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -844,6 +908,24 @@ namespace UnityEngine.InputSystem
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Snap"",
+                    ""type"": ""Button"",
+                    ""id"": ""18302ea7-7dea-495b-9fcf-f1d3cae5117a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Leave"",
+                    ""type"": ""Button"",
+                    ""id"": ""46a3f707-0fe4-43aa-a6e6-2d4e364d23a3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -978,6 +1060,50 @@ namespace UnityEngine.InputSystem
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7189a5fb-798d-4bab-913e-46dce9fae190"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Snap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""05a6474a-88a2-4df7-a714-0ee6e3743212"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Snap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b6bfee3f-b073-4769-90c1-a6e641bda0ba"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Leave"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c2810096-a927-4994-9f73-7b521eee815c"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Leave"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1053,6 +1179,7 @@ namespace UnityEngine.InputSystem
             m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
             m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
             m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+            m_Player_SesamOpenDoor = m_Player.FindAction("SesamOpenDoor", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1069,6 +1196,8 @@ namespace UnityEngine.InputSystem
             // Camera
             m_Camera = asset.FindActionMap("Camera", throwIfNotFound: true);
             m_Camera_Move = m_Camera.FindAction("Move", throwIfNotFound: true);
+            m_Camera_Snap = m_Camera.FindAction("Snap", throwIfNotFound: true);
+            m_Camera_Leave = m_Camera.FindAction("Leave", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -1136,6 +1265,7 @@ namespace UnityEngine.InputSystem
         private readonly InputAction m_Player_Sprint;
         private readonly InputAction m_Player_Interact;
         private readonly InputAction m_Player_Jump;
+        private readonly InputAction m_Player_SesamOpenDoor;
         public struct PlayerActions
         {
             private @GameInput m_Wrapper;
@@ -1146,6 +1276,7 @@ namespace UnityEngine.InputSystem
             public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
             public InputAction @Interact => m_Wrapper.m_Player_Interact;
             public InputAction @Jump => m_Wrapper.m_Player_Jump;
+            public InputAction @SesamOpenDoor => m_Wrapper.m_Player_SesamOpenDoor;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -1173,6 +1304,9 @@ namespace UnityEngine.InputSystem
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @SesamOpenDoor.started += instance.OnSesamOpenDoor;
+                @SesamOpenDoor.performed += instance.OnSesamOpenDoor;
+                @SesamOpenDoor.canceled += instance.OnSesamOpenDoor;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -1195,6 +1329,9 @@ namespace UnityEngine.InputSystem
                 @Jump.started -= instance.OnJump;
                 @Jump.performed -= instance.OnJump;
                 @Jump.canceled -= instance.OnJump;
+                @SesamOpenDoor.started -= instance.OnSesamOpenDoor;
+                @SesamOpenDoor.performed -= instance.OnSesamOpenDoor;
+                @SesamOpenDoor.canceled -= instance.OnSesamOpenDoor;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -1343,11 +1480,15 @@ namespace UnityEngine.InputSystem
         private readonly InputActionMap m_Camera;
         private List<ICameraActions> m_CameraActionsCallbackInterfaces = new List<ICameraActions>();
         private readonly InputAction m_Camera_Move;
+        private readonly InputAction m_Camera_Snap;
+        private readonly InputAction m_Camera_Leave;
         public struct CameraActions
         {
             private @GameInput m_Wrapper;
             public CameraActions(@GameInput wrapper) { m_Wrapper = wrapper; }
             public InputAction @Move => m_Wrapper.m_Camera_Move;
+            public InputAction @Snap => m_Wrapper.m_Camera_Snap;
+            public InputAction @Leave => m_Wrapper.m_Camera_Leave;
             public InputActionMap Get() { return m_Wrapper.m_Camera; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -1360,6 +1501,12 @@ namespace UnityEngine.InputSystem
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @Snap.started += instance.OnSnap;
+                @Snap.performed += instance.OnSnap;
+                @Snap.canceled += instance.OnSnap;
+                @Leave.started += instance.OnLeave;
+                @Leave.performed += instance.OnLeave;
+                @Leave.canceled += instance.OnLeave;
             }
 
             private void UnregisterCallbacks(ICameraActions instance)
@@ -1367,6 +1514,12 @@ namespace UnityEngine.InputSystem
                 @Move.started -= instance.OnMove;
                 @Move.performed -= instance.OnMove;
                 @Move.canceled -= instance.OnMove;
+                @Snap.started -= instance.OnSnap;
+                @Snap.performed -= instance.OnSnap;
+                @Snap.canceled -= instance.OnSnap;
+                @Leave.started -= instance.OnLeave;
+                @Leave.performed -= instance.OnLeave;
+                @Leave.canceled -= instance.OnLeave;
             }
 
             public void RemoveCallbacks(ICameraActions instance)
@@ -1437,6 +1590,7 @@ namespace UnityEngine.InputSystem
             void OnSprint(InputAction.CallbackContext context);
             void OnInteract(InputAction.CallbackContext context);
             void OnJump(InputAction.CallbackContext context);
+            void OnSesamOpenDoor(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {
@@ -1455,6 +1609,8 @@ namespace UnityEngine.InputSystem
         public interface ICameraActions
         {
             void OnMove(InputAction.CallbackContext context);
+            void OnSnap(InputAction.CallbackContext context);
+            void OnLeave(InputAction.CallbackContext context);
         }
     }
 }

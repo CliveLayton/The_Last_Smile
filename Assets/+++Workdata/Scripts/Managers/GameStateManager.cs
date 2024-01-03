@@ -16,6 +16,7 @@ public class GameStateManager : MonoBehaviour
    public const string level2SceneName = "Level2";
    public const string puzzle1SceneName = "Puzzle1";
    public const string puzzle2SceneName = "Puzzle2";
+   public const string shopSceneName = "Shop";
 
    public enum GameState
    {
