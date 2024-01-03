@@ -1013,6 +1013,10 @@ PrefabInstance:
       value: 50eff039-f554-4038-bf00-5b6a60dd3761
       objectReference: {fileID: 0}
     - target: {fileID: 5452562128701860555, guid: 75e3389e012e86c469ddf3986f546a87, type: 3}
+      propertyPath: colSetActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452562128701860555, guid: 75e3389e012e86c469ddf3986f546a87, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1046,7 +1050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5452562128701860555, guid: 75e3389e012e86c469ddf3986f546a87, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetObjectActive
+      value: SetColliderActive
       objectReference: {fileID: 0}
     - target: {fileID: 5452562128701860555, guid: 75e3389e012e86c469ddf3986f546a87, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1088,10 +1092,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3374863867054830464, guid: 75e3389e012e86c469ddf3986f546a87, type: 3}
       insertIndex: -1
       addedObject: {fileID: 661015363}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3459508866894268111, guid: 75e3389e012e86c469ddf3986f546a87, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75e3389e012e86c469ddf3986f546a87, type: 3}
 --- !u!4 &839925550 stripped
 Transform:

@@ -13,6 +13,7 @@ public class DialoguePlayerTest : MonoBehaviour
     [SerializeField] private DialogueButton buttonPrefab;
     [SerializeField] private RectTransform buttonParent;
     [SerializeField] private TextMeshProUGUI dialogueTextComponent;
+    [SerializeField] private float typingSpeed = 0.04f;
     public string inkPath;
 
     private void Awake()
@@ -67,5 +68,18 @@ public class DialoguePlayerTest : MonoBehaviour
         story.ChooseChoiceIndex(choice);
         for (int i = buttonParent.childCount - 1; i >= 0; i--)
             Destroy(buttonParent.GetChild(i).gameObject);
+    }
+
+    private IEnumerator DisplayLine(string line)
+    {
+        //empty the dialog text
+        dialogueTextComponent.text = "";
+
+        //display each letter one at a time
+        foreach (char letter in line.ToCharArray())
+        {
+            dialogueTextComponent.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+        }
     }
 }

@@ -1940,6 +1940,7 @@ MonoBehaviour:
   virtualCameraCamera: {fileID: 1857424010}
   player: {fileID: 702724718}
   movementSpeed: 5
+  inSnapPosition: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -5103,10 +5104,12 @@ MonoBehaviour:
           m_StringArgument: FadeIn
           m_BoolArgument: 1
         m_CallState: 2
+  colSetActive: 1
   interactable: {fileID: 1951087153}
   interactButton: {fileID: 1272178726}
   data:
     isActive: 0
+    colIsActive: 0
 --- !u!58 &1740344042
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5953,6 +5956,10 @@ PrefabInstance:
     - target: {fileID: 5452562128701860555, guid: 75e3389e012e86c469ddf3986f546a87, type: 3}
       propertyPath: uniqueGuid
       value: e48e41c3-7023-49a7-bfa8-a4a0c69a3efd
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452562128701860555, guid: 75e3389e012e86c469ddf3986f546a87, type: 3}
+      propertyPath: colSetActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5452562128701860555, guid: 75e3389e012e86c469ddf3986f546a87, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size

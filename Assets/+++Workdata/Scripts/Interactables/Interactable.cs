@@ -15,6 +15,8 @@ public class Interactable : MonoBehaviour
     public class Data
     {
         public bool isActive;
+
+        public bool colIsActive;
     }
     
     private bool isInRange;
@@ -24,6 +26,10 @@ public class Interactable : MonoBehaviour
     private GameInput inputActions;
 
     private bool setActive = true;
+
+    public bool colSetActive;
+
+    private CircleCollider2D col;
 
     [SerializeField] private GameObject interactable;
 
@@ -47,8 +53,11 @@ public class Interactable : MonoBehaviour
             //if nothing was given back, there was no data saved for this enemy, so we add the current values.
             GameStateManager.instance.data.AddInteractable(uniqueGuid, data);
             data.isActive = true;
+            data.colIsActive = true;
         }
-        
+
+        col = GetComponent<CircleCollider2D>();
+        col.enabled = colSetActive;
         inputActions = new GameInput();
         interactable.SetActive(setActive);
     }
@@ -56,6 +65,7 @@ public class Interactable : MonoBehaviour
     private void SetupFromData()
     {
         setActive = data.isActive;
+        colSetActive = data.colIsActive;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -100,6 +110,12 @@ public class Interactable : MonoBehaviour
     {
         setActive = state;
         data.isActive = state;
+    }
+
+    public void SetColliderActive(bool state)
+    {
+        colSetActive = state;
+        data.colIsActive = state;
     }
     
     //OnValidate is called by unity in the editor only, whenever something within the scene changes
