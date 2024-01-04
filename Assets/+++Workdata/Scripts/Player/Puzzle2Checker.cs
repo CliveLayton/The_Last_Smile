@@ -12,6 +12,21 @@ public class Puzzle2Checker : MonoBehaviour, IDropHandler
     
     public bool isCorrect = false;
 
+    private void OnEnable()
+    {
+        DragDrop.OnDragStartEvent += OnDragStart;
+    }
+
+    private void OnDisable()
+    {
+        DragDrop.OnDragStartEvent -= OnDragStart;
+    }
+
+    private void OnDragStart()
+    {
+        isCorrect = false;
+    }
+
     public void ConfirmAnswer()
     {
         if (isCorrect)

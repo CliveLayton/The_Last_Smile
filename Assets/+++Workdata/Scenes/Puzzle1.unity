@@ -394,6 +394,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 226443786}
   canvas: {fileID: 1199976161}
+  useExactImagePixels: 1
 --- !u!114 &226443786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -816,7 +817,7 @@ RectTransform:
   m_GameObject: {fileID: 436161099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7.525483, y: 7.525483, z: 7.525483}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1199976162}
@@ -957,6 +958,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 456341041}
   canvas: {fileID: 1199976161}
+  useExactImagePixels: 1
 --- !u!114 &456341041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1088,6 +1090,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 481208244}
   canvas: {fileID: 1199976161}
+  useExactImagePixels: 1
 --- !u!114 &481208244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1219,6 +1222,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 499863131}
   canvas: {fileID: 1199976161}
+  useExactImagePixels: 1
 --- !u!114 &499863131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1350,6 +1354,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 533434785}
   canvas: {fileID: 1199976161}
+  useExactImagePixels: 1
 --- !u!114 &533434785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2078,15 +2083,6 @@ RectTransform:
   m_Children:
   - {fileID: 436161100}
   - {fileID: 2098038885}
-  - {fileID: 762312711}
-  - {fileID: 1069230488}
-  - {fileID: 26773258}
-  - {fileID: 1496345366}
-  - {fileID: 358625965}
-  - {fileID: 1495572236}
-  - {fileID: 2124120309}
-  - {fileID: 1579309011}
-  - {fileID: 37340718}
   - {fileID: 1570304645}
   - {fileID: 1248096792}
   - {fileID: 481208241}
@@ -2096,6 +2092,15 @@ RectTransform:
   - {fileID: 1221942831}
   - {fileID: 456341038}
   - {fileID: 1613631832}
+  - {fileID: 762312711}
+  - {fileID: 1069230488}
+  - {fileID: 26773258}
+  - {fileID: 1496345366}
+  - {fileID: 358625965}
+  - {fileID: 1495572236}
+  - {fileID: 2124120309}
+  - {fileID: 1579309011}
+  - {fileID: 37340718}
   - {fileID: 411470785}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2292,6 +2297,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1221942834}
   canvas: {fileID: 1199976161}
+  useExactImagePixels: 1
 --- !u!114 &1221942834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2423,6 +2429,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1248096795}
   canvas: {fileID: 1199976161}
+  useExactImagePixels: 1
 --- !u!114 &1248096795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2892,6 +2899,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1570304646}
   canvas: {fileID: 1199976161}
+  useExactImagePixels: 1
 --- !u!225 &1570304649
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3086,6 +3094,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1613631835}
   canvas: {fileID: 1199976161}
+  useExactImagePixels: 1
 --- !u!114 &1613631835
 MonoBehaviour:
   m_ObjectHideFlags: 0

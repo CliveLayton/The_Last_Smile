@@ -45,9 +45,14 @@ public class DialoguePlayerTest : MonoBehaviour
     {
         while (story.canContinue)
         {
-            dialogueTextComponent.text = story.Continue();
+            // dialogueTextComponent.text = story.Continue();
+            yield return StartCoroutine(DisplayLine(story.Continue()));
+            
+            yield return null;
             while (!Input.GetMouseButtonDown(0))
+            {
                 yield return null;
+            }
             yield return null;
         }
 
@@ -78,6 +83,12 @@ public class DialoguePlayerTest : MonoBehaviour
         //display each letter one at a time
         foreach (char letter in line.ToCharArray())
         {
+            if (Input.GetMouseButton(0))
+            {
+                dialogueTextComponent.text = line;
+                break;
+            }
+            
             dialogueTextComponent.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }

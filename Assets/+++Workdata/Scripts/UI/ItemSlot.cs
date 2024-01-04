@@ -14,6 +14,29 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     private void Awake()
     {
         puzzleLogic = GameObject.FindGameObjectWithTag("PuzzleCheck").GetComponent<PuzzleLogic>();
+        GetComponent<Image>().raycastTarget = false;
+    }
+
+    private void OnEnable()
+    {
+        DragDrop.OnDragStartEvent += OnAnyDragStarted;
+        DragDrop.OnDragEndEvent += OnAnyDragStopped;
+    }
+
+    private void OnDisable()
+    {
+        DragDrop.OnDragStartEvent -= OnAnyDragStarted;
+        DragDrop.OnDragEndEvent -= OnAnyDragStopped;
+    }
+
+    private void OnAnyDragStarted()
+    {
+        GetComponent<Image>().raycastTarget = true;
+    }
+
+    private void OnAnyDragStopped()
+    {
+        GetComponent<Image>().raycastTarget = false;
     }
 
     private void Update()
