@@ -15,6 +15,10 @@ public class SceneSwitch : MonoBehaviour
         }
     }
     
+    /// <summary>
+    /// switch scene to the new scene
+    /// </summary>
+    /// <param name="sceneToLoad">string</param>
     public void SwitchScene(string sceneToLoad)
     {
         GameStateManager.instance.LoadNewGameplayScene(sceneToLoad);

@@ -10,10 +10,11 @@ using UnityEngine;
 public class GameStateManager : MonoBehaviour
 {
    public static GameStateManager instance;
-
+   
    public const string mainMenuSceneName = "MainMenu";
    public const string level1SceneName = "Level1";
    public const string level2SceneName = "Level2";
+   public const string level3SceneName = "Level3";
    public const string puzzle1SceneName = "Puzzle1";
    public const string puzzle2SceneName = "Puzzle2";
    public const string shopSceneName = "Shop";

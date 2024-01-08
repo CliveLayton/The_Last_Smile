@@ -22,6 +22,9 @@ public class Puzzle2Checker : MonoBehaviour, IDropHandler
         DragDrop.OnDragStartEvent -= OnDragStart;
     }
 
+    /// <summary>
+    /// if the ring gets drag turn isCorrect back to false
+    /// </summary>
     private void OnDragStart()
     {
         isCorrect = false;
@@ -40,6 +43,10 @@ public class Puzzle2Checker : MonoBehaviour, IDropHandler
         }
     }
 
+    /// <summary>
+    /// wait for 0.5 seconds then srts incorrect text off
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator DisableIncorrectText()
     {
         yield return new WaitForSeconds(0.5f);

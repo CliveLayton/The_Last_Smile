@@ -1,59 +1,76 @@
 === Level1 ===
 
 = FirstText
-I need to go to the village, there must be a hint to find Ava.
+I need to go to the village, there must be a hint to find Ava. #speaker:Liam #layout:left
 ->END
 
 = Puzzle1Text
-What is this? Looks a bit like a map. Maybe I can put them together and use it to orient myself
+What is this? Looks a bit like a map. Maybe I can put them together and use it to orient myself #speaker:Liam #layout:left
 -> END
 
 = Puzzle1Solved
-Now I can orient myself in this forest, I should stick it in my album.
+Now I can orient myself in this forest, I should stick it in my album. #speaker:Liam #layout:left
 -> END
 
 = KnockingDoor
-... hmm seems no one is in there.
+... hmm seems no one is in there. #speaker:Liam #layout:left
 -> END
 
 = CheckShop
-Oh it’s closed.
+Oh it’s closed. #speaker:Liam #layout:left
 -> END
 
 = Ethan
-Ethan: “Good day Liam! How are you?”
+Good day Liam! How are you? #speaker:Ethan #layout:right
 
-Liam: “Ah... Good day to you too, mayor. I'm well”
+Ah... Good day to you too, mayor. I'm well #speaker:Liam #layout:left
 
-Ethan: “That's good to hear. You seem a bit... mh nervous? or frantic though? is really everything okay?”
+That's good to hear. You seem a bit... mh nervous? or frantic though? is really everything okay? #speaker:Ethan #layout:right
 + [Oh, well...]
 -> ContinueDialogue
 
-=== ContinueDialogue ===
-Liam: “Oh, well.... Yeah no, kind of. I'm looking for someone. Amelia, the owner of the Shop. Is there a chance you know where she could be?”
+= ContinueDialogue
+Oh, well.... Yeah no, kind of. I'm looking for someone. Amelia, the owner of the Shop. Is there a chance you know where she could be? #speaker:Liam #layout:left
 
-Ethan: “At their shop?”
+At their shop? #speaker:Ethan #layout:right
 
-Liam: “She wasn't there”
+She wasn't there #speaker:Liam #layout:left
 
-Ethan: “Hmm… then maybe at the well in the forest? She's there pretty often.”
+Hmm… then maybe at the well in the forest? She's there pretty often. #speaker:Ethan #layout:right
 + [Oh, really?]
 -> EndDialogue
 + [Where is the well?]
 -> Answer
 
-=== Answer ===
-Ethan: “Just go this way” 
+= Answer 
+Just go this way #speaker:Ethan #layout:right
 
-Liam: “Thanks!”
+Thanks! #speaker:Liam #layout:left
 
-Liam(Thought): “... ‘This way’ where? I will just look at the map”
+... ‘This way’ where? I will just look at the map #speaker:Liam(Thought)
 -> END
 
-=== EndDialogue ===
-Liam: “Oh really? I'll look there then, thank you!”
+= EndDialogue
+Oh really? I'll look there then, thank you! #speaker:Liam
 -> END
 
+= AmeliaWell
+Hi Ethan. #speaker:Amelia
+
+Hi Amelia. #speaker:Liam
+
+I will open the shop. See you. #speaker:Liam
+
+Allright. #speaker:Liam
+-> END
+
+= JackInWoods
+What are you doing here?!! #speaker:Jack
+
+Sorry bro. #speaker:Liam
+
+Get the fuck out of here. #speaker:Jack
+-> END
 
 = Test
 VAR player_name = ""

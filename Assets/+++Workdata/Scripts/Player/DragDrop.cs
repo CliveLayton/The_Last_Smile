@@ -10,6 +10,9 @@ using Image = UnityEngine.UI.Image;
 public class DragDrop : Selectable, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     [SerializeField] private Canvas canvas;
+    /// <summary>
+    /// bool for using the exact image pixels to click on or not 
+    /// </summary>
     [SerializeField] private bool useExactImagePixels = false;
 
     public static event Action OnDragStartEvent;
@@ -71,6 +74,8 @@ public class DragDrop : Selectable, IBeginDragHandler, IEndDragHandler, IDragHan
     public void OnDrag(PointerEventData eventData)
     {
         // rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        
+        //get the exact mouse position
         Vector2 mouseAlpha = new Vector2(Input.mousePosition.x / Screen.width, Input.mousePosition.y / Screen.height);
         Vector3[] worldCorners = new Vector3[4];
         ((RectTransform)rectTransform.parent).GetWorldCorners(worldCorners);
@@ -79,6 +84,7 @@ public class DragDrop : Selectable, IBeginDragHandler, IEndDragHandler, IDragHan
         dragPosition.x = Mathf.Lerp(worldCorners[0].x, worldCorners[2].x, mouseAlpha.x);
         dragPosition.y = Mathf.Lerp(worldCorners[0].y, worldCorners[2].y, mouseAlpha.y);
         
+        //sets the position of the gamobject to the exact position of the mouse
         rectTransform.position = dragPosition;
     }
 }

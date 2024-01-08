@@ -15,16 +15,25 @@ public class MainMenu : MonoBehaviour
         AudioManager.instance.SetMusicArea(area);
     }
 
+    /// <summary>
+    /// just load the normal game as a new game
+    /// </summary>
     public void StartNewGame()
     {
         GameStateManager.instance.StartNewGame();
     }
 
+    /// <summary>
+    /// load the SaveGame1 Data
+    /// </summary>
     public void LoadGame()
     {
         GameStateManager.instance.LoadFromSave("SaveGame1");
     }
 
+    /// <summary>
+    /// quit the application
+    /// </summary>
     public void QuitGame()
     {
         print("Quit");

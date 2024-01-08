@@ -35,6 +35,7 @@ public class CameraMover : MonoBehaviour
 
     private BoxCollider2D col;
 
+    //bool to check if player is in the right position for picture
     public bool inSnapPosition = false;
 
     private InGameUI inGameUI;

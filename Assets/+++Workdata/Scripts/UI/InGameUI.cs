@@ -18,6 +18,7 @@ public class InGameUI : MonoBehaviour
     [SerializeField] private GameObject map;
     [SerializeField] private GameObject openMenuText;
     [SerializeField] private GameObject northburrySignPicture;
+    [SerializeField] private GameObject transporterPicture;
 
     private GameInput inputActions;
 
@@ -109,6 +110,19 @@ public class InGameUI : MonoBehaviour
         map.SetActive(state);
     }
 
+    /// <summary>
+    /// sets the transporter picture on the menu active or not
+    /// </summary>
+    /// <param name="state"></param>
+    public void EnableTransporterPicture(bool state)
+    {
+        transporterPicture.SetActive(state);
+    }
+
+    /// <summary>
+    /// enables the northburry sign picture in the picutre menu on or off
+    /// </summary>
+    /// <param name="state">boolean</param>
     public void EnableNorthburrySignPicture(bool state)
     {
         northburrySignPicture.SetActive(state);

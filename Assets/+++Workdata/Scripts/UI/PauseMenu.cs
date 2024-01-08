@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+//inactive script, replaced by "InGameUI" script
 public class PauseMenu : MonoBehaviour
 {
    private GameInput inputActions;

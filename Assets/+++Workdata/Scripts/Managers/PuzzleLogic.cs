@@ -17,6 +17,10 @@ public class PuzzleLogic : MonoBehaviour
         mapObject = GameObject.FindGameObjectWithTag("InGameHUD").GetComponent<InGameUI>();
     }
 
+    /// <summary>
+    /// counts correct puzzles, if puzzles 9 do PuzzleSolved Method
+    /// </summary>
+    /// <param name="i">int</param>
     public void CountCorrectPuzzles(int i)
     {
         correctPuzzle += i;
@@ -27,6 +31,9 @@ public class PuzzleLogic : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// sets winning screen active, enables map in pausemenu
+    /// </summary>
     private void PuzzleSolved()
     {
         WinningScreen.SetActive(true);

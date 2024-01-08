@@ -43,23 +43,26 @@ public class DialoguePlayerTest : MonoBehaviour
 
     private IEnumerator ShowNextTexts(Story story)
     {
+        print("NextText");
         while (story.canContinue)
         {
+            print("SameText");
             // dialogueTextComponent.text = story.Continue();
             yield return StartCoroutine(DisplayLine(story.Continue()));
-            
+            //waits for a frame
             yield return null;
             while (!Input.GetMouseButtonDown(0))
             {
                 yield return null;
             }
+
             yield return null;
         }
-
     }
 
     private IEnumerator ShowNextDecision(Story story)
     {
+        print("Decision");
         int choice = -1;
         for(int i = 0; i < story.currentChoices.Count; i++)
         {
@@ -79,16 +82,17 @@ public class DialoguePlayerTest : MonoBehaviour
     {
         //empty the dialog text
         dialogueTextComponent.text = "";
-
+        
         //display each letter one at a time
         foreach (char letter in line.ToCharArray())
         {
             if (Input.GetMouseButton(0))
             {
+                print("displayLine");
                 dialogueTextComponent.text = line;
                 break;
             }
-            
+            print("displayChars");
             dialogueTextComponent.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }

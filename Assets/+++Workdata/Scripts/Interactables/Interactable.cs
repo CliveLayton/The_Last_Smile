@@ -14,8 +14,10 @@ public class Interactable : MonoBehaviour
     [Serializable]
     public class Data
     {
+        //boolean for gameobject
         public bool isActive;
 
+        //boolean for circleCollider
         public bool colIsActive;
     }
     
@@ -25,8 +27,10 @@ public class Interactable : MonoBehaviour
 
     private GameInput inputActions;
 
+    //bool for gameobject
     private bool setActive = true;
 
+    //boolean for circlecollider
     public bool colSetActive;
 
     private CircleCollider2D col;
@@ -106,12 +110,20 @@ public class Interactable : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// sets gameobject active or not
+    /// </summary>
+    /// <param name="state">boolean</param>
     public void SetObjectActive(bool state)
     {
         setActive = state;
         data.isActive = state;
     }
 
+    /// <summary>
+    /// sets circlecollider active or not
+    /// </summary>
+    /// <param name="state">boolean</param>
     public void SetColliderActive(bool state)
     {
         colSetActive = state;

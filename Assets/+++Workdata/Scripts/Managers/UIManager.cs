@@ -21,6 +21,4 @@ public class UIManager : MonoBehaviour
     {
         loadingScreen.SetActive(enabled);
     }
-
-
 }
