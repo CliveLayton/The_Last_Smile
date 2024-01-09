@@ -15,6 +15,7 @@ public class GameStateManager : MonoBehaviour
    public const string level1SceneName = "Level1";
    public const string level2SceneName = "Level2";
    public const string level3SceneName = "Level3";
+   public const string level4SceneName = "Level4";
    public const string puzzle1SceneName = "Puzzle1";
    public const string puzzle2SceneName = "Puzzle2";
    public const string shopSceneName = "Shop";
@@ -38,6 +39,20 @@ public class GameStateManager : MonoBehaviour
    /// get their current data from this instance of the game data. 
    /// </summary>
    public GameData data = new GameData();
+
+   #region Level2Objects Variables
+
+   /// <summary>
+   /// bool for the open door circle collider is active or not 
+   /// </summary>
+   public bool shopOpenDoorActive = false;
+
+   /// <summary>
+   /// bool for the closed door gameobject is active or not
+   /// </summary>
+   public bool shopClosedDoorActive = true;
+
+   #endregion
 
    private void Awake()
    {

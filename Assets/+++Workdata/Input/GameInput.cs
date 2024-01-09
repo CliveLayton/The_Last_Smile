@@ -82,15 +82,6 @@ namespace UnityEngine.InputSystem
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""SesamOpenDoor"",
-                    ""type"": ""Button"",
-                    ""id"": ""4eca6091-644a-4807-837f-ad9c97c9d97b"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -377,17 +368,6 @@ namespace UnityEngine.InputSystem
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""3197489e-550b-439b-b9ee-7d82a8f5f27e"",
-                    ""path"": ""<Keyboard>/k"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""SesamOpenDoor"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1179,7 +1159,6 @@ namespace UnityEngine.InputSystem
             m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
             m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
             m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
-            m_Player_SesamOpenDoor = m_Player.FindAction("SesamOpenDoor", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1265,7 +1244,6 @@ namespace UnityEngine.InputSystem
         private readonly InputAction m_Player_Sprint;
         private readonly InputAction m_Player_Interact;
         private readonly InputAction m_Player_Jump;
-        private readonly InputAction m_Player_SesamOpenDoor;
         public struct PlayerActions
         {
             private @GameInput m_Wrapper;
@@ -1276,7 +1254,6 @@ namespace UnityEngine.InputSystem
             public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
             public InputAction @Interact => m_Wrapper.m_Player_Interact;
             public InputAction @Jump => m_Wrapper.m_Player_Jump;
-            public InputAction @SesamOpenDoor => m_Wrapper.m_Player_SesamOpenDoor;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -1304,9 +1281,6 @@ namespace UnityEngine.InputSystem
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
-                @SesamOpenDoor.started += instance.OnSesamOpenDoor;
-                @SesamOpenDoor.performed += instance.OnSesamOpenDoor;
-                @SesamOpenDoor.canceled += instance.OnSesamOpenDoor;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -1329,9 +1303,6 @@ namespace UnityEngine.InputSystem
                 @Jump.started -= instance.OnJump;
                 @Jump.performed -= instance.OnJump;
                 @Jump.canceled -= instance.OnJump;
-                @SesamOpenDoor.started -= instance.OnSesamOpenDoor;
-                @SesamOpenDoor.performed -= instance.OnSesamOpenDoor;
-                @SesamOpenDoor.canceled -= instance.OnSesamOpenDoor;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -1590,7 +1561,6 @@ namespace UnityEngine.InputSystem
             void OnSprint(InputAction.CallbackContext context);
             void OnInteract(InputAction.CallbackContext context);
             void OnJump(InputAction.CallbackContext context);
-            void OnSesamOpenDoor(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {

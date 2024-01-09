@@ -154,8 +154,6 @@ public class PlayerController : MonoBehaviour
 
         inputActions.Player.Jump.performed += Jump;
         inputActions.Player.Jump.canceled += Jump;
-
-        inputActions.Player.SesamOpenDoor.performed += SesamOpenDoor;
     }
 
     private void OnDisable()
@@ -169,8 +167,6 @@ public class PlayerController : MonoBehaviour
 
         inputActions.Player.Jump.performed -= Jump;
         inputActions.Player.Jump.canceled -= Jump;
-
-        inputActions.Player.SesamOpenDoor.performed -= SesamOpenDoor;
     }
 
     #endregion
@@ -216,19 +212,6 @@ public class PlayerController : MonoBehaviour
             {
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
             }
-        }
-    }
-
-    //test build for presentation
-    void SesamOpenDoor(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            GameObject closedDoor = GameObject.FindGameObjectWithTag("ClosedDoor");
-            CircleCollider2D openDoor = GameObject.FindGameObjectWithTag("OpenDoor").GetComponentInChildren<CircleCollider2D>();
-
-            closedDoor.gameObject.SetActive(false);
-            openDoor.enabled = true;
         }
     }
 

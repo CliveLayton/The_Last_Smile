@@ -47,29 +47,34 @@ Just go this way #speaker:Ethan #layout:right
 
 Thanks! #speaker:Liam #layout:left
 
-... ‘This way’ where? I will just look at the map #speaker:Liam(Thought)
+... ‘This way’ where? I will just look at the map #speaker:Liam(Thought) #layout:left
 -> END
 
 = EndDialogue
-Oh really? I'll look there then, thank you! #speaker:Liam
+Oh really? I'll look there then, thank you! #speaker:Liam #layout:left
 -> END
 
 = AmeliaWell
-Hi Ethan. #speaker:Amelia
+EXTERNAL WalkAway(animationTrigger, shopClosedDoorActive, shopOpenDoorActive)
 
-Hi Amelia. #speaker:Liam
+Hi Ethan. #speaker:Amelia #layout:right
 
-I will open the shop. See you. #speaker:Liam
+Hi Amelia. #speaker:Liam #layout:left
 
-Allright. #speaker:Liam
+I will open the shop, no problem. #speaker:Amelia #layout:right
+
+Allright, thank you. #speaker:Liam #layout:left
+
+~ WalkAway("Amelia_WalkOutForest", false, true)
+See you. #speaker:Amelia #layout:right
 -> END
 
 = JackInWoods
-What are you doing here?!! #speaker:Jack
+What are you doing here?!! #speaker:Jack #layout:right
 
-Sorry bro. #speaker:Liam
+Sorry bro. #speaker:Liam #layout:left
 
-Get the fuck out of here. #speaker:Jack
+Get the fuck out of here. #speaker:Jack #layout:right
 -> END
 
 = Test
