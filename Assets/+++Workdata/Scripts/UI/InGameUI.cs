@@ -20,6 +20,12 @@ public class InGameUI : MonoBehaviour
     [SerializeField] private GameObject northburrySignPicture;
     [SerializeField] private GameObject transporterPicture;
 
+    [SerializeField] private CollectableData transporterData;
+    [SerializeField] private CollectableData northburrySignData;
+    [SerializeField] private CollectableData mapData;
+
+    private PlayerController player;
+    
     private GameInput inputActions;
 
     private void Awake()
@@ -85,6 +91,24 @@ public class InGameUI : MonoBehaviour
     //this is called via the button in the upper left corner
     public void OpenIngameUI()
     {
+        if(GameStateManager.instance.data.HasCollectible(transporterData.identifier))
+            transporterPicture.SetActive(true);
+        else
+            transporterPicture.SetActive(false);
+        
+        if(GameStateManager.instance.data.HasCollectible(northburrySignData.identifier))
+            northburrySignPicture.SetActive(true);
+        else
+            northburrySignPicture.SetActive(false);
+        
+        if(GameStateManager.instance.data.HasCollectible(mapData.identifier))
+            map.SetActive(true);
+        else
+            map.SetActive(false);
+
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        player.enabled = false;
+        
         inGameMenu.SetActive(true);
         openMenuButton.SetActive(false);
         pauseMenu.SetActive(true);
@@ -99,33 +123,7 @@ public class InGameUI : MonoBehaviour
     {
         inGameMenu.SetActive(false);
         openMenuButton.SetActive(true);
-    }
-
-    /// <summary>
-    /// sets the map in the menu active or not
-    /// </summary>
-    /// <param name="state">bool</param>
-    public void EnableMap(bool state)
-    {
-        map.SetActive(state);
-    }
-
-    /// <summary>
-    /// sets the transporter picture on the menu active or not
-    /// </summary>
-    /// <param name="state"></param>
-    public void EnableTransporterPicture(bool state)
-    {
-        transporterPicture.SetActive(state);
-    }
-
-    /// <summary>
-    /// enables the northburry sign picture in the picutre menu on or off
-    /// </summary>
-    /// <param name="state">boolean</param>
-    public void EnableNorthburrySignPicture(bool state)
-    {
-        northburrySignPicture.SetActive(state);
+        player.enabled = true;
     }
 
     /// <summary>

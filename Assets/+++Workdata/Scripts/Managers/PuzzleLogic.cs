@@ -9,12 +9,11 @@ public class PuzzleLogic : MonoBehaviour
 
     public GameObject WinningScreen;
 
-    private InGameUI mapObject;
+    [SerializeField] private CollectableData map;
 
     private void Awake()
     {
         correctPuzzle = 0;
-        mapObject = GameObject.FindGameObjectWithTag("InGameHUD").GetComponent<InGameUI>();
     }
 
     /// <summary>
@@ -37,6 +36,6 @@ public class PuzzleLogic : MonoBehaviour
     private void PuzzleSolved()
     {
         WinningScreen.SetActive(true);
-        mapObject.EnableMap(true);
+        GameStateManager.instance.data.AddCollectible(map.identifier);
     }
 }

@@ -175,7 +175,7 @@ MonoBehaviour:
     lastScene: 
   movementSpeed: 4
   speedChangeRate: 10
-  sprintSpeed: 9
+  sprintSpeed: 20
   jumpPower: 12
   groundCheckPos: {x: 0, y: -2.5, z: 0}
   groundCheckSize: {x: 0.6, y: 0.3}

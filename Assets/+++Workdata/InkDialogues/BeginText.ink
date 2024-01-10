@@ -1,81 +1,91 @@
 === Level1 ===
 
 = FirstText
-I need to go to the village, there must be a hint to find Ava. #speaker:Liam #layout:left
+I need to go to the village, there must be a hint to find Ava. #layout:left
 ->END
 
 = Puzzle1Text
-What is this? Looks a bit like a map. Maybe I can put them together and use it to orient myself #speaker:Liam #layout:left
+What is this? Looks a bit like a map. Maybe I can put them together and use it to orient myself #layout:left
 -> END
 
 = Puzzle1Solved
-Now I can orient myself in this forest, I should stick it in my album. #speaker:Liam #layout:left
+Now I can orient myself in this forest, I should stick it in my album. #layout:left
 -> END
 
 = KnockingDoor
-... hmm seems no one is in there. #speaker:Liam #layout:left
+... hmm seems no one is in there. #layout:left
 -> END
 
 = CheckShop
-Oh it’s closed. #speaker:Liam #layout:left
+Oh it’s closed. #layout:left
 -> END
 
-= Ethan
-Good day Liam! How are you? #speaker:Ethan #layout:right
+= Oliver
+Good day Liam! How are you? #layout:right
 
-Ah... Good day to you too, mayor. I'm well #speaker:Liam #layout:left
+Ah... Good day to you too, mayor. I'm well #layout:left
 
-That's good to hear. You seem a bit... mh nervous? or frantic though? is really everything okay? #speaker:Ethan #layout:right
+That's good to hear. You seem a bit... mh nervous? or frantic though? is really everything okay? #layout:right
 + [Oh, well...]
 -> ContinueDialogue
 
 = ContinueDialogue
-Oh, well.... Yeah no, kind of. I'm looking for someone. Amelia, the owner of the Shop. Is there a chance you know where she could be? #speaker:Liam #layout:left
+Oh, well.... Yeah no, kind of. I'm looking for someone. Amelia, the owner of the Shop. Is there a chance you know where she could be? #layout:left
 
-At their shop? #speaker:Ethan #layout:right
+At their shop? #layout:right
 
-She wasn't there #speaker:Liam #layout:left
+She wasn't there #layout:left
 
-Hmm… then maybe at the well in the forest? She's there pretty often. #speaker:Ethan #layout:right
+Hmm… then maybe at the well in the forest? She's there pretty often. #layout:right
 + [Oh, really?]
 -> EndDialogue
 + [Where is the well?]
 -> Answer
 
 = Answer 
-Just go this way #speaker:Ethan #layout:right
+Just go this way #layout:right
 
-Thanks! #speaker:Liam #layout:left
+Thanks! #layout:left
 
-... ‘This way’ where? I will just look at the map #speaker:Liam(Thought) #layout:left
+(in thoughts) ... ‘This way’ where? I will just look at the map #layout:left
 -> END
 
 = EndDialogue
-Oh really? I'll look there then, thank you! #speaker:Liam #layout:left
+Oh really? I'll look there then, thank you! #layout:left
 -> END
 
 = AmeliaWell
-EXTERNAL WalkAway(animationTrigger, shopClosedDoorActive, shopOpenDoorActive)
+EXTERNAL WalkAway(animationTrigger, shopClosedDoorActive, shopOpenDoorActive, oliverActive)
 
-Hi Ethan. #speaker:Amelia #layout:right
+Hi Ethan. #layout:right
 
-Hi Amelia. #speaker:Liam #layout:left
+Hi Amelia. #layout:left
 
-I will open the shop, no problem. #speaker:Amelia #layout:right
+I will open the shop, no problem. #layout:right
 
-Allright, thank you. #speaker:Liam #layout:left
+Allright, thank you. #layout:left
 
-~ WalkAway("Amelia_WalkOutForest", false, true)
-See you. #speaker:Amelia #layout:right
+~ WalkAway("Amelia_WalkOutForest", false, true, false)
+See you. #layout:right
 -> END
 
 = JackInWoods
-What are you doing here?!! #speaker:Jack #layout:right
+EXTERNAL WalkToCabin(animationTrigger)
+What are you doing here?!! #layout:right
 
-Sorry bro. #speaker:Liam #layout:left
+Sorry bro. #layout:left
 
-Get the fuck out of here. #speaker:Jack #layout:right
+~ WalkToCabin("Jack_WalkToCabin")
+Get the fuck out of here. #layout:right
 -> END
+
+= AmeliaShop1
+Here you go, you can find the bottles in the regal over there. #layout:right
+
+Thank you Amelia. #layout:left
+
+Good luck. #layout:right
+->END
 
 = Test
 VAR player_name = ""

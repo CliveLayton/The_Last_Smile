@@ -2498,6 +2498,9 @@ MonoBehaviour:
     data:
       lastScene: 
     collectedCollectiblesIdentifiers: []
+  shopOpenDoorActive: 0
+  shopClosedDoorActive: 1
+  oliverActive: 1
 --- !u!4 &737741812
 Transform:
   m_ObjectHideFlags: 0
@@ -4980,6 +4983,9 @@ MonoBehaviour:
   openMenuText: {fileID: 1274726183}
   northburrySignPicture: {fileID: 1932038881}
   transporterPicture: {fileID: 1633887235}
+  transporterData: {fileID: 11400000, guid: 8f949e79a203a944182917173830460b, type: 2}
+  northburrySignData: {fileID: 11400000, guid: cd48950dbbb3b1a4db6de6c2452cb894, type: 2}
+  mapData: {fileID: 11400000, guid: b425fadca258f9f4b8ffc354e5ad7722, type: 2}
 --- !u!224 &1237145624
 RectTransform:
   m_ObjectHideFlags: 0

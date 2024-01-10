@@ -15,6 +15,8 @@ public class CameraMover : MonoBehaviour
 
      [SerializeField] private GameObject player;
 
+     [SerializeField] private CollectableData northburrySign;
+
      [Header("Movement")] 
     
     [SerializeField] private float movementSpeed = 5f;
@@ -129,7 +131,8 @@ public class CameraMover : MonoBehaviour
         else if (context.performed && inSnapPosition)
         {
             cameraAnim.SetTrigger("Snap");
-            inGameUI.EnableNorthburrySignPicture(true);
+            if(!GameStateManager.instance.data.HasCollectible(northburrySign.identifier))
+                GameStateManager.instance.data.AddCollectible(northburrySign.identifier);
         }
     }
 
@@ -137,9 +140,9 @@ public class CameraMover : MonoBehaviour
     {
         if (context.performed)
         {
-            virtualCameraCamera.Priority = 9;
-            player.gameObject.SetActive(true);
             cameraAnim.SetTrigger("FadeOut");
+            virtualCameraCamera.Priority = 9;
+            player.SetActive(true);
             this.gameObject.SetActive(false);
         }
     }

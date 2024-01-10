@@ -14,14 +14,15 @@ public class DialoguePlayerTest : MonoBehaviour
     [SerializeField] private DialogueButton buttonPrefab;
     [SerializeField] private RectTransform buttonParent;
     [SerializeField] private TextMeshProUGUI dialogueTextComponent;
-    [SerializeField] private TextMeshProUGUI displayNameText;
     [SerializeField] private float typingSpeed = 0.04f;
     public string inkPath;
     private Animator layoutAnimator;
 
     private Animator ameliaAnimator;
+    private Animator jackAnimator;
 
-    private const string SPEAKER_TAG = "speaker";
+    private PlayerController player;
+    
     private const string LAYOUT_TAG = "layout";
 
     private void Awake()
@@ -42,15 +43,23 @@ public class DialoguePlayerTest : MonoBehaviour
         story.ChoosePathString(inkPath);
         
         //reset layout and speaker
-        displayNameText.text = "???";
         layoutAnimator.Play("left");
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        player.enabled = false;
 
-        story.BindExternalFunction("WalkAway", (string animationTrigger, bool shopClosedDoorActive, bool shopOpenDoorActive) =>
+        story.BindExternalFunction("WalkAway", (string animationTrigger, bool shopClosedDoorActive, 
+            bool shopOpenDoorActive, bool oliverActive) =>
         {
             ameliaAnimator = GameObject.FindGameObjectWithTag("Amelia").GetComponent<Animator>();
             ameliaAnimator.Play(animationTrigger);
             GameStateManager.instance.shopClosedDoorActive = shopClosedDoorActive;
             GameStateManager.instance.shopOpenDoorActive = shopOpenDoorActive;
+            GameStateManager.instance.oliverActive = oliverActive;
+        });
+        story.BindExternalFunction("WalkToCabin", (string animationTrigger) =>
+        {
+            jackAnimator = GameObject.FindGameObjectWithTag("Jack").GetComponent<Animator>();
+            jackAnimator.Play(animationTrigger);
         });
         while (story.canContinue || story.currentChoices.Count > 0)
         {
@@ -58,17 +67,17 @@ public class DialoguePlayerTest : MonoBehaviour
             if(story.currentChoices.Count > 0)
                 yield return StartCoroutine(ShowNextDecision(story));
         }
-        
+
+        player.enabled = true;
         story.UnbindExternalFunction("WalkAway");
+        story.UnbindExternalFunction("WalkToCabin");
         gameObject.SetActive(false);
     }
 
     private IEnumerator ShowNextTexts(Story story)
     {
-        print("NextText");
         while (story.canContinue)
         {
-            print("SameText");
             // dialogueTextComponent.text = story.Continue();
             yield return StartCoroutine(DisplayLine(story.Continue(), story));
             //waits for a frame
@@ -78,13 +87,16 @@ public class DialoguePlayerTest : MonoBehaviour
                 yield return null;
             }
 
+            while (!Input.GetMouseButtonUp(0))
+            {
+                yield return null;
+            }
             yield return null;
         }
     }
 
     private IEnumerator ShowNextDecision(Story story)
     {
-        print("Decision");
         int choice = -1;
         for(int i = 0; i < story.currentChoices.Count; i++)
         {
@@ -113,11 +125,9 @@ public class DialoguePlayerTest : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
-                print("displayLine");
                 dialogueTextComponent.text = line;
                 break;
             }
-            print("displayChars");
             dialogueTextComponent.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
@@ -141,9 +151,6 @@ public class DialoguePlayerTest : MonoBehaviour
             //handle the tag
             switch (tagKey)
             {
-                case SPEAKER_TAG:
-                    displayNameText.text = tagValue;
-                    break;
                 case LAYOUT_TAG:
                     layoutAnimator.Play(tagValue);
                     break;
@@ -152,7 +159,6 @@ public class DialoguePlayerTest : MonoBehaviour
                     break;
             }
         }
-
         yield return null;
     }
 }

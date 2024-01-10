@@ -158,6 +158,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable()
     {
+        rb.velocity = new Vector2(0, 0);
+        
         inputActions.Player.Disable();
         
         inputActions.Player.Sprint.performed -= Run;

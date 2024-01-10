@@ -52,6 +52,8 @@ public class GameStateManager : MonoBehaviour
    /// </summary>
    public bool shopClosedDoorActive = true;
 
+   public bool oliverActive = true;
+
    #endregion
 
    private void Awake()
