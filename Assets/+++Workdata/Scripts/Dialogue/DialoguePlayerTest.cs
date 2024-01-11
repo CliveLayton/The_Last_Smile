@@ -24,6 +24,13 @@ public class DialoguePlayerTest : MonoBehaviour
     private PlayerController player;
     
     private const string LAYOUT_TAG = "layout";
+    private const string SPEAKER_TAG = "speaker";
+
+    private string currentLayout;
+    /// <summary>
+    /// Animator for ContinueArrow
+    /// </summary>
+    [SerializeField] private Animator arrowAnimator;
 
     private void Awake()
     {
@@ -43,7 +50,7 @@ public class DialoguePlayerTest : MonoBehaviour
         story.ChoosePathString(inkPath);
         
         //reset layout and speaker
-        layoutAnimator.Play("left");
+        layoutAnimator.Play("Liam");
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         player.enabled = false;
 
@@ -81,6 +88,7 @@ public class DialoguePlayerTest : MonoBehaviour
             // dialogueTextComponent.text = story.Continue();
             yield return StartCoroutine(DisplayLine(story.Continue(), story));
             //waits for a frame
+            arrowAnimator.SetTrigger(currentLayout);
             yield return null;
             while (!Input.GetMouseButtonDown(0))
             {
@@ -91,6 +99,7 @@ public class DialoguePlayerTest : MonoBehaviour
             {
                 yield return null;
             }
+            arrowAnimator.SetTrigger("exit");
             yield return null;
         }
     }
@@ -126,6 +135,7 @@ public class DialoguePlayerTest : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 dialogueTextComponent.text = line;
+                arrowAnimator.SetTrigger(currentLayout);
                 break;
             }
             dialogueTextComponent.text += letter;
@@ -151,8 +161,11 @@ public class DialoguePlayerTest : MonoBehaviour
             //handle the tag
             switch (tagKey)
             {
-                case LAYOUT_TAG:
+                case SPEAKER_TAG:
                     layoutAnimator.Play(tagValue);
+                    break;
+                case LAYOUT_TAG:
+                    currentLayout = tagValue;
                     break;
                 default:
                     Debug.LogWarning("Tag came in but is not currently being handled: " + tag);

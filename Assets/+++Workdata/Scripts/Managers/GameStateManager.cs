@@ -23,7 +23,8 @@ public class GameStateManager : MonoBehaviour
    public enum GameState
    {
       InMainMenu = 0,
-      InGame = 1
+      InGame = 1,
+      InPuzzle = 2
    }
    
    //this event notifies any objects that need to know about the changing of the game state.
@@ -88,10 +89,15 @@ public class GameStateManager : MonoBehaviour
    
    public void LoadNewGameplayScene(string sceneName)
    {
-      if (currentState != GameState.InGame)
+      if (currentState == GameState.InMainMenu)
          return;
         
       LoadSceneManager.instance.SwitchScene(sceneName);
+      if (sceneName == "Puzzle1" || sceneName == "Puzzle2")
+         currentState = GameState.InPuzzle;
+      else
+         currentState = GameState.InGame;
+      
       data.loadedSceneName = sceneName;
    }
    

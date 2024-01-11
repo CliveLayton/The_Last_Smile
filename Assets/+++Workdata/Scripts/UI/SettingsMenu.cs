@@ -16,7 +16,7 @@ public class SettingsMenu : MonoBehaviour
     /// <summary>
     /// List of ints for the height screensize
     /// </summary>
-    private List<int> heights = new List<int>() { 720, 1200, 1600 };
+    private List<int> heights = new List<int>() { 720, 1080, 1600 };
 
     /// <summary>
     /// Key to save selected width in playerprefs
@@ -40,7 +40,7 @@ public class SettingsMenu : MonoBehaviour
     
     public Toggle fullScreenToggle;
 
-    public TMP_Dropdown resolutionDropdown;
+    //public TMP_Dropdown resolutionDropdown;
 
     private void Start()
     {
@@ -52,11 +52,11 @@ public class SettingsMenu : MonoBehaviour
     /// </summary>
     private void LoadSettings()
     {
-        resolutionDropdown.value = PlayerPrefs.GetInt(resolutionIndex_KEY, 2);
+        //resolutionDropdown.value = PlayerPrefs.GetInt(resolutionIndex_KEY, 2);
         fullScreenToggle.isOn = PlayerPrefs.GetInt(fullScreen_KEY, Screen.fullScreen ? 1 : 0) > 0;
-        Screen.SetResolution(PlayerPrefs.GetInt(resolutionWidth_KEY, 1920), 
-            PlayerPrefs.GetInt(resolutionHeight_KEY, 1200),
-            fullScreenToggle.isOn);
+        //Screen.SetResolution(PlayerPrefs.GetInt(resolutionWidth_KEY, 1920), 
+           // PlayerPrefs.GetInt(resolutionHeight_KEY, 1080),
+          //  fullScreenToggle.isOn);
     }
 
     /// <summary>

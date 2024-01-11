@@ -31,6 +31,16 @@ public class MainMenu : MonoBehaviour
         GameStateManager.instance.LoadFromSave("SaveGame1");
     }
 
+    public void LoadGame2()
+    {
+        GameStateManager.instance.LoadFromSave("SaveGame2");
+    }
+
+    public void LoadGame3()
+    {
+        GameStateManager.instance.LoadFromSave("SaveGame3");
+    }
+
     /// <summary>
     /// quit the application
     /// </summary>

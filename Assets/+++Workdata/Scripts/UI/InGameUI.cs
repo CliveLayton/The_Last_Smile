@@ -55,13 +55,13 @@ public class InGameUI : MonoBehaviour
 
     void PauseGame(InputAction.CallbackContext context)
     {
-        if (context.performed && (GameStateManager.instance.currentState == GameStateManager.GameState.InGame)
+        if (context.performed && (GameStateManager.instance.currentState != GameStateManager.GameState.InMainMenu)
                               && (inGameMenu.activeSelf == false))
         {
             OpenIngameUI();
             openMenuText.SetActive(false);
         }
-        else if (context.performed && (GameStateManager.instance.currentState == GameStateManager.GameState.InGame)
+        else if (context.performed && (GameStateManager.instance.currentState != GameStateManager.GameState.InMainMenu)
                                    && (inGameMenu.activeSelf == true))
         {
             CloseIngameUI();
@@ -87,6 +87,16 @@ public class InGameUI : MonoBehaviour
     {
         GameStateManager.instance.SaveGame("SaveGame1");
     }
+
+    public void SaveGame2()
+    {
+        GameStateManager.instance.SaveGame("SaveGame2");
+    }
+
+    public void SaveGame3()
+    {
+        GameStateManager.instance.SaveGame("SaveGame3");
+    }
     
     //this is called via the button in the upper left corner
     public void OpenIngameUI()
@@ -105,10 +115,13 @@ public class InGameUI : MonoBehaviour
             map.SetActive(true);
         else
             map.SetActive(false);
-
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        player.enabled = false;
         
+        if (GameStateManager.instance.currentState == GameStateManager.GameState.InGame)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+            player.enabled = false;
+        }
+
         inGameMenu.SetActive(true);
         openMenuButton.SetActive(false);
         pauseMenu.SetActive(true);
@@ -123,7 +136,9 @@ public class InGameUI : MonoBehaviour
     {
         inGameMenu.SetActive(false);
         openMenuButton.SetActive(true);
-        player.enabled = true;
+        
+        if(GameStateManager.instance.currentState == GameStateManager.GameState.InGame) 
+            player.enabled = true;
     }
 
     /// <summary>

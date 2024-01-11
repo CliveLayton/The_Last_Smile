@@ -52,6 +52,7 @@ public class LoadSceneManager : MonoBehaviour
         newScene = SceneManager.GetSceneByName(newSceneName);
         SceneManager.SetActiveScene(newScene);
 
+        yield return new WaitForSeconds(1f);
         //lastly, we disalbe the loading screen and set the current scene accordingly
         UIManager.instance.ToggleLoadingScreen(false);
         currentScene = newSceneName;
