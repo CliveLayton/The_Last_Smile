@@ -12,9 +12,12 @@ public class LoadSceneManager : MonoBehaviour
     public static LoadSceneManager instance;
     private string currentScene; //this saves whatever the current loaded main scene is.
 
+    private InGameUI inGameUI;
+    
     private void Awake()
     {
         instance = this;
+        inGameUI = GameObject.FindGameObjectWithTag("InGameHUD").GetComponent<InGameUI>();
     }
 
     public void SwitchScene(string newScene)
@@ -51,7 +54,9 @@ public class LoadSceneManager : MonoBehaviour
         yield return null;
         newScene = SceneManager.GetSceneByName(newSceneName);
         SceneManager.SetActiveScene(newScene);
+        inGameUI.GetMapPosition(newSceneName);
 
+        //waits for 1 second to show the loading screen for smooth scene switch
         yield return new WaitForSeconds(1f);
         //lastly, we disalbe the loading screen and set the current scene accordingly
         UIManager.instance.ToggleLoadingScreen(false);

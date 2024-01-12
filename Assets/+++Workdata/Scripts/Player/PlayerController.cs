@@ -25,8 +25,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speedChangeRate = 10f;
     
     [SerializeField] private float sprintSpeed = 9f;
-    
-    [SerializeField] private float jumpPower = 12f;
 
     [Header("GroundCheck")] 
     [SerializeField] private Vector3 groundCheckPos;
@@ -151,9 +149,6 @@ public class PlayerController : MonoBehaviour
         inputActions.Player.Sprint.canceled += Run;
 
         inputActions.Player.Interact.performed += Interact;
-
-        inputActions.Player.Jump.performed += Jump;
-        inputActions.Player.Jump.canceled += Jump;
     }
 
     private void OnDisable()
@@ -166,9 +161,6 @@ public class PlayerController : MonoBehaviour
         inputActions.Player.Sprint.canceled -= Run;
 
         inputActions.Player.Interact.performed -= Interact;
-
-        inputActions.Player.Jump.performed -= Jump;
-        inputActions.Player.Jump.canceled -= Jump;
     }
 
     #endregion
@@ -194,27 +186,6 @@ public class PlayerController : MonoBehaviour
     void Interact(InputAction.CallbackContext context)
     {
         isInteracting = context.performed;
-    }
-
-    void Jump(InputAction.CallbackContext context)
-    {
-        if (inSequence)
-            return;
-        
-        if (context.performed && isGrounded)
-        {
-            isJumping = true;
-            rb.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
-        }
-
-        if (context.canceled)
-        {
-            isJumping = false;
-            if (rb.velocity.y > 0f)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-            }
-        }
     }
 
     #endregion

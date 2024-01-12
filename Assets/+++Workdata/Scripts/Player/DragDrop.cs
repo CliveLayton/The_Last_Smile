@@ -46,7 +46,7 @@ public class DragDrop : Selectable, IBeginDragHandler, IEndDragHandler, IDragHan
             if (Input.GetKey(KeyCode.DownArrow))
                 direction.y = -1;
 
-            transform.position += direction * (80 * Time.deltaTime);
+            transform.position += direction * (200 * Time.deltaTime);
         }
     }
 

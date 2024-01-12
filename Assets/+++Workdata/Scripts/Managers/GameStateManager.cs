@@ -13,12 +13,6 @@ public class GameStateManager : MonoBehaviour
    
    public const string mainMenuSceneName = "MainMenu";
    public const string level1SceneName = "Level1";
-   public const string level2SceneName = "Level2";
-   public const string level3SceneName = "Level3";
-   public const string level4SceneName = "Level4";
-   public const string puzzle1SceneName = "Puzzle1";
-   public const string puzzle2SceneName = "Puzzle2";
-   public const string shopSceneName = "Shop";
 
    public enum GameState
    {
@@ -115,7 +109,11 @@ public class GameStateManager : MonoBehaviour
       data = loadedData;
       
       //we set the correct state (as we want to enter the inGame-State) and give out the callback
-      currentState = GameState.InGame;
+      if (data.loadedSceneName == "Puzzle1" || data.loadedSceneName == "Puzzle2")
+         currentState = GameState.InPuzzle;
+      else
+         currentState = GameState.InGame;
+
       if (onStateChanged != null)
          onStateChanged(currentState);
         

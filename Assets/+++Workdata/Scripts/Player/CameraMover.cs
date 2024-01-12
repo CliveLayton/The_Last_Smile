@@ -11,17 +11,13 @@ public class CameraMover : MonoBehaviour
 
      [SerializeField] private Animator cameraAnim;
 
-     [SerializeField] private CinemachineVirtualCamera virtualCameraCamera;
-
-     [SerializeField] private GameObject player;
-
      [SerializeField] private CollectableData northburrySign;
 
      [Header("Movement")] 
     
-    [SerializeField] private float movementSpeed = 5f;
+     [SerializeField] private float movementSpeed = 5f;
 
-    #endregion
+     #endregion
 
     #region Input Variables
 
@@ -140,10 +136,8 @@ public class CameraMover : MonoBehaviour
     {
         if (context.performed)
         {
+            //leave the camera view and go back to the player
             cameraAnim.SetTrigger("FadeOut");
-            virtualCameraCamera.Priority = 9;
-            player.SetActive(true);
-            this.gameObject.SetActive(false);
         }
     }
 

@@ -55,7 +55,8 @@ Oh really? I'll look there then, thank you! #speaker:Liam #layout:left
 -> END
 
 = AmeliaWell
-EXTERNAL WalkAway(animationTrigger, shopClosedDoorActive, shopOpenDoorActive, oliverActive)
+EXTERNAL WalkAway(animationTrigger, shopClosedDoorActive, shopOpenDoorActive)
+EXTERNAL NPCWell(oliverActive, ameliaActive)
 
 Hi Liam. #speaker:Amelia #layout:right
 
@@ -65,17 +66,18 @@ I will open the shop, no problem. #speaker:Amelia #layout:right
 
 Allright, thank you. #speaker:Liam #layout:left
 
-~ WalkAway("Amelia_WalkOutForest", false, true, false)
+~ WalkAway("Amelia_WalkOutForest", false, true)
+~ NPCWell(false, false)
 See you. #speaker:Amelia #layout:right
 -> END
 
 = JackInWoods
-EXTERNAL WalkToCabin(animationTrigger)
+EXTERNAL WalkToCabin(animationTrigger, jackActive)
 What are you doing here?!! #speaker:Jack #layout:right
 
 Sorry bro. #speaker:Liam #layout:left
 
-~ WalkToCabin("Jack_WalkToCabin")
+~ WalkToCabin("Jack_WalkToCabin", false)
 Get the fuck out of here. #speaker:Jack #layout:right
 -> END
 

@@ -26,6 +26,7 @@ public class TriggerBehavior : MonoBehaviour
     public UnityEvent triggerExitEvent;
     private DialogueHUD dialogueHUD;
     private BoxCollider2D col;
+    //in game UI script
     private InGameUI openMenuText;
 
     private void Awake()
@@ -57,27 +58,43 @@ public class TriggerBehavior : MonoBehaviour
         setActive = data.isActive;
     }
 
+    /// <summary>
+    /// Sets the main trigger object on or off
+    /// </summary>
+    /// <param name="state">bool</param>
     public void SetTriggerObjectActive(bool state)
     {
         data.isActive = state;
         col.enabled = state;
     }
 
+    /// <summary>
+    /// sets the dialog box active 
+    /// </summary>
+    /// <param name="dialogueBoxActive">bool</param>
     public void SetDialogueBoxActive(bool dialogueBoxActive)
     {
         dialogueHUD.SetDialogueBox(dialogueBoxActive);
     }
 
+    /// <summary>
+    /// sets the dialog text, this need to be done first before activating the dialog box
+    /// </summary>
+    /// <param name="inkPath">string</param>
     public void SetDialogueText(string inkPath)
     {
         dialogueHUD.SetDialogueBoxText(inkPath);
     }
 
+    /// <summary>
+    /// the text object for open menu after puzzle1
+    /// </summary>
+    /// <param name="state">bool</param>
     public void SetOpenMenuText(bool state)
     {
         openMenuText.EnableOpenMenuText(state);
     }
-
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))

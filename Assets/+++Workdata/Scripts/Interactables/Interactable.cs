@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -33,10 +34,13 @@ public class Interactable : MonoBehaviour
     //boolean for circlecollider
     public bool colSetActive;
 
+    //the collider for the interaction range
     private CircleCollider2D col;
 
+    //the main object of the interactable
     [SerializeField] private GameObject interactable;
 
+    //the text/button that shows the key to press for interaction
     [SerializeField] private GameObject interactButton;
 
     [SerializeField] private Data data;
@@ -129,7 +133,7 @@ public class Interactable : MonoBehaviour
         colSetActive = state;
         data.colIsActive = state;
     }
-    
+
     //OnValidate is called by unity in the editor only, whenever something within the scene changes
     //we use this to set a new unique guid when we detect that it is empty.
     private void OnValidate()

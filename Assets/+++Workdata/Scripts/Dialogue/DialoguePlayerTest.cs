@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Ink.Runtime;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SearchService;
 using UnityEngine.UI;
 
@@ -20,8 +21,12 @@ public class DialoguePlayerTest : MonoBehaviour
 
     private Animator ameliaAnimator;
     private Animator jackAnimator;
+    private Interactable ameliaWell;
+    private Interactable jackForest;
 
     private PlayerController player;
+    private InGameUI inGameUI;
+    private GameObject openMenuButton;
     
     private const string LAYOUT_TAG = "layout";
     private const string SPEAKER_TAG = "speaker";
@@ -37,6 +42,8 @@ public class DialoguePlayerTest : MonoBehaviour
         instance = this;
         //get the layout animator
         layoutAnimator = GetComponent<Animator>();
+        inGameUI = GameObject.FindGameObjectWithTag("InGameHUD").GetComponent<InGameUI>();
+        openMenuButton = GameObject.Find("OpenMenuButton");
     }
 
     public void OnEnable()
@@ -53,20 +60,34 @@ public class DialoguePlayerTest : MonoBehaviour
         layoutAnimator.Play("Liam");
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         player.enabled = false;
+        inGameUI.menuActive = false;
+        openMenuButton.SetActive(false);
 
+        //function for amelia to move after dialogue on the well, activates the open shop door, deactivates the closed shop door
         story.BindExternalFunction("WalkAway", (string animationTrigger, bool shopClosedDoorActive, 
-            bool shopOpenDoorActive, bool oliverActive) =>
+            bool shopOpenDoorActive) =>
         {
             ameliaAnimator = GameObject.FindGameObjectWithTag("Amelia").GetComponent<Animator>();
             ameliaAnimator.Play(animationTrigger);
             GameStateManager.instance.shopClosedDoorActive = shopClosedDoorActive;
             GameStateManager.instance.shopOpenDoorActive = shopOpenDoorActive;
+        });
+        
+        //function to deactivate oliver in the Level2 scene, deactivate amelia on the well
+        story.BindExternalFunction("NPCWell", (bool oliverActive, bool ameliaActive) =>
+        {
+            ameliaWell = GameObject.FindGameObjectWithTag("Amelia").GetComponentInChildren<Interactable>();
+            ameliaWell.SetObjectActive(ameliaActive);
             GameStateManager.instance.oliverActive = oliverActive;
         });
-        story.BindExternalFunction("WalkToCabin", (string animationTrigger) =>
+        
+        //function for the animation to move jack after dialogue, deactivates jack in the woods
+        story.BindExternalFunction("WalkToCabin", (string animationTrigger, bool jackActive) =>
         {
             jackAnimator = GameObject.FindGameObjectWithTag("Jack").GetComponent<Animator>();
+            jackForest = GameObject.FindGameObjectWithTag("Jack").GetComponentInChildren<Interactable>();
             jackAnimator.Play(animationTrigger);
+            jackForest.SetObjectActive(jackActive);
         });
         while (story.canContinue || story.currentChoices.Count > 0)
         {
@@ -76,8 +97,11 @@ public class DialoguePlayerTest : MonoBehaviour
         }
 
         player.enabled = true;
+        inGameUI.menuActive = true;
+        openMenuButton.SetActive(true);
         story.UnbindExternalFunction("WalkAway");
         story.UnbindExternalFunction("WalkToCabin");
+        story.UnbindExternalFunction("NPCWell");
         gameObject.SetActive(false);
     }
 
@@ -87,8 +111,9 @@ public class DialoguePlayerTest : MonoBehaviour
         {
             // dialogueTextComponent.text = story.Continue();
             yield return StartCoroutine(DisplayLine(story.Continue(), story));
-            //waits for a frame
+            //sets the continue arrow of the dialogue active
             arrowAnimator.SetTrigger(currentLayout);
+            //waits for a frame
             yield return null;
             while (!Input.GetMouseButtonDown(0))
             {
@@ -99,6 +124,7 @@ public class DialoguePlayerTest : MonoBehaviour
             {
                 yield return null;
             }
+            //deactivates the continue arrwo of the dialogue
             arrowAnimator.SetTrigger("exit");
             yield return null;
         }
