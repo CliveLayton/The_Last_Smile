@@ -1031,7 +1031,7 @@ PrefabInstance:
     - target: {fileID: 5452562128701860555, guid: 75e3389e012e86c469ddf3986f546a87, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 853708253}
+      objectReference: {fileID: 839925551}
     - target: {fileID: 5452562128701860555, guid: 75e3389e012e86c469ddf3986f546a87, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -1046,7 +1046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5452562128701860555, guid: 75e3389e012e86c469ddf3986f546a87, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchScene
+      value: SwitchToPuzzles
       objectReference: {fileID: 0}
     - target: {fileID: 5452562128701860555, guid: 75e3389e012e86c469ddf3986f546a87, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -1054,7 +1054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5452562128701860555, guid: 75e3389e012e86c469ddf3986f546a87, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneSwitch, Assembly-CSharp
+      value: Interactable, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5452562128701860555, guid: 75e3389e012e86c469ddf3986f546a87, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -1250,22 +1250,31 @@ PrefabInstance:
       propertyPath: sceneName
       value: Level2
       objectReference: {fileID: 0}
+    - target: {fileID: 7338339223373267887, guid: e96ea464be0192048ac48a87bf825827, type: 3}
+      propertyPath: musicName.Path
+      value: event:/Music/NorthburryMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 7338339223373267887, guid: e96ea464be0192048ac48a87bf825827, type: 3}
+      propertyPath: musicName.Guid.Data1
+      value: 1903553750
+      objectReference: {fileID: 0}
+    - target: {fileID: 7338339223373267887, guid: e96ea464be0192048ac48a87bf825827, type: 3}
+      propertyPath: musicName.Guid.Data2
+      value: 1258550868
+      objectReference: {fileID: 0}
+    - target: {fileID: 7338339223373267887, guid: e96ea464be0192048ac48a87bf825827, type: 3}
+      propertyPath: musicName.Guid.Data3
+      value: -123645812
+      objectReference: {fileID: 0}
+    - target: {fileID: 7338339223373267887, guid: e96ea464be0192048ac48a87bf825827, type: 3}
+      propertyPath: musicName.Guid.Data4
+      value: -1352866907
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e96ea464be0192048ac48a87bf825827, type: 3}
---- !u!114 &853708253 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7338339223373267887, guid: e96ea464be0192048ac48a87bf825827, type: 3}
-  m_PrefabInstance: {fileID: 853708252}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5601f2ebabdc1024fa814a4c10fb6510, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &853708254 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 717896049727806036, guid: e96ea464be0192048ac48a87bf825827, type: 3}

@@ -207,10 +207,10 @@ MonoBehaviour:
   interactAction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 150030604}
-        m_TargetAssemblyTypeName: SceneSwitch, Assembly-CSharp
-        m_MethodName: SwitchScene
-        m_Mode: 5
+      - m_Target: {fileID: 2129117}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+        m_MethodName: SwitchToShop
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1870,6 +1870,26 @@ PrefabInstance:
       propertyPath: sceneName
       value: Level1
       objectReference: {fileID: 0}
+    - target: {fileID: 7338339223373267887, guid: e96ea464be0192048ac48a87bf825827, type: 3}
+      propertyPath: musicName.Path
+      value: event:/Music/Level1Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 7338339223373267887, guid: e96ea464be0192048ac48a87bf825827, type: 3}
+      propertyPath: musicName.Guid.Data1
+      value: 1580987671
+      objectReference: {fileID: 0}
+    - target: {fileID: 7338339223373267887, guid: e96ea464be0192048ac48a87bf825827, type: 3}
+      propertyPath: musicName.Guid.Data2
+      value: 1249351995
+      objectReference: {fileID: 0}
+    - target: {fileID: 7338339223373267887, guid: e96ea464be0192048ac48a87bf825827, type: 3}
+      propertyPath: musicName.Guid.Data3
+      value: -2032438114
+      objectReference: {fileID: 0}
+    - target: {fileID: 7338339223373267887, guid: e96ea464be0192048ac48a87bf825827, type: 3}
+      propertyPath: musicName.Guid.Data4
+      value: 827196085
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1880,17 +1900,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 717896049727806036, guid: e96ea464be0192048ac48a87bf825827, type: 3}
   m_PrefabInstance: {fileID: 150030602}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &150030604 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7338339223373267887, guid: e96ea464be0192048ac48a87bf825827, type: 3}
-  m_PrefabInstance: {fileID: 150030602}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5601f2ebabdc1024fa814a4c10fb6510, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &152182745
 GameObject:
   m_ObjectHideFlags: 0
@@ -12917,6 +12926,26 @@ PrefabInstance:
     - target: {fileID: 7338339223373267887, guid: e96ea464be0192048ac48a87bf825827, type: 3}
       propertyPath: sceneName
       value: Level3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7338339223373267887, guid: e96ea464be0192048ac48a87bf825827, type: 3}
+      propertyPath: musicName.Path
+      value: event:/Music/MoonbrightForestMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 7338339223373267887, guid: e96ea464be0192048ac48a87bf825827, type: 3}
+      propertyPath: musicName.Guid.Data1
+      value: -1466324848
+      objectReference: {fileID: 0}
+    - target: {fileID: 7338339223373267887, guid: e96ea464be0192048ac48a87bf825827, type: 3}
+      propertyPath: musicName.Guid.Data2
+      value: 1285273720
+      objectReference: {fileID: 0}
+    - target: {fileID: 7338339223373267887, guid: e96ea464be0192048ac48a87bf825827, type: 3}
+      propertyPath: musicName.Guid.Data3
+      value: -768645487
+      objectReference: {fileID: 0}
+    - target: {fileID: 7338339223373267887, guid: e96ea464be0192048ac48a87bf825827, type: 3}
+      propertyPath: musicName.Guid.Data4
+      value: 1752681596
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

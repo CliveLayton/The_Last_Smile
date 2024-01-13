@@ -34,6 +34,7 @@ public class Puzzle2Checker : MonoBehaviour, IDropHandler
     {
         if (isCorrect)
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.puzzleSolved, this.transform.position);
             winScreen.SetActive(true);
         }
         else if (!isCorrect)

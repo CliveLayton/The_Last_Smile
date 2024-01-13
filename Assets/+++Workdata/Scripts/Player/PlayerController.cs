@@ -87,6 +87,9 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();
+        
+        //initialize sound for the dialogue text for the current scene
+        AudioManager.instance.InitializeDialogueSFX(FMODEvents.instance.dialogueText);
 
         inputActions = new GameInput();
         moveAction = inputActions.Player.Move;

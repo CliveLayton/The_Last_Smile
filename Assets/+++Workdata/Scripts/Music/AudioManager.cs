@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 public class AudioManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class AudioManager : MonoBehaviour
 
    private EventInstance ambienceEventInstance;
    private EventInstance musicEventInstance;
+   private EventInstance dialogueSFXEventInstance;
    public static AudioManager instance { get; private set; }
 
    public void Awake()
@@ -29,20 +31,34 @@ public class AudioManager : MonoBehaviour
 
    private void Start()
    {
-      InitializeAmbience(FMODEvents.instance.ambience);
-      InitializeMusic(FMODEvents.instance.music);
+      InitializeMusic(FMODEvents.instance.mainMenuMusic);
    }
 
-   private void InitializeAmbience(EventReference ambienceEventReference)
+   public void InitializeAmbience(EventReference ambienceEventReference)
    {
       ambienceEventInstance = CreateEventInstance(ambienceEventReference);
       ambienceEventInstance.start();
    }
 
-   private void InitializeMusic(EventReference musicEventReference)
+   public void InitializeMusic(EventReference musicEventReference)
    {
       musicEventInstance = CreateEventInstance(musicEventReference);
       musicEventInstance.start();
+   }
+
+   public void InitializeDialogueSFX(EventReference dialogueSFXEventReference)
+   { 
+      dialogueSFXEventInstance = CreateEventInstance(dialogueSFXEventReference);
+   }
+
+   public void StartDialogueSFX()
+   {
+      dialogueSFXEventInstance.start();
+   }
+
+   public void StopDialogueSFX()
+   {
+      dialogueSFXEventInstance.stop(STOP_MODE.IMMEDIATE);
    }
 
    public void SetAmbienceParameter(string parameterName, float parameterValue)
@@ -75,7 +91,7 @@ public class AudioManager : MonoBehaviour
       return emitter;
    }
 
-   private void CleanUp()
+   public void CleanUp()
    {
       //stop and release any created instances
       foreach (EventInstance eventInstance in eventInstances)

@@ -134,6 +134,20 @@ public class Interactable : MonoBehaviour
         data.colIsActive = state;
     }
 
+    public void SwitchToShop()
+    {
+        AudioManager.instance.CleanUp();
+        AudioManager.instance.InitializeMusic(FMODEvents.instance.shopMusic);
+        GameStateManager.instance.LoadNewGameplayScene("Shop");
+    }
+
+    public void SwitchToPuzzles(string sceneName)
+    {
+        AudioManager.instance.CleanUp();
+        AudioManager.instance.InitializeMusic(FMODEvents.instance.puzzleMusic);
+        GameStateManager.instance.LoadNewGameplayScene(sceneName);
+    }
+
     //OnValidate is called by unity in the editor only, whenever something within the scene changes
     //we use this to set a new unique guid when we detect that it is empty.
     private void OnValidate()

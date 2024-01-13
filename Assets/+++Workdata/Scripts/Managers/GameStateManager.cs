@@ -108,15 +108,43 @@ public class GameStateManager : MonoBehaviour
       //after we successfuly loaded the save, we set the data correctly. 
       data = loadedData;
       
+      AudioManager.instance.CleanUp();
+      
       //we set the correct state (as we want to enter the inGame-State) and give out the callback
       if (data.loadedSceneName == "Puzzle1" || data.loadedSceneName == "Puzzle2")
+      {
+         AudioManager.instance.InitializeMusic(FMODEvents.instance.puzzleMusic);
          currentState = GameState.InPuzzle;
+      }
       else
+      {
+         switch (data.loadedSceneName)
+         {
+            case "Level1":
+               AudioManager.instance.InitializeMusic(FMODEvents.instance.level1Music);
+               break;
+            case "Level2":
+               AudioManager.instance.InitializeMusic(FMODEvents.instance.northburryMusic);
+               break;
+            case "Shop":
+               AudioManager.instance.InitializeMusic(FMODEvents.instance.shopMusic);
+               break;
+            case "Level3":
+               AudioManager.instance.InitializeMusic(FMODEvents.instance.moonbrightForestMusic);
+               break;
+            case "Level4":
+               AudioManager.instance.InitializeMusic(FMODEvents.instance.oldCabinMusic);
+               break;
+            default:
+               AudioManager.instance.InitializeMusic(FMODEvents.instance.mainMenuMusic);
+               break;
+         }
          currentState = GameState.InGame;
+      }
 
       if (onStateChanged != null)
          onStateChanged(currentState);
-        
+      
       //we load the scene we last saved the game in, as it is set within the data.
       LoadSceneManager.instance.SwitchScene(data.loadedSceneName);
    }

@@ -96,13 +96,55 @@ MonoBehaviour:
       Data3: 1846622601
       Data4: 1119450089
     Path: event:/Ambience/Wind
-  <music>k__BackingField:
+  <mainMenuMusic>k__BackingField:
     Guid:
-      Data1: 1561305695
-      Data2: 1169098025
-      Data3: 2007438013
-      Data4: -1930956255
-    Path: event:/Music/TestMusic
+      Data1: -1649597055
+      Data2: 1079728260
+      Data3: 459361437
+      Data4: -1179374579
+    Path: event:/Music/MainMenuMusic
+  <level1Music>k__BackingField:
+    Guid:
+      Data1: 1580987671
+      Data2: 1249351995
+      Data3: -2032438114
+      Data4: 827196085
+    Path: event:/Music/Level1Music
+  <northburryMusic>k__BackingField:
+    Guid:
+      Data1: 1903553750
+      Data2: 1258550868
+      Data3: -123645812
+      Data4: -1352866907
+    Path: event:/Music/NorthburryMusic
+  <shopMusic>k__BackingField:
+    Guid:
+      Data1: -710667047
+      Data2: 1184505749
+      Data3: -1935352937
+      Data4: 1244451411
+    Path: event:/Music/ShopMusic
+  <moonbrightForestMusic>k__BackingField:
+    Guid:
+      Data1: -1466324848
+      Data2: 1285273720
+      Data3: -768645487
+      Data4: 1752681596
+    Path: event:/Music/MoonbrightForestMusic
+  <oldCabinMusic>k__BackingField:
+    Guid:
+      Data1: 1886434075
+      Data2: 1083426237
+      Data3: -400518776
+      Data4: 2087026233
+    Path: event:/Music/OldCabinMusic
+  <puzzleMusic>k__BackingField:
+    Guid:
+      Data1: 175709834
+      Data2: 1197499707
+      Data3: -1493690990
+      Data4: -532184075
+    Path: event:/Music/PuzzleMusic
   <buttonHovered>k__BackingField:
     Guid:
       Data1: 1148321175
@@ -110,3 +152,38 @@ MonoBehaviour:
       Data3: 1017378729
       Data4: 1790553087
     Path: event:/SFX/Buttonhovered
+  <dialogueText>k__BackingField:
+    Guid:
+      Data1: 407986147
+      Data2: 1247583844
+      Data3: -1793561684
+      Data4: -1310523488
+    Path: event:/SFX/DialogueTextSFX
+  <toggleButtonOn>k__BackingField:
+    Guid:
+      Data1: -317480192
+      Data2: 1323508882
+      Data3: 273275526
+      Data4: -1076700472
+    Path: event:/SFX/ToggleButtonOn
+  <toggleButtonOff>k__BackingField:
+    Guid:
+      Data1: 578320488
+      Data2: 1120358633
+      Data3: -1679295090
+      Data4: -2056603790
+    Path: event:/SFX/ToggleButtonOff
+  <puzzleSolved>k__BackingField:
+    Guid:
+      Data1: -302273109
+      Data2: 1321071030
+      Data3: 1850342306
+      Data4: 1460415869
+    Path: event:/SFX/PuzzleSolved
+  <loadGameButton>k__BackingField:
+    Guid:
+      Data1: -1523752428
+      Data2: 1094583788
+      Data3: 959848588
+      Data4: 1173363909
+    Path: event:/SFX/LoadGameButton

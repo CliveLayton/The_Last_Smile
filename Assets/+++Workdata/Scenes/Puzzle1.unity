@@ -1074,6 +1074,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 
+  musicName:
+    Guid:
+      Data1: 1580987671
+      Data2: 1249351995
+      Data3: -2032438114
+      Data4: 827196085
+    Path: event:/Music/Level1Music
 --- !u!1 &456341037
 GameObject:
   m_ObjectHideFlags: 0

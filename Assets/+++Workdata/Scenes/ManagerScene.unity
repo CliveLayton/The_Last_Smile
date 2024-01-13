@@ -385,11 +385,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnUp: {fileID: 371903678}
+    m_SelectOnDown: {fileID: 530577301}
+    m_SelectOnLeft: {fileID: 371903678}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
@@ -1568,9 +1568,9 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 764034097}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnDown: {fileID: 133594453}
     m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnRight: {fileID: 133594453}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1744,11 +1744,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnUp: {fileID: 133594453}
+    m_SelectOnDown: {fileID: 1979423441}
+    m_SelectOnLeft: {fileID: 371903678}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
@@ -5602,6 +5602,266 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <music>k__BackingField.Path
+      value: event:/Music/MainMenuMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <shopMusic>k__BackingField.Path
+      value: event:/Music/ShopMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <level1Music>k__BackingField.Path
+      value: event:/Music/Level1Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <music>k__BackingField.Guid.Data1
+      value: -1649597055
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <music>k__BackingField.Guid.Data2
+      value: 1079728260
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <music>k__BackingField.Guid.Data3
+      value: 459361437
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <music>k__BackingField.Guid.Data4
+      value: -1179374579
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <puzzleMusic>k__BackingField.Path
+      value: event:/Music/PuzzleMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <dialogueText>k__BackingField.Path
+      value: event:/SFX/DialogueTextSFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <puzzleSolved>k__BackingField.Path
+      value: event:/SFX/PuzzleSolved
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <mainMenuMusic>k__BackingField.Path
+      value: event:/Music/MainMenuMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <oldCabinMusic>k__BackingField.Path
+      value: event:/Music/OldCabinMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <loadGameButton>k__BackingField.Path
+      value: event:/SFX/LoadGameButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <toggleButtonOn>k__BackingField.Path
+      value: event:/SFX/ToggleButtonOn
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <northburryMusic>k__BackingField.Path
+      value: event:/Music/NorthburryMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <shopMusic>k__BackingField.Guid.Data1
+      value: -710667047
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <shopMusic>k__BackingField.Guid.Data2
+      value: 1184505749
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <shopMusic>k__BackingField.Guid.Data3
+      value: -1935352937
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <shopMusic>k__BackingField.Guid.Data4
+      value: 1244451411
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <toggleButtonOff>k__BackingField.Path
+      value: event:/SFX/ToggleButtonOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <level1Music>k__BackingField.Guid.Data1
+      value: 1580987671
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <level1Music>k__BackingField.Guid.Data2
+      value: 1249351995
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <level1Music>k__BackingField.Guid.Data3
+      value: -2032438114
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <level1Music>k__BackingField.Guid.Data4
+      value: 827196085
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <puzzleMusic>k__BackingField.Guid.Data1
+      value: 175709834
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <puzzleMusic>k__BackingField.Guid.Data2
+      value: 1197499707
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <puzzleMusic>k__BackingField.Guid.Data3
+      value: -1493690990
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <puzzleMusic>k__BackingField.Guid.Data4
+      value: -532184075
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <dialogueText>k__BackingField.Guid.Data1
+      value: 407986147
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <dialogueText>k__BackingField.Guid.Data2
+      value: 1247583844
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <dialogueText>k__BackingField.Guid.Data3
+      value: -1793561684
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <dialogueText>k__BackingField.Guid.Data4
+      value: -1310523488
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <puzzleSolved>k__BackingField.Guid.Data1
+      value: -302273109
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <puzzleSolved>k__BackingField.Guid.Data2
+      value: 1321071030
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <puzzleSolved>k__BackingField.Guid.Data3
+      value: 1850342306
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <puzzleSolved>k__BackingField.Guid.Data4
+      value: 1460415869
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <mainMenuMusic>k__BackingField.Guid.Data1
+      value: -1649597055
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <mainMenuMusic>k__BackingField.Guid.Data2
+      value: 1079728260
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <mainMenuMusic>k__BackingField.Guid.Data3
+      value: 459361437
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <mainMenuMusic>k__BackingField.Guid.Data4
+      value: -1179374579
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <oldCabinMusic>k__BackingField.Guid.Data1
+      value: 1886434075
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <oldCabinMusic>k__BackingField.Guid.Data2
+      value: 1083426237
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <oldCabinMusic>k__BackingField.Guid.Data3
+      value: -400518776
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <oldCabinMusic>k__BackingField.Guid.Data4
+      value: 2087026233
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <loadGameButton>k__BackingField.Guid.Data1
+      value: -1523752428
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <loadGameButton>k__BackingField.Guid.Data2
+      value: 1094583788
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <loadGameButton>k__BackingField.Guid.Data3
+      value: 959848588
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <loadGameButton>k__BackingField.Guid.Data4
+      value: 1173363909
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <toggleButtonOn>k__BackingField.Guid.Data1
+      value: -317480192
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <toggleButtonOn>k__BackingField.Guid.Data2
+      value: 1323508882
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <toggleButtonOn>k__BackingField.Guid.Data3
+      value: 273275526
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <toggleButtonOn>k__BackingField.Guid.Data4
+      value: -1076700472
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <moonbrightForestMusic>k__BackingField.Path
+      value: event:/Music/MoonbrightForestMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <northburryMusic>k__BackingField.Guid.Data1
+      value: 1903553750
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <northburryMusic>k__BackingField.Guid.Data2
+      value: 1258550868
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <northburryMusic>k__BackingField.Guid.Data3
+      value: -123645812
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <northburryMusic>k__BackingField.Guid.Data4
+      value: -1352866907
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <toggleButtonOff>k__BackingField.Guid.Data1
+      value: 578320488
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <toggleButtonOff>k__BackingField.Guid.Data2
+      value: 1120358633
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <toggleButtonOff>k__BackingField.Guid.Data3
+      value: -1679295090
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <toggleButtonOff>k__BackingField.Guid.Data4
+      value: -2056603790
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <moonbrightForestMusic>k__BackingField.Guid.Data1
+      value: -1466324848
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <moonbrightForestMusic>k__BackingField.Guid.Data2
+      value: 1285273720
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <moonbrightForestMusic>k__BackingField.Guid.Data3
+      value: -768645487
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <moonbrightForestMusic>k__BackingField.Guid.Data4
+      value: 1752681596
+      objectReference: {fileID: 0}
     - target: {fileID: 6771982062748264566, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6033,11 +6293,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnUp: {fileID: 1979423441}
+    m_SelectOnDown: {fileID: 1229037997}
+    m_SelectOnLeft: {fileID: 371903678}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
@@ -7735,11 +7995,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnUp: {fileID: 530577301}
+    m_SelectOnDown: {fileID: 1391607563}
+    m_SelectOnLeft: {fileID: 371903678}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:

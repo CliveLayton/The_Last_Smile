@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using Ink.Runtime;
 using TMPro;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class DialoguePlayerTest : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueTextComponent;
     [SerializeField] private float typingSpeed = 0.04f;
     public string inkPath;
+    public EventReference dialogueTextSFX;
     private Animator layoutAnimator;
 
     private Animator ameliaAnimator;
@@ -152,6 +154,8 @@ public class DialoguePlayerTest : MonoBehaviour
         //empty the dialog text
         dialogueTextComponent.text = "";
         
+        AudioManager.instance.StartDialogueSFX();
+
         //handle tags
         yield return StartCoroutine(HandleTags(currentStory.currentTags));
 
@@ -161,12 +165,15 @@ public class DialoguePlayerTest : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 dialogueTextComponent.text = line;
+                AudioManager.instance.StopDialogueSFX();
                 arrowAnimator.SetTrigger(currentLayout);
                 break;
             }
             dialogueTextComponent.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
+        
+        AudioManager.instance.StopDialogueSFX();
     }
 
     private IEnumerator HandleTags(List<string> currentTags)

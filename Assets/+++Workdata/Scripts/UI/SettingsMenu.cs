@@ -79,6 +79,15 @@ public class SettingsMenu : MonoBehaviour
     /// <param name="isFullscreen">bool for in fullscreen</param>
     public void SetFullscreen(bool isFullscreen)
     {
+        if (isFullscreen == true)
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.toggleButtonOff, this.transform.position);
+        }
+        else if (isFullscreen == false)
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.toggleButtonOn, this.transform.position);
+        }
+        
         Screen.fullScreen = isFullscreen;
         PlayerPrefs.SetInt(fullScreen_KEY, isFullscreen ? 1: 0);
     }

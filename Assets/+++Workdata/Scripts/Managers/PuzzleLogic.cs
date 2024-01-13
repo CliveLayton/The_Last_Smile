@@ -35,6 +35,7 @@ public class PuzzleLogic : MonoBehaviour
     /// </summary>
     private void PuzzleSolved()
     {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.puzzleSolved, this.transform.position);
         WinningScreen.SetActive(true);
         GameStateManager.instance.data.AddCollectible(map.identifier);
     }

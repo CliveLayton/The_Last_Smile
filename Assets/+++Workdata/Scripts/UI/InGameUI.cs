@@ -88,6 +88,8 @@ public class InGameUI : MonoBehaviour
     {
         GameStateManager.instance.GoToMainMenu();
         CloseIngameUI();
+        AudioManager.instance.CleanUp();
+        AudioManager.instance.InitializeMusic(FMODEvents.instance.mainMenuMusic);
     }
     
     //this is called via the "save game" button or relevant events in the game
