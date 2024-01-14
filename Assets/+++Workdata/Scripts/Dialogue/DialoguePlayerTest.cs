@@ -60,7 +60,7 @@ public class DialoguePlayerTest : MonoBehaviour
         
         //reset layout and speaker
         layoutAnimator.Play("Liam");
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        player = FindObjectOfType<PlayerController>().gameObject.GetComponent<PlayerController>();
         player.enabled = false;
         inGameUI.menuActive = false;
         openMenuButton.SetActive(false);
