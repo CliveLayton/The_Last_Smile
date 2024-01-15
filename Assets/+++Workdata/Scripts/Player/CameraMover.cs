@@ -11,7 +11,11 @@ public class CameraMover : MonoBehaviour
 
      [SerializeField] private Animator cameraAnim;
 
-     [SerializeField] private CollectableData northburrySign;
+     [SerializeField] private CollectableData collectablePhoto;
+
+     [SerializeField] private Interactable cameraInteractable;
+
+     [SerializeField] private GameObject RightSpotRim;
 
      [Header("Movement")] 
     
@@ -103,6 +107,7 @@ public class CameraMover : MonoBehaviour
         if (other.gameObject.CompareTag("SnapPosition"))
         {
             inSnapPosition = true;
+            RightSpotRim.SetActive(true);
         }
     }
 
@@ -111,6 +116,7 @@ public class CameraMover : MonoBehaviour
         if (other.gameObject.CompareTag("SnapPosition"))
         {
             inSnapPosition = false;
+            RightSpotRim.SetActive(false);
         }
     }
 
@@ -127,8 +133,11 @@ public class CameraMover : MonoBehaviour
         else if (context.performed && inSnapPosition)
         {
             cameraAnim.SetTrigger("Snap");
-            if(!GameStateManager.instance.data.HasCollectible(northburrySign.identifier))
-                GameStateManager.instance.data.AddCollectible(northburrySign.identifier);
+            if (!GameStateManager.instance.data.HasCollectible(collectablePhoto.identifier))
+            {
+                GameStateManager.instance.data.AddCollectible(collectablePhoto.identifier);
+                cameraInteractable.SetObjectActive(false);
+            }
         }
     }
 
