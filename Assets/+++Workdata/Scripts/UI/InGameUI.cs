@@ -5,11 +5,11 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class InGameUI : MonoBehaviour
 {
     //all objects in the InGameHUD
-    [SerializeField] private GameObject openMenuButton;
     [SerializeField] private GameObject inGameMenu;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject optionMenu;
@@ -32,6 +32,10 @@ public class InGameUI : MonoBehaviour
 
     //objects for the current position animation on the map
     [SerializeField] private List<GameObject> onMapPositions;
+    
+    //buttons to open and close the journal
+    [SerializeField] private Button openMenuButton;
+    [SerializeField] private Button useCameraButton;
 
     private PlayerController player;
     
@@ -67,15 +71,21 @@ public class InGameUI : MonoBehaviour
 
     void PauseGame(InputAction.CallbackContext context)
     {
+        OpenMenuSound();
+        
         if (context.performed && menuActive && (GameStateManager.instance.currentState != GameStateManager.GameState.InMainMenu)
                               && (inGameMenu.activeSelf == false))
         {
             OpenIngameUI();
+            openMenuButton.interactable = false;
+            useCameraButton.interactable = false;
             openMenuText.SetActive(false);
         }
         else if (context.performed && (GameStateManager.instance.currentState != GameStateManager.GameState.InMainMenu)
                                    && (inGameMenu.activeSelf == true))
         {
+            openMenuButton.interactable = true;
+            useCameraButton.interactable = true;
             CloseIngameUI();
         }
     }
@@ -147,7 +157,8 @@ public class InGameUI : MonoBehaviour
         }
 
         inGameMenu.SetActive(true);
-        openMenuButton.SetActive(false);
+        openMenuButton.interactable = false;
+        useCameraButton.interactable = false;
         pauseMenu.SetActive(true);
         optionMenu.SetActive(false);
         characterMenu.SetActive(false);
@@ -159,8 +170,8 @@ public class InGameUI : MonoBehaviour
     public void CloseIngameUI()
     {
         inGameMenu.SetActive(false);
-        openMenuButton.SetActive(true);
-        
+        openMenuButton.interactable = true;
+
         if(GameStateManager.instance.currentState == GameStateManager.GameState.InGame) 
             player.enabled = true;
     }
@@ -172,6 +183,11 @@ public class InGameUI : MonoBehaviour
     public void EnableOpenMenuText(bool state)
     {
         openMenuText.SetActive(state);
+    }
+
+    public void CameraButtonInteractable(bool state)
+    {
+        useCameraButton.interactable = state;
     }
 
     /// <summary>
@@ -233,5 +249,17 @@ public class InGameUI : MonoBehaviour
     public void ButtonSound()
     {
         AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonHovered, this.transform.position);
+    }
+
+    //plays a sound if another menu open up
+    public void TurnPagesSound()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.turnPages, this.transform.position);
+    }
+
+    //plays a sound if the menu opens or close
+    public void OpenMenuSound()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.opemMenu, this.transform.position);
     }
 }

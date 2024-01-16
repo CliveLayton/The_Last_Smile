@@ -54,32 +54,63 @@ public class GameData
     }
     
     /// <summary>
-    /// All interactable stats saved in a Dictionary, sorted by their unique Guid.
-    /// We need them to be able to be referenced by Guid so that we can load the specific interactable instance we need.
+    /// All triggerbehavior stats saved in a Dictionary, sorted by their unique Guid.
+    /// We need them to be able to be referenced by Guid so that we can load the specific triggerbehavior instance we need.
     /// </summary>
     public Dictionary<string, TriggerBehavior.Data> triggerStatsByGuid = new Dictionary<string, TriggerBehavior.Data>();
 
     /// <summary>
-    /// we call this via the interactable, whenever a new interactable should be added to the save game
+    /// we call this via the triggerbehavior, whenever a new triggerbehavior should be added to the save game
     /// </summary>
-    /// <param name="guid">the guid that is unique for every single interactable</param>
+    /// <param name="guid">the guid that is unique for every single triggerbehavior</param>
     /// <param name="data">the actual interactable data</param>
     public void AddTriggerBehavior(string guid, TriggerBehavior.Data data)
     {
         if (!triggerStatsByGuid.ContainsKey(guid))
-            triggerStatsByGuid.Add(guid, data); //add new interactable none was yet saved
+            triggerStatsByGuid.Add(guid, data); //add new triggerbehavior none was yet saved
         else
-            triggerStatsByGuid[guid] = data; //update data for existing interactable
+            triggerStatsByGuid[guid] = data; //update data for existing triggerbehavior
     }
 
     /// <summary>
-    /// this is called by the interactables when they initialize 
+    /// this is called by the triggerbehavior when they initialize 
     /// </summary>
-    /// <param name="guid">the guid that is unique for every single interactable</param>
+    /// <param name="guid">the guid that is unique for every single triggerbehavior</param>
     /// <returns>Returns the data if it already exists. If return value is null, no data was saved yet</returns>
     public TriggerBehavior.Data GetTrigggerBehaviorData(string guid)
     {
         if (triggerStatsByGuid.TryGetValue(guid, out var data))
+            return data;
+        return null; //return null if no value was yet saved
+    }
+    
+    /// <summary>
+    /// All camerainteractable stats saved in a Dictionary, sorted by their unique Guid.
+    /// We need them to be able to be referenced by Guid so that we can load the specific camerainteractable instance we need.
+    /// </summary>
+    public Dictionary<string, CameraInteractable.Data> cameraStatsByGuid = new Dictionary<string, CameraInteractable.Data>();
+
+    /// <summary>
+    /// we call this via the camerainteractable, whenever a new camerainteractable should be added to the save game
+    /// </summary>
+    /// <param name="guid">the guid that is unique for every single camerainteractable</param>
+    /// <param name="data">the actual interactable data</param>
+    public void AddCameraInteractable(string guid, CameraInteractable.Data data)
+    {
+        if (!cameraStatsByGuid.ContainsKey(guid))
+            cameraStatsByGuid.Add(guid, data); //add new camerainteractable none was yet saved
+        else
+            cameraStatsByGuid[guid] = data; //update data for existing camerainteractable
+    }
+
+    /// <summary>
+    /// this is called by the camerainteractable when they initialize 
+    /// </summary>
+    /// <param name="guid">the guid that is unique for every single camerainteractable</param>
+    /// <returns>Returns the data if it already exists. If return value is null, no data was saved yet</returns>
+    public CameraInteractable.Data GetCameraTriggerData(string guid)
+    {
+        if (cameraStatsByGuid.TryGetValue(guid, out var data))
             return data;
         return null; //return null if no value was yet saved
     }

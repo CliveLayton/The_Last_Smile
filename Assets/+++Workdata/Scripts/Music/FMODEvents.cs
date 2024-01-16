@@ -36,6 +36,12 @@ public class FMODEvents : MonoBehaviour
 
    [field: Header("Player SFX")]
    
+   //audio reference for player footsteps outside
+   [field: SerializeField] public EventReference playerFootstepsOutside { get; private set; }
+   
+   //audio reference for player footsteps inside
+   [field: SerializeField] public EventReference playerFootstepsInside { get; private set; }
+   
    [field: Header("NPC SFX")]
    
    [field: Header("Environment")]
@@ -59,6 +65,12 @@ public class FMODEvents : MonoBehaviour
    
    //audio reference for load game 
    [field: SerializeField] public EventReference loadGameButton { get; private set; }
+   
+   //audio reference for open menu
+   [field: SerializeField] public EventReference opemMenu { get; private set; }
+   
+   //audio reference for turn pages
+   [field: SerializeField] public EventReference turnPages { get; private set; }
    
    public static FMODEvents instance { get; private set; }
 

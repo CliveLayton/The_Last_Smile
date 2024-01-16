@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -83,6 +84,12 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private Vector2 moveInput;
 
+    //audio event instance for player footsteps outside
+    private EventInstance playerFootstepsOutside;
+
+    //audio event instance for player footsteps inside
+    private EventInstance playerFootstepsInside;
+
     #endregion
 
     #region Unity Event Functions
@@ -119,6 +126,12 @@ public class PlayerController : MonoBehaviour
             transform.position = position;
     }
 
+    private void Start()
+    {
+        playerFootstepsInside = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootstepsInside);
+        playerFootstepsOutside = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootstepsOutside);
+    }
+
     private void FixedUpdate()
     {
         isGrounded = Physics2D.OverlapBox(transform.position + groundCheckPos, groundCheckSize, 0, groundLayer);
@@ -148,8 +161,9 @@ public class PlayerController : MonoBehaviour
             data.positionsBySceneName.Add(sceneName, transform.position);
         else
             data.positionsBySceneName[sceneName] = transform.position;
-        
+       
         AnimateWalk();
+        UpdateSound();
     }
 
     private void OnEnable()
@@ -167,6 +181,9 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(0, 0);
         
         playerAnimator.SetFloat("movementSpeed", 0);
+        
+        playerFootstepsInside.stop(STOP_MODE.IMMEDIATE);
+        playerFootstepsOutside.stop(STOP_MODE.IMMEDIATE);
         
         inputActions.Player.Disable();
         
@@ -252,6 +269,30 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
+    private void UpdateSound()
+    {
+        if (Mathf.Abs(rb.velocity.x) > 1f && GameStateManager.instance.data.loadedSceneName != "Shop")
+        {
+            //get the playback state
+            PLAYBACK_STATE playbackStateOutside;
+            playerFootstepsOutside.getPlaybackState(out playbackStateOutside);
+            if (playbackStateOutside.Equals(PLAYBACK_STATE.STOPPED))
+                playerFootstepsOutside.start();
+        }
+        else if (Mathf.Abs(rb.velocity.x) > 1f && GameStateManager.instance.data.loadedSceneName == "Shop")
+        {
+            PLAYBACK_STATE playbackStateInside;
+            playerFootstepsInside.getPlaybackState(out playbackStateInside);
+            if (playbackStateInside.Equals(PLAYBACK_STATE.STOPPED))
+                playerFootstepsInside.start();
+        }
+        else
+        {
+            playerFootstepsInside.stop(STOP_MODE.ALLOWFADEOUT);
+            playerFootstepsOutside.stop(STOP_MODE.ALLOWFADEOUT);
+        }
+    }
+    
     /// <summary>
     /// draws a wirecube in unity to visualize the groundcheck
     /// </summary>

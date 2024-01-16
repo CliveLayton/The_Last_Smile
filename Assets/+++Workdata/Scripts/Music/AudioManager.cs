@@ -32,6 +32,7 @@ public class AudioManager : MonoBehaviour
    private void Start()
    {
       InitializeMusic(FMODEvents.instance.mainMenuMusic);
+      
    }
 
    public void InitializeAmbience(EventReference ambienceEventReference)

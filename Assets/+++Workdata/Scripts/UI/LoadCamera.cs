@@ -12,12 +12,14 @@ public class LoadCamera : MonoBehaviour
    [SerializeField] private PlayerController player;
    [SerializeField] private CameraMover camMover;
    private GameObject openMenuButton;
+   private GameObject useCameraButton;
    private InGameUI inGameUI;
 
 
    private void Awake()
    {
       openMenuButton = GameObject.Find("OpenMenuButton");
+      useCameraButton = GameObject.Find("UseCameraButton");
       inGameUI = GameObject.FindGameObjectWithTag("InGameHUD").GetComponent<InGameUI>();
    }
 
@@ -27,6 +29,7 @@ public class LoadCamera : MonoBehaviour
    public void SetOpenMenuButtonActive()
    {
       openMenuButton.SetActive(true);
+      useCameraButton.SetActive(true);
       inGameUI.menuActive = true;
    }
 
@@ -36,6 +39,7 @@ public class LoadCamera : MonoBehaviour
    public void SetOpenMenuButtonInActive()
    {
       openMenuButton.SetActive(false);
+      useCameraButton.SetActive(false);
       inGameUI.menuActive = false;
    }
    

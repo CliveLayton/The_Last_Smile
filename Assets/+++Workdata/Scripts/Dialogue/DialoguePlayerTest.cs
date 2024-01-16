@@ -29,6 +29,7 @@ public class DialoguePlayerTest : MonoBehaviour
     private PlayerController player;
     private InGameUI inGameUI;
     private GameObject openMenuButton;
+    private GameObject useCameraButton;
     
     private const string LAYOUT_TAG = "layout";
     private const string SPEAKER_TAG = "speaker";
@@ -46,6 +47,7 @@ public class DialoguePlayerTest : MonoBehaviour
         layoutAnimator = GetComponent<Animator>();
         inGameUI = GameObject.FindGameObjectWithTag("InGameHUD").GetComponent<InGameUI>();
         openMenuButton = GameObject.Find("OpenMenuButton");
+        useCameraButton = GameObject.Find("UseCameraButton");
     }
 
     public void OnEnable()
@@ -65,6 +67,7 @@ public class DialoguePlayerTest : MonoBehaviour
         player.enabled = false;
         inGameUI.menuActive = false;
         openMenuButton.SetActive(false);
+        useCameraButton.SetActive(false);
 
         //function for amelia to move after dialogue on the well, activates the open shop door, deactivates the closed shop door
         story.BindExternalFunction("WalkAway", (string animationTrigger, bool shopClosedDoorActive, 
@@ -103,6 +106,7 @@ public class DialoguePlayerTest : MonoBehaviour
         player.inSequence = false;
         inGameUI.menuActive = true;
         openMenuButton.SetActive(true);
+        useCameraButton.SetActive(true);
         story.UnbindExternalFunction("WalkAway");
         story.UnbindExternalFunction("WalkToCabin");
         story.UnbindExternalFunction("NPCWell");

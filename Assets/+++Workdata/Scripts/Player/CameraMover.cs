@@ -13,7 +13,7 @@ public class CameraMover : MonoBehaviour
 
      [SerializeField] private CollectableData collectablePhoto;
 
-     [SerializeField] private Interactable cameraInteractable;
+     [SerializeField] private CameraInteractable cameraInteractable;
 
      [SerializeField] private GameObject RightSpotRim;
 

@@ -145,45 +145,73 @@ MonoBehaviour:
       Data3: -1493690990
       Data4: -532184075
     Path: event:/Music/PuzzleMusic
+  <playerFootstepsOutside>k__BackingField:
+    Guid:
+      Data1: 782013310
+      Data2: 1207600440
+      Data3: 103693998
+      Data4: 849448105
+    Path: event:/SFX/Player/PlayerFootStepsOutside
+  <playerFootstepsInside>k__BackingField:
+    Guid:
+      Data1: 690998608
+      Data2: 1133478876
+      Data3: -204633926
+      Data4: 1205747418
+    Path: event:/SFX/Player/PlayerFootStepsInside
   <buttonHovered>k__BackingField:
     Guid:
       Data1: 1148321175
       Data2: 1272688418
       Data3: 1017378729
       Data4: 1790553087
-    Path: event:/SFX/Buttonhovered
+    Path: event:/SFX/UI/Buttonhovered
   <dialogueText>k__BackingField:
     Guid:
       Data1: 407986147
       Data2: 1247583844
       Data3: -1793561684
       Data4: -1310523488
-    Path: event:/SFX/DialogueTextSFX
+    Path: event:/SFX/UI/DialogueTextSFX
   <toggleButtonOn>k__BackingField:
     Guid:
       Data1: -317480192
       Data2: 1323508882
       Data3: 273275526
       Data4: -1076700472
-    Path: event:/SFX/ToggleButtonOn
+    Path: event:/SFX/UI/ToggleButtonOn
   <toggleButtonOff>k__BackingField:
     Guid:
       Data1: 578320488
       Data2: 1120358633
       Data3: -1679295090
       Data4: -2056603790
-    Path: event:/SFX/ToggleButtonOff
+    Path: event:/SFX/UI/ToggleButtonOff
   <puzzleSolved>k__BackingField:
     Guid:
       Data1: -302273109
       Data2: 1321071030
       Data3: 1850342306
       Data4: 1460415869
-    Path: event:/SFX/PuzzleSolved
+    Path: event:/SFX/UI/PuzzleSolved
   <loadGameButton>k__BackingField:
     Guid:
       Data1: -1523752428
       Data2: 1094583788
       Data3: 959848588
       Data4: 1173363909
-    Path: event:/SFX/LoadGameButton
+    Path: event:/SFX/UI/LoadGameButton
+  <opemMenu>k__BackingField:
+    Guid:
+      Data1: 1102830099
+      Data2: 1328751209
+      Data3: 1747266703
+      Data4: 1043042942
+    Path: event:/SFX/UI/OpenMenu
+  <turnPages>k__BackingField:
+    Guid:
+      Data1: 2014649805
+      Data2: 1074592125
+      Data3: -27910747
+      Data4: -249372887
+    Path: event:/SFX/UI/TurnPages

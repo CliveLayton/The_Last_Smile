@@ -24,7 +24,7 @@ public class PuzzleLogic : MonoBehaviour
     {
         correctPuzzle += i;
 
-        if (correctPuzzle == 9)
+        if (correctPuzzle == 10)
         {
             PuzzleSolved();
         }
