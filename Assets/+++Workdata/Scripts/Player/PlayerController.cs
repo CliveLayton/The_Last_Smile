@@ -49,6 +49,10 @@ public class PlayerController : MonoBehaviour
 
     private BoxCollider2D col;
 
+    private SpriteRenderer sr;
+
+    private Animator playerAnimator;
+
     public bool isRunning;
 
     public bool isInteracting;
@@ -87,6 +91,8 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();
+        sr = GetComponent<SpriteRenderer>();
+        playerAnimator = GetComponent<Animator>();
         
         //initialize sound for the dialogue text for the current scene
         AudioManager.instance.InitializeDialogueSFX(FMODEvents.instance.dialogueText);
@@ -142,6 +148,8 @@ public class PlayerController : MonoBehaviour
             data.positionsBySceneName.Add(sceneName, transform.position);
         else
             data.positionsBySceneName[sceneName] = transform.position;
+        
+        AnimateWalk();
     }
 
     private void OnEnable()
@@ -157,6 +165,8 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         rb.velocity = new Vector2(0, 0);
+        
+        playerAnimator.SetFloat("movementSpeed", 0);
         
         inputActions.Player.Disable();
         
@@ -202,10 +212,12 @@ public class PlayerController : MonoBehaviour
         if (moveInput.x > 0)
         {
             leftMovement = false;
+            sr.flipX = false;
         }
         else if (moveInput.x < 0)
         {
             leftMovement = true;
+            sr.flipX = true;
         }
 
         directionMultiply = leftMovement ? -1 : 1;
@@ -224,6 +236,18 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(currentSpeed * directionMultiply, rb.velocity.y);
 
         lastMovement.x = currentSpeed;
+    }
+
+    #endregion
+
+    #region Animations
+
+    private void AnimateWalk()
+    {
+        Vector2 velocity = lastMovement;
+        float speed = velocity.magnitude;
+        
+        playerAnimator.SetFloat("movementSpeed", speed);
     }
 
     #endregion

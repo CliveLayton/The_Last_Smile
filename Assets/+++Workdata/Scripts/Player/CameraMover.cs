@@ -147,6 +147,7 @@ public class CameraMover : MonoBehaviour
         {
             //leave the camera view and go back to the player
             cameraAnim.SetTrigger("FadeOut");
+            RightSpotRim.SetActive(false);
         }
     }
 

@@ -19,12 +19,16 @@ public class InGameUI : MonoBehaviour
     [SerializeField] private GameObject map;
     [SerializeField] private GameObject openMenuText;
     [SerializeField] private GameObject northburrySignPicture;
+    [SerializeField] private GameObject bankPicture;
     [SerializeField] private GameObject transporterPicture;
+    [SerializeField] private GameObject flowerPicture;
 
     //all collectible object data in the InGameHUD
+    [SerializeField] private CollectableData bankData;
     [SerializeField] private CollectableData transporterData;
     [SerializeField] private CollectableData northburrySignData;
     [SerializeField] private CollectableData mapData;
+    [SerializeField] private CollectableData flowerData;
 
     //objects for the current position animation on the map
     [SerializeField] private List<GameObject> onMapPositions;
@@ -125,10 +129,20 @@ public class InGameUI : MonoBehaviour
             map.SetActive(true);
         else
             map.SetActive(false);
+
+        if (GameStateManager.instance.data.HasCollectible(flowerData.identifier))
+            flowerPicture.SetActive(true);
+        else
+            flowerPicture.SetActive(false);
         
+        if (GameStateManager.instance.data.HasCollectible(bankData.identifier))
+            bankPicture.SetActive(true);
+        else
+            bankPicture.SetActive(false);
+
         if (GameStateManager.instance.currentState == GameStateManager.GameState.InGame)
         {
-            player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+            player = FindObjectOfType<PlayerController>().gameObject.GetComponent<PlayerController>();
             player.enabled = false;
         }
 

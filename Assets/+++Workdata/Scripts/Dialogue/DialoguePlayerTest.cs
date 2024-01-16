@@ -61,6 +61,7 @@ public class DialoguePlayerTest : MonoBehaviour
         //reset layout and speaker
         layoutAnimator.Play("Liam");
         player = FindObjectOfType<PlayerController>().gameObject.GetComponent<PlayerController>();
+        player.inSequence = true;
         player.enabled = false;
         inGameUI.menuActive = false;
         openMenuButton.SetActive(false);
@@ -99,6 +100,7 @@ public class DialoguePlayerTest : MonoBehaviour
         }
 
         player.enabled = true;
+        player.inSequence = false;
         inGameUI.menuActive = true;
         openMenuButton.SetActive(true);
         story.UnbindExternalFunction("WalkAway");
