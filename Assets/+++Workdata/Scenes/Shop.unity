@@ -647,7 +647,7 @@ GameObject:
   m_Component:
   - component: {fileID: 555162354}
   - component: {fileID: 555162353}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CameraColiider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1215,7 +1215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5452562128701860555, guid: 75e3389e012e86c469ddf3986f546a87, type: 3}
       propertyPath: uniqueGuid
-      value: 50eff039-f554-4038-bf00-5b6a60dd3761
+      value: 50eff039-4038-bf00-5b6a60dd3761
       objectReference: {fileID: 0}
     - target: {fileID: 5452562128701860555, guid: 75e3389e012e86c469ddf3986f546a87, type: 3}
       propertyPath: colSetActive
@@ -1916,7 +1916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2dfeb510db2a11498c8eb80b4f7102f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uniqueGuid: 289f5911-60df-42a6-86e7-5c84c01f610a
+  uniqueGuid: 289f5911-60df-86e7-5c8f610a
   data:
     isActive: 0
   triggerEnterEvent:
@@ -2348,7 +2348,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7823944201933870733, guid: 75e3389e012e86c469ddf3986f546a87, type: 3}
       propertyPath: m_Radius
-      value: 2.34
+      value: 1.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000629222328577964, guid: 75e3389e012e86c469ddf3986f546a87, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000629222328577964, guid: 75e3389e012e86c469ddf3986f546a87, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.04
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2423,7 +2431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2dfeb510db2a11498c8eb80b4f7102f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uniqueGuid: 22169790-ea97-4b01-afa6-47f06b76d3e5
+  uniqueGuid: 22160-ea97-4b01-afa6-47f06b76d3e5
   data:
     isActive: 0
   triggerEnterEvent:

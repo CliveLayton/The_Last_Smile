@@ -87,7 +87,7 @@ Here you go, you can find the bottles in the regal over there. #speaker:Amelia #
 Thank you Amelia. #speaker:Liam #layout:left
 
 Good luck. #speaker:Amelia #layout:right
-->END
+-> END
 
 = Test
 VAR player_name = ""

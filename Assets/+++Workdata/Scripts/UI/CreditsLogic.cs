@@ -8,10 +8,17 @@ public class CreditsLogic : MonoBehaviour
 {
     private GameInput inputActions;
 
+    private GameObject inGameUI;
+
     private void Awake()
     {
         inputActions = new GameInput();
-        
+        if (GameStateManager.instance.currentState != GameStateManager.GameState.InMainMenu)
+        {
+            inGameUI = GameObject.FindGameObjectWithTag("InGameHUD").gameObject;
+            inGameUI.SetActive(false);
+        }
+
         AudioManager.instance.CleanUp();
         AudioManager.instance.InitializeMusic(FMODEvents.instance.creditMusic);
     }
@@ -33,11 +40,11 @@ public class CreditsLogic : MonoBehaviour
     void SkipCredits(InputAction.CallbackContext context)
     {
         if(context.performed)
-            GameStateManager.instance.LoadNewGameplayScene("MainMenu");
+            GameStateManager.instance.GoToMainMenu();
     }
 
     public void EndCredits()
     {
-        GameStateManager.instance.LoadNewGameplayScene("MainMenu");
+        GameStateManager.instance.GoToMainMenu();
     }
 }

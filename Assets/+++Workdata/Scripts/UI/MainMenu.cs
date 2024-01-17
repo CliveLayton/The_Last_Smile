@@ -7,9 +7,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject loadingScreen;
-
     public EventReference musicName;
+
+    private void Awake()
+    {
+        AudioManager.instance.CleanUp();
+        AudioManager.instance.InitializeMusic(FMODEvents.instance.mainMenuMusic);
+    }
 
     /// <summary>
     /// just load the normal game as a new game
@@ -19,6 +23,11 @@ public class MainMenu : MonoBehaviour
         AudioManager.instance.CleanUp();
         AudioManager.instance.InitializeMusic(musicName);
         GameStateManager.instance.StartNewGame();
+    }
+
+    public void StartCredits()
+    {
+        LoadSceneManager.instance.SwitchScene("Credits");
     }
 
     /// <summary>

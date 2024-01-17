@@ -22,6 +22,7 @@ public class InGameUI : MonoBehaviour
     [SerializeField] private GameObject bankPicture;
     [SerializeField] private GameObject transporterPicture;
     [SerializeField] private GameObject flowerPicture;
+    [SerializeField] private GameObject lightningPicture;
 
     //all collectible object data in the InGameHUD
     [SerializeField] private CollectableData bankData;
@@ -29,6 +30,7 @@ public class InGameUI : MonoBehaviour
     [SerializeField] private CollectableData northburrySignData;
     [SerializeField] private CollectableData mapData;
     [SerializeField] private CollectableData flowerData;
+    [SerializeField] private CollectableData lightningData;
 
     //objects for the current position animation on the map
     [SerializeField] private List<GameObject> onMapPositions;
@@ -85,7 +87,6 @@ public class InGameUI : MonoBehaviour
                                    && (inGameMenu.activeSelf == true))
         {
             openMenuButton.interactable = true;
-            useCameraButton.interactable = true;
             CloseIngameUI();
         }
     }
@@ -149,6 +150,11 @@ public class InGameUI : MonoBehaviour
             bankPicture.SetActive(true);
         else
             bankPicture.SetActive(false);
+        
+        if (GameStateManager.instance.data.HasCollectible(lightningData.identifier))
+            lightningPicture.SetActive(true);
+        else
+            lightningPicture.SetActive(false);
 
         if (GameStateManager.instance.currentState == GameStateManager.GameState.InGame)
         {

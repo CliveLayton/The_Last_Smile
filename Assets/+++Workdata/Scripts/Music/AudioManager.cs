@@ -29,12 +29,6 @@ public class AudioManager : MonoBehaviour
       eventEmitters = new List<StudioEventEmitter>();
    }
 
-   private void Start()
-   {
-      InitializeMusic(FMODEvents.instance.mainMenuMusic);
-      
-   }
-
    public void InitializeAmbience(EventReference ambienceEventReference)
    {
       ambienceEventInstance = CreateEventInstance(ambienceEventReference);

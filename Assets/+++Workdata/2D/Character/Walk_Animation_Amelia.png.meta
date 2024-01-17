@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 430
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,7 +108,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Walk_Animation_Amelia_0
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 390
+        width: 634
+        height: 1812
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5662252}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dfa43a175b231246bdfa92866843689
+      internalID: -1457047377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Animation_Amelia_1
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 379
+        width: 625
+        height: 1820
+      alignment: 9
+      pivot: {x: 0.5, y: 0.56593406}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48ad7be6d007d4942a9f7b6036532363
+      internalID: -1390697864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Animation_Amelia_2
+      rect:
+        serializedVersion: 2
+        x: 1643
+        y: 356
+        width: 522
+        height: 1843
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5651112}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8885d710b0f750f48a3d8a9b623c3eab
+      internalID: 2083957317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Animation_Amelia_4
+      rect:
+        serializedVersion: 2
+        x: 2207
+        y: 398
+        width: 603
+        height: 1807
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5664084}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0f597338d6b7a74f97e1204986e748a
+      internalID: 518622793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Animation_Amelia_5
+      rect:
+        serializedVersion: 2
+        x: 2866
+        y: 367
+        width: 664
+        height: 1818
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5660066}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfe9a65d818ae7741a52f4ceeae34dab
+      internalID: 1479740626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Animation_Amelia_6
+      rect:
+        serializedVersion: 2
+        x: 3659
+        y: 348
+        width: 622
+        height: 1807
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5664084}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b789b63532d3a5a4db49834f774ba07d
+      internalID: -1414400534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Animation_Amelia_7
+      rect:
+        serializedVersion: 2
+        x: 4382
+        y: 365
+        width: 458
+        height: 1837
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5653239}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab22abb7fe4bb38418de20e093a15adf
+      internalID: -1559720287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Animation_Amelia_8
+      rect:
+        serializedVersion: 2
+        x: 5072
+        y: 395
+        width: 522
+        height: 1821
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5658979}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc7e87b5e34c2b84a99c9fdc24713bc3
+      internalID: -1761093470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +287,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Walk_Animation_Amelia_0: -1457047377
+      Walk_Animation_Amelia_1: -1390697864
+      Walk_Animation_Amelia_10: 1620469812
+      Walk_Animation_Amelia_2: 2083957317
+      Walk_Animation_Amelia_3: 972546895
+      Walk_Animation_Amelia_4: 518622793
+      Walk_Animation_Amelia_5: 1479740626
+      Walk_Animation_Amelia_6: -1414400534
+      Walk_Animation_Amelia_7: -1559720287
+      Walk_Animation_Amelia_8: -1761093470
+      Walk_Animation_Amelia_9: -1815643036
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
