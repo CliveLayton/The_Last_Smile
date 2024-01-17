@@ -364,13 +364,6 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: SetCameraPriority
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 11
-    messageOptions: 0
-  - time: 0
     functionName: SetPlayerInActive
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -378,7 +371,21 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0
+    functionName: SetCameraPriority
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 11
+    messageOptions: 0
+  - time: 0
     functionName: SetOpenMenuButtonInActive
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.75
+    functionName: ActivateTutorial
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

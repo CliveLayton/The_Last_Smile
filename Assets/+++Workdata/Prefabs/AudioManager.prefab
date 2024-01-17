@@ -145,6 +145,13 @@ MonoBehaviour:
       Data3: -1493690990
       Data4: -532184075
     Path: event:/Music/PuzzleMusic
+  <creditMusic>k__BackingField:
+    Guid:
+      Data1: 19125788
+      Data2: 1089596937
+      Data3: -1727348852
+      Data4: -1947344111
+    Path: event:/Music/CreditsMusic
   <playerFootstepsOutside>k__BackingField:
     Guid:
       Data1: 782013310

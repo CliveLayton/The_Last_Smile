@@ -34,6 +34,9 @@ public class FMODEvents : MonoBehaviour
    //audio reference for puzzle music
    [field: SerializeField] public EventReference puzzleMusic { get; private set; }
 
+   //audio reference for credit music
+   [field: SerializeField] public EventReference creditMusic { get; private set; }
+
    [field: Header("Player SFX")]
    
    //audio reference for player footsteps outside

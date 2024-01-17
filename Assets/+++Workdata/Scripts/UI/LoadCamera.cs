@@ -11,6 +11,7 @@ public class LoadCamera : MonoBehaviour
    [SerializeField] private CinemachineVirtualCamera cameraCam;
    [SerializeField] private PlayerController player;
    [SerializeField] private CameraMover camMover;
+   [SerializeField] private GameObject tutorialCamera;
    private GameObject openMenuButton;
    private GameObject useCameraButton;
    private InGameUI inGameUI;
@@ -21,6 +22,11 @@ public class LoadCamera : MonoBehaviour
       openMenuButton = GameObject.Find("OpenMenuButton");
       useCameraButton = GameObject.Find("UseCameraButton");
       inGameUI = GameObject.FindGameObjectWithTag("InGameHUD").GetComponent<InGameUI>();
+   }
+
+   public void ActivateTutorial()
+   {
+      tutorialCamera.SetActive(true);
    }
 
    /// <summary>

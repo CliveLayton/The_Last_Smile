@@ -9,7 +9,7 @@ public class MovementChecker : MonoBehaviour
     
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        player = FindObjectOfType<PlayerController>().gameObject.GetComponent<PlayerController>();
     }
 
     public void StopPlayerMovement()
