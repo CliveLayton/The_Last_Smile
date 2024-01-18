@@ -80,11 +80,14 @@ public class DialoguePlayerTest : MonoBehaviour
         });
         
         //function to deactivate oliver in the Level2 scene, deactivate amelia on the well
-        story.BindExternalFunction("NPCWell", (bool oliverActive, bool ameliaActive) =>
+        story.BindExternalFunction("NPCWell", (bool oliverActive, bool ameliaActive, 
+            bool transporterWithoutWoodActive, bool transporterWithWoodActive) =>
         {
             ameliaWell = GameObject.FindGameObjectWithTag("Amelia").GetComponentInChildren<Interactable>();
             ameliaWell.SetObjectActive(ameliaActive);
             GameStateManager.instance.oliverActive = oliverActive;
+            GameStateManager.instance.truckWithoutWood = transporterWithoutWoodActive;
+            GameStateManager.instance.truckWithWood = transporterWithWoodActive;
         });
         
         //function for the animation to move jack after dialogue, deactivates jack in the woods

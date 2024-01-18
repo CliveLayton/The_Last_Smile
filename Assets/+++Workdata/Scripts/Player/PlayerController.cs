@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using FMOD.Studio;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -201,8 +202,35 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Collision Functions
-    
-    
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("NotAvailable") && moveInput.y >= 0.5f)
+        {
+            var notPartOfDemo = GameObject.Find("NotPartOfDemo").GetComponent<TextMeshPro>();
+            notPartOfDemo.enabled = true;
+            StartCoroutine(SetNotPartOfDemoOff(notPartOfDemo));
+        }
+
+        if (other.CompareTag("GoToShop") && moveInput.x >= 0.5f)
+        {
+            var goToShopText = GameObject.Find(("GoToShopText")).GetComponent<TextMeshPro>();
+            goToShopText.enabled = true;
+            StartCoroutine(SetGoToShopTextOff(goToShopText));
+        }
+    }
+
+    private IEnumerator SetNotPartOfDemoOff(TextMeshPro currentObject)
+    {
+        yield return new WaitForSeconds(1f);
+        currentObject.enabled = false;
+    }
+
+    private IEnumerator SetGoToShopTextOff(TextMeshPro currentObject)
+    {
+        yield return new WaitForSeconds(1f);
+        currentObject.enabled = false;
+    }
 
     #endregion
 

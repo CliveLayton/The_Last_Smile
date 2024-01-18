@@ -56,7 +56,7 @@ Oh really? I'll look there then, thank you! #speaker:Liam #layout:left
 
 = AmeliaWell
 EXTERNAL WalkAway(animationTrigger, shopClosedDoorActive, shopOpenDoorActive)
-EXTERNAL NPCWell(oliverActive, ameliaActive)
+EXTERNAL NPCWell(oliverActive, ameliaActive, transporterWithoutWoodActive, transporterWithWoodActive)
 
 Hi Liam. #speaker:Amelia #layout:right
 
@@ -67,7 +67,7 @@ I will open the shop, no problem. #speaker:Amelia #layout:right
 Allright, thank you. #speaker:Liam #layout:left
 
 ~ WalkAway("Amelia_WalkOutForest", false, true)
-~ NPCWell(false, false)
+~ NPCWell(false, false, false, true)
 See you. #speaker:Amelia #layout:right
 -> END
 

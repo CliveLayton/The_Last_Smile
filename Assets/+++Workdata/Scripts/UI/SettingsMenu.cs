@@ -50,7 +50,7 @@ public class SettingsMenu : MonoBehaviour
     /// <summary>
     /// sets resolution and fullscreen to saved variables in playerprefs
     /// </summary>
-    private void LoadSettings()
+    public void LoadSettings()
     {
         //resolutionDropdown.value = PlayerPrefs.GetInt(resolutionIndex_KEY, 2);
         fullScreenToggle.isOn = PlayerPrefs.GetInt(fullScreen_KEY, Screen.fullScreen ? 1 : 0) > 0;

@@ -3,16 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using FMODUnity;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
     public EventReference musicName;
 
+    [SerializeField] private GameObject newGameButton;
+    [SerializeField] private GameObject slot1Button;
+    [SerializeField] private GameObject noButton;
+    [SerializeField] private GameObject masterSlider;
+
     private void Awake()
     {
         AudioManager.instance.CleanUp();
         AudioManager.instance.InitializeMusic(FMODEvents.instance.mainMenuMusic);
+        EventSystem.current.SetSelectedGameObject(newGameButton);
     }
 
     /// <summary>
@@ -58,6 +65,38 @@ public class MainMenu : MonoBehaviour
     {
         print("Quit");
         Application.Quit();
+    }
+
+    /// <summary>
+    /// set selected button for main menu
+    /// </summary>
+    public void SetSelectedButtonMain()
+    {
+        EventSystem.current.SetSelectedGameObject(newGameButton);
+    }
+    
+    /// <summary>
+    /// set selected button for options menu
+    /// </summary>
+    public void SetSelectedButtonOptions()
+    {
+        EventSystem.current.SetSelectedGameObject(masterSlider);
+    }
+
+    /// <summary>
+    /// set selected button for load game screen
+    /// </summary>
+    public void SetSelectedButtonLoad()
+    {
+        EventSystem.current.SetSelectedGameObject(slot1Button);
+    }
+
+    /// <summary>
+    /// set selected button for quit menu
+    /// </summary>
+    public void SetSelectedButtonQuit()
+    {
+        EventSystem.current.SetSelectedGameObject(noButton);
     }
 
     public void ButtonSelectedSound()

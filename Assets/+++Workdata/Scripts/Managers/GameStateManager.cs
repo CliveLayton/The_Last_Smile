@@ -14,6 +14,8 @@ public class GameStateManager : MonoBehaviour
    public const string mainMenuSceneName = "MainMenu";
    public const string level1SceneName = "Level1";
 
+   [SerializeField] private SettingsMenu settingsOptions;
+
    public enum GameState
    {
       InMainMenu = 0,
@@ -49,6 +51,10 @@ public class GameStateManager : MonoBehaviour
 
    public bool oliverActive = true;
 
+   public bool truckWithoutWood = true;
+
+   public bool truckWithWood = false;
+
    #endregion
 
    private void Awake()
@@ -75,6 +81,7 @@ public class GameStateManager : MonoBehaviour
    public void StartNewGame()
    {
       data = new GameData();
+      settingsOptions.LoadSettings();
       currentState = GameState.InGame;
       if (onStateChanged != null)
          onStateChanged(currentState);
