@@ -207,26 +207,27 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("NotAvailable") && moveInput.y >= 0.5f)
         {
-            var notPartOfDemo = GameObject.Find("NotPartOfDemo").GetComponent<TextMeshPro>();
+            var notPartOfDemo = GameObject.Find("NotPartOfDemo").GetComponent<SpriteRenderer>();
             notPartOfDemo.enabled = true;
             StartCoroutine(SetNotPartOfDemoOff(notPartOfDemo));
         }
 
         if (other.CompareTag("GoToShop") && moveInput.x >= 0.5f)
         {
-            var goToShopText = GameObject.Find(("GoToShopText")).GetComponent<TextMeshPro>();
+            var goToShopText = GameObject.Find(("GoToShopText")).GetComponent<SpriteRenderer>();
             goToShopText.enabled = true;
-            StartCoroutine(SetGoToShopTextOff(goToShopText));
+            StartCoroutine(SetNotPartOfDemoOff(goToShopText));
+        }
+
+        if (other.CompareTag("GoToCity") && moveInput.x <= 0.5f)
+        {
+            var goToCityText = GameObject.Find("GoToCityText").GetComponent<SpriteRenderer>();
+            goToCityText.enabled = true;
+            StartCoroutine(SetNotPartOfDemoOff(goToCityText));
         }
     }
 
-    private IEnumerator SetNotPartOfDemoOff(TextMeshPro currentObject)
-    {
-        yield return new WaitForSeconds(1f);
-        currentObject.enabled = false;
-    }
-
-    private IEnumerator SetGoToShopTextOff(TextMeshPro currentObject)
+    private IEnumerator SetNotPartOfDemoOff(SpriteRenderer currentObject)
     {
         yield return new WaitForSeconds(1f);
         currentObject.enabled = false;

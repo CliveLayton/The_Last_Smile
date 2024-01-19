@@ -427,7 +427,17 @@ MonoBehaviour:
   dialogueTextComponent: {fileID: 699977414382764673}
   typingSpeed: 0.04
   inkPath: 
+  dialogueTextSFX:
+    Guid:
+      Data1: 407986147
+      Data2: 1247583844
+      Data3: -1793561684
+      Data4: -1310523488
+    Path: event:/SFX/UI/DialogueTextSFX
   arrowAnimator: {fileID: 3148260204903993379}
+  oliverInfo: {fileID: 11400000, guid: 05429aea09a263449bdd62c94be26d41, type: 2}
+  ameliaInfo: {fileID: 11400000, guid: 5858a7230af9e364ea6bfd77f8efa195, type: 2}
+  jackInfo: {fileID: 11400000, guid: c83e0948546741343923569b3c02bb4e, type: 2}
 --- !u!95 &3622276620818827238
 Animator:
   serializedVersion: 5

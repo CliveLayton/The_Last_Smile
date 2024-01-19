@@ -23,6 +23,9 @@ public class InGameUI : MonoBehaviour
     [SerializeField] private GameObject transporterPicture;
     [SerializeField] private GameObject flowerPicture;
     [SerializeField] private GameObject lightningPicture;
+    [SerializeField] private GameObject oliverInfo;
+    [SerializeField] private GameObject ameliaInfo;
+    [SerializeField] private GameObject jackInfo;
 
     //all collectible object data in the InGameHUD
     [SerializeField] private CollectableData bankData;
@@ -31,6 +34,9 @@ public class InGameUI : MonoBehaviour
     [SerializeField] private CollectableData mapData;
     [SerializeField] private CollectableData flowerData;
     [SerializeField] private CollectableData lightningData;
+    [SerializeField] private CollectableData oliverInfoData;
+    [SerializeField] private CollectableData ameliaInfoData;
+    [SerializeField] private CollectableData jackInfoData;
 
     //objects for the current position animation on the map
     [SerializeField] private List<GameObject> onMapPositions;
@@ -155,6 +161,21 @@ public class InGameUI : MonoBehaviour
             lightningPicture.SetActive(true);
         else
             lightningPicture.SetActive(false);
+
+        if (GameStateManager.instance.data.HasCollectible(oliverInfoData.identifier))
+            oliverInfo.SetActive(true);
+        else
+            oliverInfo.SetActive(false);
+        
+        if (GameStateManager.instance.data.HasCollectible(ameliaInfoData.identifier))
+            ameliaInfo.SetActive(true);
+        else
+            ameliaInfo.SetActive(false);
+        
+        if (GameStateManager.instance.data.HasCollectible(jackInfoData.identifier))
+            jackInfo.SetActive(true);
+        else
+            jackInfo.SetActive(false);
 
         if (GameStateManager.instance.currentState == GameStateManager.GameState.InGame)
         {

@@ -39,6 +39,12 @@ public class DialoguePlayerTest : MonoBehaviour
     /// Animator for ContinueArrow
     /// </summary>
     [SerializeField] private Animator arrowAnimator;
+    
+    
+    //CollectableData for the info text of each character
+    [SerializeField] private CollectableData oliverInfo;
+    [SerializeField] private CollectableData ameliaInfo;
+    [SerializeField] private CollectableData jackInfo;
 
     private void Awake()
     {
@@ -69,35 +75,9 @@ public class DialoguePlayerTest : MonoBehaviour
         openMenuButton.SetActive(false);
         useCameraButton.SetActive(false);
 
-        //function for amelia to move after dialogue on the well, activates the open shop door, deactivates the closed shop door
-        story.BindExternalFunction("WalkAway", (string animationTrigger, bool shopClosedDoorActive, 
-            bool shopOpenDoorActive) =>
-        {
-            ameliaAnimator = GameObject.FindGameObjectWithTag("Amelia").GetComponent<Animator>();
-            ameliaAnimator.Play(animationTrigger);
-            GameStateManager.instance.shopClosedDoorActive = shopClosedDoorActive;
-            GameStateManager.instance.shopOpenDoorActive = shopOpenDoorActive;
-        });
+        ObjectInteractionFunctions(story);
+        CharacterInfoFunctions(story);
         
-        //function to deactivate oliver in the Level2 scene, deactivate amelia on the well
-        story.BindExternalFunction("NPCWell", (bool oliverActive, bool ameliaActive, 
-            bool transporterWithoutWoodActive, bool transporterWithWoodActive) =>
-        {
-            ameliaWell = GameObject.FindGameObjectWithTag("Amelia").GetComponentInChildren<Interactable>();
-            ameliaWell.SetObjectActive(ameliaActive);
-            GameStateManager.instance.oliverActive = oliverActive;
-            GameStateManager.instance.truckWithoutWood = transporterWithoutWoodActive;
-            GameStateManager.instance.truckWithWood = transporterWithWoodActive;
-        });
-        
-        //function for the animation to move jack after dialogue, deactivates jack in the woods
-        story.BindExternalFunction("WalkToCabin", (string animationTrigger, bool jackActive) =>
-        {
-            jackAnimator = GameObject.FindGameObjectWithTag("Jack").GetComponent<Animator>();
-            jackForest = GameObject.FindGameObjectWithTag("Jack").GetComponentInChildren<Interactable>();
-            jackAnimator.Play(animationTrigger);
-            jackForest.SetObjectActive(jackActive);
-        });
         while (story.canContinue || story.currentChoices.Count > 0)
         {
             yield return StartCoroutine(ShowNextTexts(story));
@@ -110,9 +90,7 @@ public class DialoguePlayerTest : MonoBehaviour
         inGameUI.menuActive = true;
         openMenuButton.SetActive(true);
         useCameraButton.SetActive(true);
-        story.UnbindExternalFunction("WalkAway");
-        story.UnbindExternalFunction("WalkToCabin");
-        story.UnbindExternalFunction("NPCWell");
+        UnbindAllFunction(story);
         gameObject.SetActive(false);
     }
 
@@ -216,4 +194,70 @@ public class DialoguePlayerTest : MonoBehaviour
         }
         yield return null;
     }
+
+    private void CharacterInfoFunctions(Story currentStory)
+    {
+        currentStory.BindExternalFunction("InfoOliver", (int sympathyCount) =>
+        {
+            if((sympathyCount == 1) && !GameStateManager.instance.data.HasCollectible(oliverInfo.identifier))
+                GameStateManager.instance.data.AddCollectible(oliverInfo.identifier);
+        });
+        
+        currentStory.BindExternalFunction("InfoAmelia", (int sympathyCount) =>
+        {
+            if((sympathyCount == 1) && !GameStateManager.instance.data.HasCollectible(ameliaInfo.identifier))
+                GameStateManager.instance.data.AddCollectible(ameliaInfo.identifier);
+        });
+        
+        currentStory.BindExternalFunction("InfoJack", (int sympathyCount) =>
+        {
+            if((sympathyCount == 1) && !GameStateManager.instance.data.HasCollectible(jackInfo.identifier))
+                GameStateManager.instance.data.AddCollectible(jackInfo.identifier);
+        });
+        
+    }
+
+    private void ObjectInteractionFunctions(Story currentStory)
+    {
+        //function for amelia to move after dialogue on the well, activates the open shop door, deactivates the closed shop door
+        currentStory.BindExternalFunction("WalkAway", (string animationTrigger, bool shopClosedDoorActive, 
+            bool shopOpenDoorActive) =>
+        {
+            ameliaAnimator = GameObject.FindGameObjectWithTag("Amelia").GetComponent<Animator>();
+            ameliaAnimator.Play(animationTrigger);
+            GameStateManager.instance.shopClosedDoorActive = shopClosedDoorActive;
+            GameStateManager.instance.shopOpenDoorActive = shopOpenDoorActive;
+        });
+        
+        //function to deactivate oliver in the Level2 scene, deactivate amelia on the well
+        currentStory.BindExternalFunction("NPCWell", (bool oliverActive, bool ameliaActive, 
+            bool transporterWithoutWoodActive, bool transporterWithWoodActive) =>
+        {
+            ameliaWell = GameObject.FindGameObjectWithTag("Amelia").GetComponentInChildren<Interactable>();
+            ameliaWell.SetObjectActive(ameliaActive);
+            GameStateManager.instance.oliverActive = oliverActive;
+            GameStateManager.instance.truckWithoutWood = transporterWithoutWoodActive;
+            GameStateManager.instance.truckWithWood = transporterWithWoodActive;
+        });
+        
+        //function for the animation to move jack after dialogue, deactivates jack in the woods
+        currentStory.BindExternalFunction("WalkToCabin", (string animationTrigger, bool jackActive) =>
+        {
+            jackAnimator = GameObject.FindGameObjectWithTag("Jack").GetComponent<Animator>();
+            jackForest = GameObject.FindGameObjectWithTag("Jack").GetComponentInChildren<Interactable>();
+            jackAnimator.Play(animationTrigger);
+            jackForest.SetObjectActive(jackActive);
+        });
+    }
+
+    private void UnbindAllFunction(Story currentstory)
+    {
+        currentstory.UnbindExternalFunction("WalkAway");
+        currentstory.UnbindExternalFunction("WalkToCabin");
+        currentstory.UnbindExternalFunction("NPCWell");
+        currentstory.UnbindExternalFunction("InfoOliver");
+        currentstory.UnbindExternalFunction("InfoAmelia");
+        currentstory.UnbindExternalFunction("InfoJack");
+    }
+    
 }
