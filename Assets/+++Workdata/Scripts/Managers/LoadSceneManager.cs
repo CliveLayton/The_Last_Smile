@@ -14,6 +14,8 @@ public class LoadSceneManager : MonoBehaviour
 
     private InGameUI inGameUI;
 
+    public bool sceneLoaded = true;
+
     private void Awake()
     {
         instance = this;
@@ -32,6 +34,7 @@ public class LoadSceneManager : MonoBehaviour
     {
         //first, show the loading screen, so that the player does not have to see elements plopping in and out of the scene
         UIManager.instance.ToggleLoadingScreen(true);
+        sceneLoaded = false;
 
         //if the current scene is actually loaded, we first unload it
         var scene = SceneManager.GetSceneByName(currentScene);
@@ -58,6 +61,7 @@ public class LoadSceneManager : MonoBehaviour
 
         //waits for 1 second to show the loading screen for smooth scene switch
         yield return new WaitForSeconds(1f);
+        sceneLoaded = true;
         //lastly, we disalbe the loading screen and set the current scene accordingly
         UIManager.instance.ToggleLoadingScreen(false);
         currentScene = newSceneName;

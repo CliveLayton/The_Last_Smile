@@ -3,7 +3,7 @@
 = FirstText
 I have to find Ava! What if something has happened to her? #speaker:Liam #layout:left
 
-I should take a closer look around.Maybe I'll find some clues as to where she was... #speaker:Liam #layout:left
+I should take a closer look around. Maybe I'll find some clues as to where she was... #speaker:Liam #layout:left
 
 It's best to start looking in the village. #speaker:Liam #layout:left
 ->END

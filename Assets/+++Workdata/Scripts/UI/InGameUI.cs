@@ -278,6 +278,11 @@ public class InGameUI : MonoBehaviour
         AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonHovered, this.transform.position);
     }
 
+    public void ButtonPressedSound()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonPressed, this.transform.position);
+    }
+
     //plays a sound if another menu open up
     public void TurnPagesSound()
     {

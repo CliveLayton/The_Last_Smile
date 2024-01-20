@@ -444,6 +444,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1237145623}
+        m_TargetAssemblyTypeName: InGameUI, Assembly-CSharp
+        m_MethodName: ButtonPressedSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &133594454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,7 +507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 9
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -1018,7 +1030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 9
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -1106,7 +1118,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
+    m_SelectOnUp: {fileID: 1128484553}
     m_SelectOnDown: {fileID: 1136855031}
     m_SelectOnLeft: {fileID: 1048255696}
     m_SelectOnRight: {fileID: 1229037997}
@@ -1222,6 +1234,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1237145623}
         m_TargetAssemblyTypeName: InGameUI, Assembly-CSharp
         m_MethodName: TurnPagesSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1237145623}
+        m_TargetAssemblyTypeName: InGameUI, Assembly-CSharp
+        m_MethodName: ButtonPressedSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1414,7 +1438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 9
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -1579,7 +1603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 9
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -1642,6 +1666,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1237145623}
         m_TargetAssemblyTypeName: InGameUI, Assembly-CSharp
         m_MethodName: SaveGame2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1237145623}
+        m_TargetAssemblyTypeName: InGameUI, Assembly-CSharp
+        m_MethodName: ButtonPressedSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2343,7 +2379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 9
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -2816,7 +2852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 9
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -3285,7 +3321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 9
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -3316,7 +3352,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
+    m_SelectOnUp: {fileID: 1128484553}
     m_SelectOnDown: {fileID: 1136855031}
     m_SelectOnLeft: {fileID: 1340034521}
     m_SelectOnRight: {fileID: 286788250}
@@ -3432,6 +3468,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1237145623}
         m_TargetAssemblyTypeName: InGameUI, Assembly-CSharp
         m_MethodName: TurnPagesSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1237145623}
+        m_TargetAssemblyTypeName: InGameUI, Assembly-CSharp
+        m_MethodName: ButtonPressedSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3901,9 +3949,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 2
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
+    m_SelectOnUp: {fileID: 1229037997}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -4019,7 +4067,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 9
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -4085,7 +4133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4805685, g: 0.8301887, b: 0.41901034, a: 1}
+  m_Color: {r: 0.19215687, g: 0.15686275, b: 0.14509805, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4219,7 +4267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 9
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -4369,7 +4417,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
+    m_SelectOnUp: {fileID: 1128484553}
     m_SelectOnDown: {fileID: 1136855031}
     m_SelectOnLeft: {fileID: 286788250}
     m_SelectOnRight: {fileID: 1340034521}
@@ -4494,6 +4542,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1237145623}
+        m_TargetAssemblyTypeName: InGameUI, Assembly-CSharp
+        m_MethodName: ButtonPressedSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &1229037998
 Animator:
   serializedVersion: 5
@@ -4558,7 +4618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 9
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -4738,7 +4798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4805685, g: 0.8301887, b: 0.41901034, a: 1}
+  m_Color: {r: 0.19215687, g: 0.15686275, b: 0.14509805, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4899,12 +4959,20 @@ PrefabInstance:
       value: event:/SFX/UI/PuzzleSolved
       objectReference: {fileID: 0}
     - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <buttonPressed>k__BackingField.Path
+      value: event:/SFX/UI/ButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
       propertyPath: <mainMenuMusic>k__BackingField.Path
       value: event:/Music/MainMenuMusic
       objectReference: {fileID: 0}
     - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
       propertyPath: <oldCabinMusic>k__BackingField.Path
       value: event:/Music/OldCabinMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <switchMenuEnd>k__BackingField.Path
+      value: event:/SFX/UI/SwitchMenusEnd
       objectReference: {fileID: 0}
     - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
       propertyPath: <loadGameButton>k__BackingField.Path
@@ -4971,6 +5039,10 @@ PrefabInstance:
       value: -532184075
       objectReference: {fileID: 0}
     - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <switchesMenuBegin>k__BackingField.Path
+      value: event:/SFX/UI/SwitchMenusBegin
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
       propertyPath: <dialogueText>k__BackingField.Guid.Data1
       value: 407986147
       objectReference: {fileID: 0}
@@ -5003,6 +5075,22 @@ PrefabInstance:
       value: 1460415869
       objectReference: {fileID: 0}
     - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <buttonPressed>k__BackingField.Guid.Data1
+      value: 1605729917
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <buttonPressed>k__BackingField.Guid.Data2
+      value: 1197526263
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <buttonPressed>k__BackingField.Guid.Data3
+      value: -854125420
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <buttonPressed>k__BackingField.Guid.Data4
+      value: 1284518680
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
       propertyPath: <mainMenuMusic>k__BackingField.Guid.Data1
       value: -1649597055
       objectReference: {fileID: 0}
@@ -5033,6 +5121,22 @@ PrefabInstance:
     - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
       propertyPath: <oldCabinMusic>k__BackingField.Guid.Data4
       value: 2087026233
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <switchMenuEnd>k__BackingField.Guid.Data1
+      value: -1098782033
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <switchMenuEnd>k__BackingField.Guid.Data2
+      value: 1204683607
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <switchMenuEnd>k__BackingField.Guid.Data3
+      value: -2146455151
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <switchMenuEnd>k__BackingField.Guid.Data4
+      value: -958161795
       objectReference: {fileID: 0}
     - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
       propertyPath: <loadGameButton>k__BackingField.Guid.Data1
@@ -5101,6 +5205,22 @@ PrefabInstance:
     - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
       propertyPath: <toggleButtonOff>k__BackingField.Guid.Data4
       value: -2056603790
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <switchesMenuBegin>k__BackingField.Guid.Data1
+      value: -302272100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <switchesMenuBegin>k__BackingField.Guid.Data2
+      value: 1170657289
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <switchesMenuBegin>k__BackingField.Guid.Data3
+      value: 825372070
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
+      propertyPath: <switchesMenuBegin>k__BackingField.Guid.Data4
+      value: -2090291482
       objectReference: {fileID: 0}
     - target: {fileID: 5752064468893464849, guid: 30c6e53401fb80e4fbe66f3ca7682da1, type: 3}
       propertyPath: <moonbrightForestMusic>k__BackingField.Guid.Data1
@@ -5218,7 +5338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 9
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -5306,7 +5426,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
+    m_SelectOnUp: {fileID: 1128484553}
     m_SelectOnDown: {fileID: 1136855031}
     m_SelectOnLeft: {fileID: 1229037997}
     m_SelectOnRight: {fileID: 1048255696}
@@ -5422,6 +5542,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1237145623}
         m_TargetAssemblyTypeName: InGameUI, Assembly-CSharp
         m_MethodName: TurnPagesSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1237145623}
+        m_TargetAssemblyTypeName: InGameUI, Assembly-CSharp
+        m_MethodName: ButtonPressedSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5638,7 +5770,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 1979423441}
-    m_SelectOnDown: {fileID: 1229037997}
+    m_SelectOnDown: {fileID: 1128484553}
     m_SelectOnLeft: {fileID: 371903678}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -5669,6 +5801,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1237145623}
         m_TargetAssemblyTypeName: InGameUI, Assembly-CSharp
         m_MethodName: GoToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1237145623}
+        m_TargetAssemblyTypeName: InGameUI, Assembly-CSharp
+        m_MethodName: ButtonPressedSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5729,7 +5873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 9
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -5878,6 +6022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a15407b51b8e39a40aaa34d38e550862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneLoaded: 1
 --- !u!1 &1622040244
 GameObject:
   m_ObjectHideFlags: 0
@@ -7829,7 +7974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 9
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -7892,6 +8037,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1237145623}
         m_TargetAssemblyTypeName: InGameUI, Assembly-CSharp
         m_MethodName: SaveGame3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1237145623}
+        m_TargetAssemblyTypeName: InGameUI, Assembly-CSharp
+        m_MethodName: ButtonPressedSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8192,7 +8349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4805685, g: 0.8301887, b: 0.41901034, a: 1}
+  m_Color: {r: 0.19215687, g: 0.15686275, b: 0.14509805, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

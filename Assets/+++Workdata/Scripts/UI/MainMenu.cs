@@ -103,4 +103,29 @@ public class MainMenu : MonoBehaviour
     {
         AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonHovered, this.transform.position);
     }
+    
+    public void ButtonPressedSound()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonPressed, this.transform.position);
+    }
+
+    public void SwitchMenuBeginSound()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.switchesMenuBegin, this.transform.position);
+    }
+
+    public void SwitchMenuEndSound()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.switchMenuEnd, this.transform.position);
+    }
+
+    public void NewGameButtonSound()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.newGameButtonPressed, this.transform.position);
+    }
+
+    public void NewGameAnimationSound()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.newGameAnimationSound, this.transform.position);
+    }
 }

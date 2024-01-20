@@ -166,6 +166,27 @@ MonoBehaviour:
       Data3: -204633926
       Data4: 1205747418
     Path: event:/SFX/Player/PlayerFootStepsInside
+  <cameraOn>k__BackingField:
+    Guid:
+      Data1: 1746650696
+      Data2: 1292033771
+      Data3: -1335746432
+      Data4: -483871165
+    Path: event:/SFX/Player/CameraOn
+  <cameraOff>k__BackingField:
+    Guid:
+      Data1: -975649356
+      Data2: 1133433737
+      Data3: -419356541
+      Data4: -2087975511
+    Path: event:/SFX/Player/CameraOff
+  <cameraSnap>k__BackingField:
+    Guid:
+      Data1: 617289130
+      Data2: 1242664818
+      Data3: 1198912178
+      Data4: 1865838576
+    Path: event:/SFX/Player/CameraSnap
   <buttonHovered>k__BackingField:
     Guid:
       Data1: 1148321175
@@ -222,3 +243,38 @@ MonoBehaviour:
       Data3: -27910747
       Data4: -249372887
     Path: event:/SFX/UI/TurnPages
+  <buttonPressed>k__BackingField:
+    Guid:
+      Data1: 1605729917
+      Data2: 1197526263
+      Data3: -854125420
+      Data4: 1284518680
+    Path: event:/SFX/UI/ButtonPressed
+  <switchesMenuBegin>k__BackingField:
+    Guid:
+      Data1: -302272100
+      Data2: 1170657289
+      Data3: 825372070
+      Data4: -2090291482
+    Path: event:/SFX/UI/SwitchMenusBegin
+  <switchMenuEnd>k__BackingField:
+    Guid:
+      Data1: -1098782033
+      Data2: 1204683607
+      Data3: -2146455151
+      Data4: -958161795
+    Path: event:/SFX/UI/SwitchMenusEnd
+  <newGameButtonPressed>k__BackingField:
+    Guid:
+      Data1: 1141132678
+      Data2: 1114327228
+      Data3: -1550671976
+      Data4: -1771268824
+    Path: event:/SFX/UI/NewGameButton
+  <newGameAnimationSound>k__BackingField:
+    Guid:
+      Data1: -1661924903
+      Data2: 1163244751
+      Data3: 1457769602
+      Data4: -580707887
+    Path: event:/SFX/UI/NewGameAnimation

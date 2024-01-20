@@ -129,10 +129,12 @@ public class CameraMover : MonoBehaviour
         if (context.performed && !inSnapPosition)
         {
             cameraAnim.SetTrigger("Snap");
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.cameraSnap, this.transform.position);
         }
         else if (context.performed && inSnapPosition)
         {
             cameraAnim.SetTrigger("Snap");
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.cameraSnap, this.transform.position);
             if (!GameStateManager.instance.data.HasCollectible(collectablePhoto.identifier))
             {
                 GameStateManager.instance.data.AddCollectible(collectablePhoto.identifier);

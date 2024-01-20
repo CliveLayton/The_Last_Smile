@@ -45,7 +45,16 @@ public class FMODEvents : MonoBehaviour
    //audio reference for player footsteps inside
    [field: SerializeField] public EventReference playerFootstepsInside { get; private set; }
    
-   [field: Header("NPC SFX")]
+   [field: Header("Camera SFX")]
+   
+   //audio reference for camera turning on
+   [field: SerializeField] public EventReference cameraOn { get; private set; }
+   
+   //audio reference for camera turning off
+   [field: SerializeField] public EventReference cameraOff { get; private set; }
+   
+   //audio reference for camera take a photo
+   [field: SerializeField] public EventReference cameraSnap { get; private set; }
    
    [field: Header("Environment")]
    
@@ -74,6 +83,22 @@ public class FMODEvents : MonoBehaviour
    
    //audio reference for turn pages
    [field: SerializeField] public EventReference turnPages { get; private set; }
+   
+   //audio reference for button pressed
+   [field: SerializeField] public EventReference buttonPressed { get; private set; }
+   
+   //audio reference for begin switch menu in main menu
+   [field: SerializeField] public EventReference switchesMenuBegin { get; private set; }
+   
+   //audio reference for end switch menu in main menu
+   [field: SerializeField] public EventReference switchMenuEnd { get; private set; }
+   
+   //audio reference for new game button is pressed
+   [field: SerializeField] public EventReference newGameButtonPressed { get; private set; }
+   
+   //audio reference for new game animation 
+   [field: SerializeField] public EventReference newGameAnimationSound { get; private set; }
+   
    
    public static FMODEvents instance { get; private set; }
 

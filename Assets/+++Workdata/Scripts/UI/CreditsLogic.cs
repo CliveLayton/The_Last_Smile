@@ -10,6 +10,8 @@ public class CreditsLogic : MonoBehaviour
 
     private GameObject inGameUI;
 
+    private bool allowSkip;
+
     private void Awake()
     {
         inputActions = new GameInput();
@@ -21,6 +23,8 @@ public class CreditsLogic : MonoBehaviour
 
         AudioManager.instance.CleanUp();
         AudioManager.instance.InitializeMusic(FMODEvents.instance.creditMusic);
+
+        StartCoroutine(WaitforSkip());
     }
 
     private void OnEnable()
@@ -39,12 +43,22 @@ public class CreditsLogic : MonoBehaviour
 
     void SkipCredits(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if (context.performed && allowSkip)
+        {
+            allowSkip = false;
             GameStateManager.instance.GoToMainMenu();
+        }
+            
     }
 
     public void EndCredits()
     {
         GameStateManager.instance.GoToMainMenu();
+    }
+
+    private IEnumerator WaitforSkip()
+    {
+        yield return new WaitForSeconds(2f);
+        allowSkip = true;
     }
 }

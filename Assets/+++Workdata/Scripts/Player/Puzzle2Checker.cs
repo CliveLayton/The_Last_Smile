@@ -62,4 +62,13 @@ public class Puzzle2Checker : MonoBehaviour, IDropHandler
         }
     }
 
+    public void ButtonSelectedSound()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonHovered, this.transform.position);
+    }
+
+    public void ButtonPressedSound()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonPressed, this.transform.position);
+    }
 }

@@ -77,4 +77,14 @@ public class LoadCamera : MonoBehaviour
    {
       camMover.enabled = false;
    }
+
+   public void TakeCameraSound()
+   {
+      AudioManager.instance.PlayOneShot(FMODEvents.instance.cameraOn, this.transform.position);
+   }
+
+   public void TurnCameraOffSound()
+   {
+      AudioManager.instance.PlayOneShot(FMODEvents.instance.cameraOff, this.transform.position);
+   }
 }

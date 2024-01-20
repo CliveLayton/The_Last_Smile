@@ -92,13 +92,13 @@ public class GameStateManager : MonoBehaviour
    {
       if (currentState == GameState.InMainMenu)
          return;
-        
+
       LoadSceneManager.instance.SwitchScene(sceneName);
       if (sceneName == "Puzzle1" || sceneName == "Puzzle2")
          currentState = GameState.InPuzzle;
       else
          currentState = GameState.InGame;
-      
+
       data.loadedSceneName = sceneName;
    }
    

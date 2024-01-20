@@ -139,7 +139,8 @@ public class PlayerController : MonoBehaviour
 
         if (!inSequence)
         {
-            Movement();   
+            if(LoadSceneManager.instance.sceneLoaded) 
+                Movement();   
         }
         else if (inSequence)
         {
