@@ -8,6 +8,7 @@ public class UseCameraButton : MonoBehaviour
 {
     private Animator loadCameraScreen;
 
+    //do the camera animation for activating the camera
     public void SetAnimationForCamera()
     {
         loadCameraScreen = GameObject.FindGameObjectWithTag("LoadCameraScreen").GetComponent<Animator>();

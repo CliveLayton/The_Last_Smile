@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//not used in this build/game
 public class DialogueTrigger : MonoBehaviour
 {
    #region Variables

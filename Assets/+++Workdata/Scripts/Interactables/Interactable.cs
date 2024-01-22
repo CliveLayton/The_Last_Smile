@@ -134,6 +134,9 @@ public class Interactable : MonoBehaviour
         data.colIsActive = state;
     }
 
+    /// <summary>
+    /// clean up music and initialize music for the shop, load the shop scene
+    /// </summary>
     public void SwitchToShop()
     {
         AudioManager.instance.CleanUp();
@@ -141,6 +144,10 @@ public class Interactable : MonoBehaviour
         GameStateManager.instance.LoadNewGameplayScene("Shop");
     }
 
+    /// <summary>
+    /// clean up music and initialize music for the puzzles, load the new puzzle scene
+    /// </summary>
+    /// <param name="sceneName">string</param>
     public void SwitchToPuzzles(string sceneName)
     {
         AudioManager.instance.CleanUp();

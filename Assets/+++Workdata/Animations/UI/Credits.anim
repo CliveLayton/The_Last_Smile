@@ -31,7 +31,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2
+        time: 2.4
         value: 0
         inSlope: 0
         outSlope: 0
@@ -40,7 +40,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 35.333332
+        time: 42.4
         value: -0.8853913
         inSlope: 0
         outSlope: 0
@@ -49,7 +49,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 37.766666
+        time: 45.32
         value: -0.8853913
         inSlope: 0
         outSlope: 0
@@ -58,7 +58,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 42
+        time: 50.4
         value: -1
         inSlope: 0
         outSlope: 0
@@ -75,7 +75,7 @@ AnimationClip:
     script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
     flags: 0
   m_PPtrCurves: []
-  m_SampleRate: 30
+  m_SampleRate: 25
   m_WrapMode: 1
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -88,7 +88,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 42
+    m_StopTime: 50.4
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -118,7 +118,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2
+        time: 2.4
         value: 0
         inSlope: 0
         outSlope: 0
@@ -127,7 +127,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 35.333332
+        time: 42.4
         value: -0.8853913
         inSlope: 0
         outSlope: 0
@@ -136,7 +136,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 37.766666
+        time: 45.32
         value: -0.8853913
         inSlope: 0
         outSlope: 0
@@ -145,7 +145,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 42
+        time: 50.4
         value: -1
         inSlope: 0
         outSlope: 0
@@ -165,7 +165,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 42
+  - time: 50.4
     functionName: EndCredits
     data: 
     objectReferenceParameter: {fileID: 0}

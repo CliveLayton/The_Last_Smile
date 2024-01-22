@@ -57,18 +57,27 @@ namespace UnityEngine.InputSystem
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Sprint"",
+                    ""name"": ""Interact"",
                     ""type"": ""Button"",
-                    ""id"": ""9853f968-9147-47de-ab73-d0cb4ce2da99"",
+                    ""id"": ""26e96ec3-36d4-4ee8-9644-12826ab57173"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Interact"",
+                    ""name"": ""MovePuzzle"",
+                    ""type"": ""Value"",
+                    ""id"": ""0a8b60b4-aa38-4d09-b9db-5147bc919518"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""EnterPuzzle"",
                     ""type"": ""Button"",
-                    ""id"": ""26e96ec3-36d4-4ee8-9644-12826ab57173"",
+                    ""id"": ""329bbb99-84c7-4341-a7f6-714e95cd7245"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -110,31 +119,9 @@ namespace UnityEngine.InputSystem
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""8180e8bd-4097-4f4e-ab88-4523101a6ce9"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""down"",
                     ""id"": ""320bffee-a40b-4347-ac70-c210eb8bc73a"",
                     ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""1c5327b5-f71c-4f60-99c7-4e737386f1d1"",
-                    ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
@@ -154,31 +141,9 @@ namespace UnityEngine.InputSystem
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""left"",
-                    ""id"": ""2e46982e-44cc-431b-9f0b-c11910bf467a"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""right"",
                     ""id"": ""fcfe95b8-67b9-4526-84b5-5d0bc98d6400"",
                     ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""77bff152-3580-4b21-b6de-dcd0c7e41164"",
-                    ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
@@ -298,28 +263,6 @@ namespace UnityEngine.InputSystem
                 },
                 {
                     ""name"": """",
-                    ""id"": ""54c13c50-02cf-41d4-a26b-5a6a858787f8"",
-                    ""path"": ""<Keyboard>/leftShift"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Sprint"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""af7a3ec9-eeb5-4070-bb67-d2637e314868"",
-                    ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Sprint"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""1329e2f0-37bd-4cde-a963-c35037a44540"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
@@ -337,6 +280,127 @@ namespace UnityEngine.InputSystem
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Arrows"",
+                    ""id"": ""12084398-0d7f-412b-9f02-a0e7e76705a8"",
+                    ""path"": ""3DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovePuzzle"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Up"",
+                    ""id"": ""fe3d88b1-b42d-4a38-978a-ab82259a46a0"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""MovePuzzle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Down"",
+                    ""id"": ""7d20db4a-12eb-4ab4-aa3b-8645e73e9465"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""MovePuzzle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Left"",
+                    ""id"": ""5ed51c45-af12-457d-9b4a-9f4903c29607"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""MovePuzzle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Right"",
+                    ""id"": ""34b12be8-0e0c-4a12-82d2-8fadeb3011fa"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""MovePuzzle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Forward"",
+                    ""id"": ""d6bd9fb5-da4f-4835-8a8a-ad5ec890a731"",
+                    ""path"": ""<Keyboard>/0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""MovePuzzle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Backward"",
+                    ""id"": ""b26f37f4-37e1-4278-b3d5-6b9aee7262e3"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovePuzzle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d3bf03b1-59a0-4652-b176-364cec0b6da2"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""MovePuzzle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0e9fa143-6cf9-4806-a523-3cb5c3b437e4"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""EnterPuzzle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2e3e360a-229f-4c88-818f-3128d0a05ff9"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""EnterPuzzle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3c1b3634-345a-4d4a-ba04-804f4eb8ba33"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""EnterPuzzle"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1048,8 +1112,9 @@ namespace UnityEngine.InputSystem
             m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
             m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
             m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
-            m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
             m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+            m_Player_MovePuzzle = m_Player.FindAction("MovePuzzle", throwIfNotFound: true);
+            m_Player_EnterPuzzle = m_Player.FindAction("EnterPuzzle", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1132,8 +1197,9 @@ namespace UnityEngine.InputSystem
         private readonly InputAction m_Player_Move;
         private readonly InputAction m_Player_Look;
         private readonly InputAction m_Player_Fire;
-        private readonly InputAction m_Player_Sprint;
         private readonly InputAction m_Player_Interact;
+        private readonly InputAction m_Player_MovePuzzle;
+        private readonly InputAction m_Player_EnterPuzzle;
         public struct PlayerActions
         {
             private @GameInput m_Wrapper;
@@ -1141,8 +1207,9 @@ namespace UnityEngine.InputSystem
             public InputAction @Move => m_Wrapper.m_Player_Move;
             public InputAction @Look => m_Wrapper.m_Player_Look;
             public InputAction @Fire => m_Wrapper.m_Player_Fire;
-            public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
             public InputAction @Interact => m_Wrapper.m_Player_Interact;
+            public InputAction @MovePuzzle => m_Wrapper.m_Player_MovePuzzle;
+            public InputAction @EnterPuzzle => m_Wrapper.m_Player_EnterPuzzle;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -1161,12 +1228,15 @@ namespace UnityEngine.InputSystem
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
-                @Sprint.started += instance.OnSprint;
-                @Sprint.performed += instance.OnSprint;
-                @Sprint.canceled += instance.OnSprint;
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @MovePuzzle.started += instance.OnMovePuzzle;
+                @MovePuzzle.performed += instance.OnMovePuzzle;
+                @MovePuzzle.canceled += instance.OnMovePuzzle;
+                @EnterPuzzle.started += instance.OnEnterPuzzle;
+                @EnterPuzzle.performed += instance.OnEnterPuzzle;
+                @EnterPuzzle.canceled += instance.OnEnterPuzzle;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -1180,12 +1250,15 @@ namespace UnityEngine.InputSystem
                 @Fire.started -= instance.OnFire;
                 @Fire.performed -= instance.OnFire;
                 @Fire.canceled -= instance.OnFire;
-                @Sprint.started -= instance.OnSprint;
-                @Sprint.performed -= instance.OnSprint;
-                @Sprint.canceled -= instance.OnSprint;
                 @Interact.started -= instance.OnInteract;
                 @Interact.performed -= instance.OnInteract;
                 @Interact.canceled -= instance.OnInteract;
+                @MovePuzzle.started -= instance.OnMovePuzzle;
+                @MovePuzzle.performed -= instance.OnMovePuzzle;
+                @MovePuzzle.canceled -= instance.OnMovePuzzle;
+                @EnterPuzzle.started -= instance.OnEnterPuzzle;
+                @EnterPuzzle.performed -= instance.OnEnterPuzzle;
+                @EnterPuzzle.canceled -= instance.OnEnterPuzzle;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -1441,8 +1514,9 @@ namespace UnityEngine.InputSystem
             void OnMove(InputAction.CallbackContext context);
             void OnLook(InputAction.CallbackContext context);
             void OnFire(InputAction.CallbackContext context);
-            void OnSprint(InputAction.CallbackContext context);
             void OnInteract(InputAction.CallbackContext context);
+            void OnMovePuzzle(InputAction.CallbackContext context);
+            void OnEnterPuzzle(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {

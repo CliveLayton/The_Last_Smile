@@ -10,6 +10,7 @@ public class CollectableObject : MonoBehaviour
     //save game.
     [SerializeField] private CollectableData data;
 
+    //in game UI script
     private InGameUI inGameUI;
 
     private void Awake()

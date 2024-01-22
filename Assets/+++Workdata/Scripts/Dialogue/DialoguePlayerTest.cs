@@ -8,27 +8,37 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SearchService;
 using UnityEngine.UI;
-
+/// <summary>
+/// this is the manager script for all dialogues in the game
+/// </summary>
 public class DialoguePlayerTest : MonoBehaviour
 {
     public static DialoguePlayerTest instance;
     public TextAsset dialogueAsset;
+    //the button that get initialize for choices
     [SerializeField] private DialogueButton buttonPrefab;
+    //the parent for the buttons to initialize each button on the right place
     [SerializeField] private RectTransform buttonParent;
     [SerializeField] private TextMeshProUGUI dialogueTextComponent;
     [SerializeField] private float typingSpeed = 0.04f;
     public string inkPath;
+    //audio reference for typing text
     public EventReference dialogueTextSFX;
+    //animator for the dialogue system
     private Animator layoutAnimator;
 
+    //npcs and their animator
     private Animator ameliaAnimator;
     private Animator jackAnimator;
     private Interactable ameliaWell;
     private Interactable jackForest;
 
     private PlayerController player;
+    //the in game UI script
     private InGameUI inGameUI;
+    //the button for open the journal
     private GameObject openMenuButton;
+    //the button for using the camera
     private GameObject useCameraButton;
     
     private const string LAYOUT_TAG = "layout";
@@ -68,13 +78,18 @@ public class DialoguePlayerTest : MonoBehaviour
         
         //reset layout and speaker
         layoutAnimator.Play("Liam");
+        
+        //set player inactive while dialogue is playing
         player = FindObjectOfType<PlayerController>().gameObject.GetComponent<PlayerController>();
         player.inSequence = true;
         player.enabled = false;
+        
+        //set the gameUI off while dialogue is playing
         inGameUI.menuActive = false;
         openMenuButton.SetActive(false);
         useCameraButton.SetActive(false);
 
+        //set the functions coming from ink
         ObjectInteractionFunctions(story);
         CharacterInfoFunctions(story);
         
@@ -85,11 +100,14 @@ public class DialoguePlayerTest : MonoBehaviour
                 yield return StartCoroutine(ShowNextDecision(story));
         }
 
+        //enable all objects if dialogue ends
         player.enabled = true;
         player.inSequence = false;
         inGameUI.menuActive = true;
         openMenuButton.SetActive(true);
         useCameraButton.SetActive(true);
+        
+        //unbind all functions coming from ink
         UnbindAllFunction(story);
         gameObject.SetActive(false);
     }
@@ -195,6 +213,10 @@ public class DialoguePlayerTest : MonoBehaviour
         yield return null;
     }
 
+    /// <summary>
+    /// all functions to set the character info for each character in the ink story
+    /// </summary>
+    /// <param name="currentStory">story</param>
     private void CharacterInfoFunctions(Story currentStory)
     {
         currentStory.BindExternalFunction("InfoOliver", (int sympathyCount) =>
@@ -217,6 +239,10 @@ public class DialoguePlayerTest : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// all object interactions we manage within ink story
+    /// </summary>
+    /// <param name="currentStory">story</param>
     private void ObjectInteractionFunctions(Story currentStory)
     {
         //function for amelia to move after dialogue on the well, activates the open shop door, deactivates the closed shop door
@@ -250,6 +276,10 @@ public class DialoguePlayerTest : MonoBehaviour
         });
     }
 
+    /// <summary>
+    /// unbind all function from ink
+    /// </summary>
+    /// <param name="currentstory">story</param>
     private void UnbindAllFunction(Story currentstory)
     {
         currentstory.UnbindExternalFunction("WalkAway");

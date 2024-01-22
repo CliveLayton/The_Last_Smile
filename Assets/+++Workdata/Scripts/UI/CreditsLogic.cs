@@ -8,8 +8,10 @@ public class CreditsLogic : MonoBehaviour
 {
     private GameInput inputActions;
 
+    //in game menu script
     private GameObject inGameUI;
 
+    //bool to check if player can skip the credits
     private bool allowSkip;
 
     private void Awake()
@@ -41,6 +43,7 @@ public class CreditsLogic : MonoBehaviour
         inputActions.Player.Interact.performed -= SkipCredits;
     }
 
+    //if the allowSkip is true, loads main menu and set allowSkip back to false
     void SkipCredits(InputAction.CallbackContext context)
     {
         if (context.performed && allowSkip)
@@ -51,11 +54,16 @@ public class CreditsLogic : MonoBehaviour
             
     }
 
+    //loads the main menu
     public void EndCredits()
     {
         GameStateManager.instance.GoToMainMenu();
     }
 
+    /// <summary>
+    /// waits 2 seconds and turn allowSkip to true
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator WaitforSkip()
     {
         yield return new WaitForSeconds(2f);

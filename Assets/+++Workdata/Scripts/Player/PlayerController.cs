@@ -25,8 +25,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float movementSpeed = 4f;
     
     [SerializeField] private float speedChangeRate = 10f;
-    
-    [SerializeField] private float sprintSpeed = 9f;
 
     [Header("GroundCheck")] 
     [SerializeField] private Vector3 groundCheckPos;
@@ -55,11 +53,7 @@ public class PlayerController : MonoBehaviour
 
     private Animator playerAnimator;
 
-    public bool isRunning;
-
     public bool isInteracting;
-
-    public bool isJumping;
 
     public bool inSequence = false;
 
@@ -139,8 +133,14 @@ public class PlayerController : MonoBehaviour
 
         if (!inSequence)
         {
-            if(LoadSceneManager.instance.sceneLoaded) 
-                Movement();   
+            if (LoadSceneManager.instance.sceneLoaded)
+            {
+                Movement();  
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, 0);
+            } 
         }
         else if (inSequence)
         {
@@ -172,9 +172,6 @@ public class PlayerController : MonoBehaviour
     {
         inputActions.Player.Enable();
 
-        inputActions.Player.Sprint.performed += Run;
-        inputActions.Player.Sprint.canceled += Run;
-
         inputActions.Player.Interact.performed += Interact;
     }
 
@@ -188,9 +185,6 @@ public class PlayerController : MonoBehaviour
         playerFootstepsOutside.stop(STOP_MODE.IMMEDIATE);
         
         inputActions.Player.Disable();
-        
-        inputActions.Player.Sprint.performed -= Run;
-        inputActions.Player.Sprint.canceled -= Run;
 
         inputActions.Player.Interact.performed -= Interact;
     }
@@ -206,6 +200,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
+        //if the player walks against a wall where he cannot go through, set the text active
+        //and let the player know he can't pass in the demo
         if (other.CompareTag("NotAvailable") && moveInput.y >= 0.5f)
         {
             var notPartOfDemo = GameObject.Find("NotPartOfDemo").GetComponent<SpriteRenderer>();
@@ -227,7 +223,12 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(SetNotPartOfDemoOff(goToCityText));
         }
     }
-
+    
+    /// <summary>
+    /// wait for 1 second and disable the text
+    /// </summary>
+    /// <param name="currentObject">SpriteRenderer</param>
+    /// <returns></returns>
     private IEnumerator SetNotPartOfDemoOff(SpriteRenderer currentObject)
     {
         yield return new WaitForSeconds(1f);
@@ -237,11 +238,6 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Input CallbackContext Methods
-
-    void Run(InputAction.CallbackContext context)
-    {
-        isRunning = context.performed;
-    }
 
     void Interact(InputAction.CallbackContext context)
     {
@@ -269,7 +265,7 @@ public class PlayerController : MonoBehaviour
 
         directionMultiply = leftMovement ? -1 : 1;
 
-        float targetSpeed = (moveInput.x == 0 ? 0 : (isRunning ? sprintSpeed : movementSpeed) * moveInput.magnitude);
+        float targetSpeed = (moveInput.x == 0 ? 0 : movementSpeed * moveInput.magnitude);
 
         if (Mathf.Abs(currentSpeed - targetSpeed) > 0.01f)
         {
@@ -294,6 +290,7 @@ public class PlayerController : MonoBehaviour
         Vector2 velocity = lastMovement;
         float speed = velocity.magnitude;
         
+        //set the float in the animator to the current speed of the player to animate movement
         playerAnimator.SetFloat("movementSpeed", speed);
     }
 
@@ -301,6 +298,8 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateSound()
     {
+        //check if the player is in the shop scene, if so play the footstep sound for inside buildings
+        //otherwise play the footsteps for outside
         if (Mathf.Abs(rb.velocity.x) > 1f && GameStateManager.instance.data.loadedSceneName != "Shop")
         {
             //get the playback state

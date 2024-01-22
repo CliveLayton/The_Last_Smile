@@ -14,6 +14,7 @@ public class SceneSwitch : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            //clean up music and initialize the music for the next scene
             AudioManager.instance.CleanUp();
             AudioManager.instance.InitializeMusic(musicName);
             GameStateManager.instance.LoadNewGameplayScene(sceneName);

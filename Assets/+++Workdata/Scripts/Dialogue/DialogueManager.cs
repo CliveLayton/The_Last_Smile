@@ -7,6 +7,8 @@ using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
+
+//not used in this build/game
 public class DialogueManager : MonoBehaviour
 {
     [Header("Dialogue UI")] 

@@ -10,6 +10,12 @@ public class DialogueButton : MonoBehaviour
     private System.Action<int> onClicked;
     [SerializeField] TextMeshProUGUI textComponent;
     
+    /// <summary>
+    /// initialize a button with the choice from the ink story
+    /// </summary>
+    /// <param name="choiceIndex">int</param>
+    /// <param name="text">string</param>
+    /// <param name="onClicked">action</param>
     public void Initialize(int choiceIndex, string text, System.Action<int> onClicked)
     {
         this.choiceIndex = choiceIndex;
@@ -17,6 +23,9 @@ public class DialogueButton : MonoBehaviour
         this.onClicked = onClicked;
     }
     
+    /// <summary>
+    /// if button is pressed give the action the choice index of the button to confirm which answer was clicked
+    /// </summary>
     public void OnClick()
     {
         if (onClicked != null)

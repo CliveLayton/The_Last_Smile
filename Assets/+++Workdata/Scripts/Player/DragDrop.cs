@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
@@ -21,8 +22,18 @@ public class DragDrop : Selectable, IBeginDragHandler, IEndDragHandler, IDragHan
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     
+    //input variables
+    private GameInput inputActions;
+    private InputAction moveAction;
+    private Vector3 moveInput;
+
+    [SerializeField] private float puzzleMoveSpeed = 200f;
+    
     protected override void Awake()
     {
+        inputActions = new GameInput();
+        moveAction = inputActions.Player.MovePuzzle;
+        
         base.Awake();
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
@@ -32,22 +43,28 @@ public class DragDrop : Selectable, IBeginDragHandler, IEndDragHandler, IDragHan
 
     private void Update()
     {
+        moveInput = moveAction.ReadValue<Vector3>();
+
         if (!interactable)
             return;
         if (EventSystem.current != null && EventSystem.current.currentSelectedGameObject == this.gameObject)
         {
-            Vector3 direction = new Vector3();
-            if (Input.GetKey(KeyCode.LeftArrow))
-                direction.x = -1;
-            if (Input.GetKey(KeyCode.RightArrow))
-                direction.x = 1;
-            if (Input.GetKey(KeyCode.UpArrow))
-                direction.y = 1;
-            if (Input.GetKey(KeyCode.DownArrow))
-                direction.y = -1;
-
-            transform.position += direction * (200 * Time.deltaTime);
+            transform.position += moveInput.normalized * (puzzleMoveSpeed * Time.deltaTime);
         }
+    }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        
+        inputActions.Enable();
+    }
+
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+        
+        inputActions.Disable();
     }
 
     public override void OnPointerDown(PointerEventData eventData)

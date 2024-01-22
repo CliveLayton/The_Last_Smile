@@ -16,11 +16,13 @@ public class TriggerBehavior : MonoBehaviour
     [Serializable]
     public class Data
     {
+        //bool for collider
         public bool isActive;
     }
 
     [SerializeField] private Data data;
 
+    //bool for collider is active or not
     private bool setActive = true;
     public UnityEvent triggerEnterEvent;
     public UnityEvent triggerExitEvent;

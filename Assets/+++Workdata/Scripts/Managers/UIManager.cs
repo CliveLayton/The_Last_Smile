@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
         instance = this;
         loadingScreen.SetActive(false);
     }
-
+    
     public void ToggleLoadingScreen(bool enabled)
     {
         loadingScreen.SetActive(enabled);

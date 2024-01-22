@@ -294,6 +294,18 @@ MonoBehaviour:
           m_StringArgument: Shop
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1426749700}
+        m_TargetAssemblyTypeName: Puzzle2Checker, Assembly-CSharp
+        m_MethodName: ButtonPressedSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &187032209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,22 +364,6 @@ MonoBehaviour:
         - m_Target: {fileID: 1426749700}
           m_TargetAssemblyTypeName: Puzzle2Checker, Assembly-CSharp
           m_MethodName: ButtonSelectedSound
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 15
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1426749700}
-          m_TargetAssemblyTypeName: Puzzle2Checker, Assembly-CSharp
-          m_MethodName: ButtonPressedSound
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -697,18 +693,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 1432400986}
+    m_SelectOnDown: {fileID: 1432400986}
+    m_SelectOnLeft: {fileID: 1432400986}
+    m_SelectOnRight: {fileID: 1432400986}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -727,6 +723,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 794424377}
   canvas: {fileID: 1109113729}
   useExactImagePixels: 0
+  puzzleMoveSpeed: 200
 --- !u!114 &794424377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1160,6 +1157,7 @@ MonoBehaviour:
   winScreen: {fileID: 748193561}
   incorrectText: {fileID: 1068766175}
   puzzleRing: {fileID: 794424374}
+  winScreenButton: {fileID: 187032206}
   isCorrect: 0
 --- !u!1 &1432400984
 GameObject:
@@ -1214,12 +1212,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 794424376}
+    m_SelectOnDown: {fileID: 794424376}
+    m_SelectOnLeft: {fileID: 794424376}
+    m_SelectOnRight: {fileID: 794424376}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1248,6 +1246,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1426749700}
         m_TargetAssemblyTypeName: Puzzle2Checker, Assembly-CSharp
         m_MethodName: ConfirmAnswer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1426749700}
+        m_TargetAssemblyTypeName: Puzzle2Checker, Assembly-CSharp
+        m_MethodName: ButtonPressedSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1315,22 +1325,6 @@ MonoBehaviour:
         - m_Target: {fileID: 1426749700}
           m_TargetAssemblyTypeName: Puzzle2Checker, Assembly-CSharp
           m_MethodName: ButtonSelectedSound
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 15
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1426749700}
-          m_TargetAssemblyTypeName: Puzzle2Checker, Assembly-CSharp
-          m_MethodName: ButtonPressedSound
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

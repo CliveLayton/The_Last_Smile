@@ -9,12 +9,16 @@ public class CameraMover : MonoBehaviour
 {
      #region Inspector
 
+     //animator for the camera
      [SerializeField] private Animator cameraAnim;
 
+     //the photo the player can collect in this camera
      [SerializeField] private CollectableData collectablePhoto;
 
+     //the interactable to use the camera
      [SerializeField] private CameraInteractable cameraInteractable;
 
+     //the right spot rim object to show up if the player is on the right place to take a photo
      [SerializeField] private GameObject RightSpotRim;
 
      [Header("Movement")] 
@@ -128,11 +132,13 @@ public class CameraMover : MonoBehaviour
     {
         if (context.performed && !inSnapPosition)
         {
+            //take a photo sound and animation
             cameraAnim.SetTrigger("Snap");
             AudioManager.instance.PlayOneShot(FMODEvents.instance.cameraSnap, this.transform.position);
         }
         else if (context.performed && inSnapPosition)
         {
+            //take a photo sound and animation, adds the photo you can collect if it's not already collected
             cameraAnim.SetTrigger("Snap");
             AudioManager.instance.PlayOneShot(FMODEvents.instance.cameraSnap, this.transform.position);
             if (!GameStateManager.instance.data.HasCollectible(collectablePhoto.identifier))

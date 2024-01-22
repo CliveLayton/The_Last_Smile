@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class ItemSlot : MonoBehaviour, IDropHandler
@@ -10,9 +11,15 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     [SerializeField] private GameObject item;
     private CanvasGroup canvasGroup;
     private PuzzleLogic puzzleLogic;
+    
+    //input variables
+    private GameInput inputActions;
+    private bool insertPuzzle;
 
     private void Awake()
     {
+        inputActions = new GameInput();
+
         puzzleLogic = GameObject.FindGameObjectWithTag("PuzzleCheck").GetComponent<PuzzleLogic>();
         //sets raycast false on the slot image
         GetComponent<Image>().raycastTarget = false;
@@ -20,14 +27,32 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
     private void OnEnable()
     {
+        inputActions.Enable();
+
+        inputActions.Player.EnterPuzzle.performed += EnterPuzzle;
+        inputActions.Player.EnterPuzzle.canceled += EnterPuzzle;
+        
         DragDrop.OnDragStartEvent += OnAnyDragStarted;
         DragDrop.OnDragEndEvent += OnAnyDragStopped;
     }
 
     private void OnDisable()
     {
+        inputActions.Disable();
+
+        inputActions.Player.EnterPuzzle.performed -= EnterPuzzle;
+        inputActions.Player.EnterPuzzle.canceled -= EnterPuzzle;
+        
         DragDrop.OnDragStartEvent -= OnAnyDragStarted;
         DragDrop.OnDragEndEvent -= OnAnyDragStopped;
+    }
+
+    void EnterPuzzle(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            insertPuzzle = true;
+        else if (context.canceled)
+            insertPuzzle = false;
     }
 
     private void OnAnyDragStarted()
@@ -44,26 +69,34 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (insertPuzzle)
         {
             if (EventSystem.current.currentSelectedGameObject == null)
                 return;
             //get current item if one is selected
-            var droppedIem = EventSystem.current.currentSelectedGameObject.GetComponent<DragDrop>();
-            if (droppedIem == null || !droppedIem.interactable)
+            var droppedItem = EventSystem.current.currentSelectedGameObject.GetComponent<DragDrop>();
+            if (droppedItem == null || !droppedItem.interactable)
                 return;
             
-            if (Vector2.Distance(droppedIem.transform.position, transform.position) < 40)
+            if (Vector2.Distance(droppedItem.transform.position, transform.position) < 40)
             {
                 //drop the current item to the position of the slot
-                droppedIem.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+                droppedItem.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
                 //if the item is correct, count corrct puzzle 1 up
                 //set interactable off and select next item
-                if (droppedIem.gameObject == item)
+                if (droppedItem.gameObject == item)
                 {
                     puzzleLogic.CountCorrectPuzzles(1);
-                    droppedIem.interactable = false;
-                    droppedIem.FindSelectableOnDown().Select();
+                    droppedItem.interactable = false;
+                    //droppedItem.FindSelectableOnDown().Select();
+                    if (droppedItem.FindSelectableOnDown())
+                    {
+                        droppedItem.FindSelectableOnDown().Select();
+                    }
+                    else if (!droppedItem.FindSelectableOnDown())
+                    {
+                        droppedItem.FindSelectableOnUp().Select();
+                    }
                 }
             }
         }

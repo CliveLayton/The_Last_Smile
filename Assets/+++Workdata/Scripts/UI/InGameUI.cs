@@ -49,6 +49,7 @@ public class InGameUI : MonoBehaviour
     
     private GameInput inputActions;
 
+    //bool to check if menu player may open menu
     public bool menuActive = true;
 
     private void Awake()
@@ -132,6 +133,7 @@ public class InGameUI : MonoBehaviour
     //this is called via the button in the upper left corner
     public void OpenIngameUI()
     {
+        //check if any collectable object is already collected and set it true or not
         if(GameStateManager.instance.data.HasCollectible(transporterData.identifier))
             transporterPicture.SetActive(true);
         else
@@ -212,6 +214,10 @@ public class InGameUI : MonoBehaviour
         openMenuText.SetActive(state);
     }
 
+    /// <summary>
+    /// sets the state for the camera button interactable 
+    /// </summary>
+    /// <param name="state">bool</param>
     public void CameraButtonInteractable(bool state)
     {
         useCameraButton.interactable = state;
@@ -278,6 +284,7 @@ public class InGameUI : MonoBehaviour
         AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonHovered, this.transform.position);
     }
 
+    //plays a sound if a button is pressed
     public void ButtonPressedSound()
     {
         AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonPressed, this.transform.position);

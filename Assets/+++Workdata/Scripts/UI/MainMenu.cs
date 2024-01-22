@@ -10,9 +10,13 @@ public class MainMenu : MonoBehaviour
 {
     public EventReference musicName;
 
+    //new game button object on main canvas
     [SerializeField] private GameObject newGameButton;
+    //slot1 button object on load menu
     [SerializeField] private GameObject slot1Button;
+    //no button object on exit menu
     [SerializeField] private GameObject noButton;
+    //master slider object on option menu
     [SerializeField] private GameObject masterSlider;
 
     private void Awake()
@@ -23,7 +27,7 @@ public class MainMenu : MonoBehaviour
     }
 
     /// <summary>
-    /// just load the normal game as a new game
+    /// just load the normal game as a new game, set the music for level1
     /// </summary>
     public void StartNewGame()
     {
@@ -32,6 +36,7 @@ public class MainMenu : MonoBehaviour
         GameStateManager.instance.StartNewGame();
     }
 
+    //loads the credits scene
     public void StartCredits()
     {
         LoadSceneManager.instance.SwitchScene("Credits");
@@ -46,12 +51,18 @@ public class MainMenu : MonoBehaviour
         GameStateManager.instance.LoadFromSave("SaveGame1");
     }
 
+    /// <summary>
+    /// laod the SaveGame2 Data
+    /// </summary>
     public void LoadGame2()
     {
         AudioManager.instance.PlayOneShot(FMODEvents.instance.loadGameButton, this.transform.position);
         GameStateManager.instance.LoadFromSave("SaveGame2");
     }
 
+    /// <summary>
+    /// load the SaveGame3 Data
+    /// </summary>
     public void LoadGame3()
     {
         AudioManager.instance.PlayOneShot(FMODEvents.instance.loadGameButton, this.transform.position);
@@ -99,31 +110,49 @@ public class MainMenu : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(noButton);
     }
 
+    /// <summary>
+    /// plays sound for button selected
+    /// </summary>
     public void ButtonSelectedSound()
     {
         AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonHovered, this.transform.position);
     }
     
+    /// <summary>
+    /// plays sound for button is pressed
+    /// </summary>
     public void ButtonPressedSound()
     {
         AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonPressed, this.transform.position);
     }
 
+    /// <summary>
+    /// plays sound for switching scenes at start
+    /// </summary>
     public void SwitchMenuBeginSound()
     {
         AudioManager.instance.PlayOneShot(FMODEvents.instance.switchesMenuBegin, this.transform.position);
     }
 
+    /// <summary>
+    /// plays sound for switching scenes at end
+    /// </summary>
     public void SwitchMenuEndSound()
     {
         AudioManager.instance.PlayOneShot(FMODEvents.instance.switchMenuEnd, this.transform.position);
     }
 
+    /// <summary>
+    /// plays sound for new game button is pressed
+    /// </summary>
     public void NewGameButtonSound()
     {
         AudioManager.instance.PlayOneShot(FMODEvents.instance.newGameButtonPressed, this.transform.position);
     }
 
+    /// <summary>
+    /// plays sound for new game animation
+    /// </summary>
     public void NewGameAnimationSound()
     {
         AudioManager.instance.PlayOneShot(FMODEvents.instance.newGameAnimationSound, this.transform.position);

@@ -12,8 +12,11 @@ public class LoadCamera : MonoBehaviour
    [SerializeField] private PlayerController player;
    [SerializeField] private CameraMover camMover;
    [SerializeField] private GameObject tutorialCamera;
+   //button for open the in game menu
    private GameObject openMenuButton;
+   //button for using the camera
    private GameObject useCameraButton;
+   //in game ui script
    private InGameUI inGameUI;
 
 
@@ -24,6 +27,9 @@ public class LoadCamera : MonoBehaviour
       inGameUI = GameObject.FindGameObjectWithTag("InGameHUD").GetComponent<InGameUI>();
    }
 
+   /// <summary>
+   /// sets the tutorial Object for the camera active
+   /// </summary>
    public void ActivateTutorial()
    {
       tutorialCamera.SetActive(true);
@@ -78,11 +84,17 @@ public class LoadCamera : MonoBehaviour
       camMover.enabled = false;
    }
 
+   /// <summary>
+   /// sound for open the camera
+   /// </summary>
    public void TakeCameraSound()
    {
       AudioManager.instance.PlayOneShot(FMODEvents.instance.cameraOn, this.transform.position);
    }
 
+   /// <summary>
+   /// sound for close the camera
+   /// </summary>
    public void TurnCameraOffSound()
    {
       AudioManager.instance.PlayOneShot(FMODEvents.instance.cameraOff, this.transform.position);

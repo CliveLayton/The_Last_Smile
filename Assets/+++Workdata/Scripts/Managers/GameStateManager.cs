@@ -49,10 +49,19 @@ public class GameStateManager : MonoBehaviour
    /// </summary>
    public bool shopClosedDoorActive = true;
 
+   /// <summary>
+   /// bool for npc oliver is active in level2 or not
+   /// </summary>
    public bool oliverActive = true;
 
+   /// <summary>
+   /// bool for truck without wood is active in level2 or not
+   /// </summary>
    public bool truckWithoutWood = true;
 
+   /// <summary>
+   /// bool for truck with wood is active in level2 or not
+   /// </summary>
    public bool truckWithWood = false;
 
    #endregion
